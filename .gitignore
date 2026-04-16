@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/cache/
+.streamlit/__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+ehthumbs.db
+
+# Generated files
+data/*.docx
+data/*.pdf
+data/temp_charts/
+data/~*.docx
+*.bak
+
+# Logs
+*.log
+
+# Development
+.claude/
+*.tmp
+node_modules/
+
+# Keep only necessary data files
+!data/classified_data_*.json
+!data/analytics_phaseA_*.json
+!data/analytics_phaseB_*.json
+!data/analytics_phaseC_*.json
+!data/business_ideas_*.json
+
+# Old/test scripts to exclude
+scripts/update_*.py
+scripts/add_*.py
+scripts/init_*.py
+scripts/monthly_pipeline.py
+scripts/ideate_business_strategy.py
+scripts/markdown_to_pdf.py
+scripts/test_*.py
+test_*.py
+Phase1指示書.docx
+Phase2指示書.docx
+phase2_text.txt
+keyword_example.docx
+skills/

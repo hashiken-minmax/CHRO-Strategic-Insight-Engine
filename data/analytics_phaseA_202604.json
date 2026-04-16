@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-16T20:33:27.834301",
+    "period": "202604",
+    "phase": "A",
+    "description": "SNS Information Summary + Context Distribution"
+  },
+  "sns_summary": {
+    "JP": {
+      "country_ja": "日本",
+      "chro_count": 26,
+      "total_posts": 258,
+      "work_posts": 258,
+      "x_posts": 9,
+      "linkedin_posts": 249,
+      "chro_list": [
+        "Katsuyoshi Sugita",
+        "Lauren Duprey",
+        "Lorena Dellagiovanna",
+        "中西 歌 (Utae Nakanishi)",
+        "井原 徹 (Toru Ihara)",
+        "八幡誠",
+        "原 慎一 (Shinichi Hara)",
+        "和田 信二 (Shinji Wada)（2025年12月31日退任）",
+        "堀川 大介 (Daisuke Horikawa)",
+        "尾崎 幸子 (Yukiko Ozaki)",
+        "平松 浩樹 (Hiroki Hiramatsu)",
+        "平松浩樹",
+        "有沢 正人 (Masahito Arisawa)",
+        "木下 達夫 (Tatsuo Kinoshita)",
+        "東 孝典 (Takanori Azuma)",
+        "松本孝",
+        "正鹿 照之 (Teruyuki Masaka)",
+        "江上 茂樹 (Shigeki Egami)",
+        "瀬名波 文野 (Ayano Senaha)",
+        "瀬名波文野",
+        "神山 信弘 (Nobuhiro Kaminoyama)",
+        "竹増 貞信 (Yoshiaki Takemasu)",
+        "花田琢也",
+        "谷村 圭三 (Keizo Tanimura)",
+        "青木千恵",
+        "高倉 洋介 (Yosuke Takakura)"
+      ]
+    },
+    "US": {
+      "country_ja": "米国",
+      "chro_count": 35,
+      "total_posts": 400,
+      "work_posts": 400,
+      "x_posts": 49,
+      "linkedin_posts": 351,
+      "chro_list": [
+        "Amanda Poole",
+        "Amy Coleman",
+        "Angela Beatty",
+        "Arden Hoffman",
+        "Bala Purushothaman",
+        "Becky Schmitt",
+        "Bei Ling",
+        "Beth Galetti",
+        "Betty Larson",
+        "Cameron Rice",
+        "Caroline Heller",
+        "Demetris Crum",
+        "Donna Morris",
+        "Eric Dozier",
+        "Erin McSweeney",
+        "Fiona Cicconi",
+        "Heidi B. Capozzi",
+        "Jacqueline Arthur",
+        "Janelle Gale",
+        "Kelly Mahon Tullier",
+        "Kristen Mulholland",
+        "Lisa Britt",
+        "Matt Walter",
+        "Nathalie Scardino",
+        "Nickle LaMoreaux",
+        "Payal Sahni Becher",
+        "Robin Leopold",
+        "Samantha Hammock",
+        "Sara Wechter",
+        "Sergio Ezama",
+        "Sheri Bronstein",
+        "Stephanie Smith",
+        "Susan Muigai",
+        "Treasure Heinle",
+        "Uma Amuluru"
+      ]
+    },
+    "UK": {
+      "country_ja": "英国",
+      "chro_count": 32,
+      "total_posts": 331,
+      "work_posts": 331,
+      "x_posts": 30,
+      "linkedin_posts": 301,
+      "chro_list": [
+        "Aileen Taylor",
+        "Ali Bebo",
+        "Alison Wilcox",
+        "Amanda Cusdin",
+        "Catherine Chia",
+        "Danielle Harmer",
+        "Deborah Lee",
+        "Diana Conrad",
+        "Dr. Cora Koppe-Stahrenberg",
+        "Emma Hardaker-Jones",
+        "Emma Holden",
+        "Emma Taylor",
+        "Erica Bourne",
+        "Georgie Bezette",
+        "Hayley Tatum MBE",
+        "Jacky Simmonds",
+        "Jeff Pott",
+        "John Stewart",
+        "Kerry Dryburgh",
+        "Line De Decker",
+        "Louise Prashad",
+        "Mairéad Nayager",
+        "Maria Kokkinou",
+        "Michelle Murphy",
+        "Rachel Solway",
+        "Ranjay Radhakrishnan",
+        "Rose Thomson",
+        "Sarah Armstrong",
+        "Sharon Doherty",
+        "Tanuj Kapilashrami",
+        "Tristram Roberts",
+        "Wayne Hoare"
+      ]
+    },
+    "DE": {
+      "country_ja": "ドイツ",
+      "chro_count": 16,
+      "total_posts": 168,
+      "work_posts": 168,
+      "x_posts": 20,
+      "linkedin_posts": 148,
+      "chro_list": [
+        "Birgit Bohle",
+        "Carmen-Maja Rex",
+        "Darleen Caron",
+        "Dr. Katja Scharpwinkel",
+        "Dr. Vera Saal",
+        "Gina Vargiu-Breuer",
+        "Heike Eckert",
+        "Judith Wiese",
+        "Jürgen Hartwig",
+        "Katja van Doren",
+        "Markus Fink",
+        "Michelle Robertson",
+        "Nicola D. Lafrentz",
+        "Stefan Britz",
+        "Sylvie Nicol",
+        "Tim Oliver Holt"
+      ]
+    }
+  },
+  "context_distribution": {
+    "JP": {
+      "total_posts": 258,
+      "distribution": {
+        "S&G": {
+          "count": 3,
+          "percentage": 1.1627906976744187
+        },
+        "A&S": {
+          "count": 103,
+          "percentage": 39.92248062015504
+        },
+        "HRT": {
+          "count": 5,
+          "percentage": 1.937984496124031
+        },
+        "WTT": {
+          "count": 4,
+          "percentage": 1.550387596899225
+        },
+        "TMD": {
+          "count": 62,
+          "percentage": 24.031007751937985
+        },
+        "HROPAI": {
+          "count": 49,
+          "percentage": 18.992248062015506
+        },
+        "C&E": {
+          "count": 32,
+          "percentage": 12.4031007751938
+        }
+      }
+    },
+    "US": {
+      "total_posts": 400,
+      "distribution": {
+        "S&G": {
+          "count": 6,
+          "percentage": 1.5
+        },
+        "A&S": {
+          "count": 166,
+          "percentage": 41.5
+        },
+        "HRT": {
+          "count": 3,
+          "percentage": 0.75
+        },
+        "WTT": {
+          "count": 8,
+          "percentage": 2.0
+        },
+        "TMD": {
+          "count": 136,
+          "percentage": 34.0
+        },
+        "HROPAI": {
+          "count": 42,
+          "percentage": 10.5
+        },
+        "C&E": {
+          "count": 39,
+          "percentage": 9.75
+        }
+      }
+    },
+    "UK": {
+      "total_posts": 331,
+      "distribution": {
+        "S&G": {
+          "count": 7,
+          "percentage": 2.1148036253776437
+        },
+        "A&S": {
+          "count": 144,
+          "percentage": 43.50453172205438
+        },
+        "HRT": {
+          "count": 6,
+          "percentage": 1.8126888217522659
+        },
+        "WTT": {
+          "count": 11,
+          "percentage": 3.323262839879154
+        },
+        "TMD": {
+          "count": 100,
+          "percentage": 30.211480362537763
+        },
+        "HROPAI": {
+          "count": 24,
+          "percentage": 7.2507552870090635
+        },
+        "C&E": {
+          "count": 39,
+          "percentage": 11.782477341389727
+        }
+      }
+    },
+    "DE": {
+      "total_posts": 168,
+      "distribution": {
+        "S&G": {
+          "count": 7,
+          "percentage": 4.166666666666667
+        },
+        "A&S": {
+          "count": 73,
+          "percentage": 43.45238095238095
+        },
+        "HRT": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "WTT": {
+          "count": 1,
+          "percentage": 0.5952380952380952
+        },
+        "TMD": {
+          "count": 46,
+          "percentage": 27.38095238095238
+        },
+        "HROPAI": {
+          "count": 26,
+          "percentage": 15.476190476190476
+        },
+        "C&E": {
+          "count": 15,
+          "percentage": 8.928571428571429
+        }
+      }
+    }
+  }
+}

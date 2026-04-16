@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-16T21:05:18.279278",
+    "period": "202604",
+    "phase": "B",
+    "description": "Context × Activity Matrix Analysis"
+  },
+  "matrix_by_country": {
+    "JP": {
+      "matrix": {
+        "A&S": {
+          "Done": 11,
+          "Doing": 56,
+          "Next": 18,
+          "Idea": 4,
+          "Issue": 14
+        },
+        "TMD": {
+          "Done": 7,
+          "Doing": 31,
+          "Next": 16,
+          "Idea": 3,
+          "Issue": 5
+        },
+        "HROPAI": {
+          "Done": 4,
+          "Doing": 26,
+          "Next": 5,
+          "Idea": 1,
+          "Issue": 13
+        },
+        "C&E": {
+          "Done": 6,
+          "Doing": 9,
+          "Next": 15,
+          "Idea": 0,
+          "Issue": 2
+        },
+        "WTT": {
+          "Done": 0,
+          "Doing": 2,
+          "Next": 2,
+          "Idea": 0,
+          "Issue": 0
+        },
+        "HRT": {
+          "Done": 0,
+          "Doing": 3,
+          "Next": 1,
+          "Idea": 0,
+          "Issue": 1
+        },
+        "S&G": {
+          "Done": 0,
+          "Doing": 2,
+          "Next": 1,
+          "Idea": 0,
+          "Issue": 0
+        }
+      },
+      "row_totals": {
+        "A&S": 103,
+        "TMD": 62,
+        "HROPAI": 49,
+        "C&E": 32,
+        "WTT": 4,
+        "HRT": 5,
+        "S&G": 3
+      },
+      "col_totals": {
+        "Done": 28,
+        "Doing": 129,
+        "Next": 58,
+        "Idea": 8,
+        "Issue": 35
+      },
+      "grand_total": 258,
+      "total_posts": 258
+    },
+    "US": {
+      "matrix": {
+        "A&S": {
+          "Done": 32,
+          "Doing": 52,
+          "Next": 59,
+          "Idea": 5,
+          "Issue": 18
+        },
+        "TMD": {
+          "Done": 26,
+          "Doing": 73,
+          "Next": 26,
+          "Idea": 4,
+          "Issue": 7
+        },
+        "HROPAI": {
+          "Done": 10,
+          "Doing": 19,
+          "Next": 9,
+          "Idea": 1,
+          "Issue": 3
+        },
+        "C&E": {
+          "Done": 9,
+          "Doing": 9,
+          "Next": 16,
+          "Idea": 0,
+          "Issue": 5
+        },
+        "WTT": {
+          "Done": 0,
+          "Doing": 1,
+          "Next": 4,
+          "Idea": 1,
+          "Issue": 2
+        },
+        "HRT": {
+          "Done": 0,
+          "Doing": 1,
+          "Next": 1,
+          "Idea": 1,
+          "Issue": 0
+        },
+        "S&G": {
+          "Done": 2,
+          "Doing": 1,
+          "Next": 2,
+          "Idea": 0,
+          "Issue": 1
+        }
+      },
+      "row_totals": {
+        "A&S": 166,
+        "TMD": 136,
+        "HROPAI": 42,
+        "C&E": 39,
+        "WTT": 8,
+        "HRT": 3,
+        "S&G": 6
+      },
+      "col_totals": {
+        "Done": 79,
+        "Doing": 156,
+        "Next": 117,
+        "Idea": 12,
+        "Issue": 36
+      },
+      "grand_total": 400,
+      "total_posts": 400
+    },
+    "UK": {
+      "matrix": {
+        "A&S": {
+          "Done": 27,
+          "Doing": 64,
+          "Next": 39,
+          "Idea": 3,
+          "Issue": 11
+        },
+        "TMD": {
+          "Done": 14,
+          "Doing": 52,
+          "Next": 22,
+          "Idea": 6,
+          "Issue": 6
+        },
+        "HROPAI": {
+          "Done": 6,
+          "Doing": 7,
+          "Next": 7,
+          "Idea": 2,
+          "Issue": 2
+        },
+        "C&E": {
+          "Done": 6,
+          "Doing": 20,
+          "Next": 7,
+          "Idea": 3,
+          "Issue": 3
+        },
+        "WTT": {
+          "Done": 1,
+          "Doing": 5,
+          "Next": 2,
+          "Idea": 1,
+          "Issue": 2
+        },
+        "HRT": {
+          "Done": 2,
+          "Doing": 2,
+          "Next": 1,
+          "Idea": 1,
+          "Issue": 0
+        },
+        "S&G": {
+          "Done": 1,
+          "Doing": 3,
+          "Next": 2,
+          "Idea": 0,
+          "Issue": 1
+        }
+      },
+      "row_totals": {
+        "A&S": 144,
+        "TMD": 100,
+        "HROPAI": 24,
+        "C&E": 39,
+        "WTT": 11,
+        "HRT": 6,
+        "S&G": 7
+      },
+      "col_totals": {
+        "Done": 57,
+        "Doing": 153,
+        "Next": 80,
+        "Idea": 16,
+        "Issue": 25
+      },
+      "grand_total": 331,
+      "total_posts": 331
+    },
+    "DE": {
+      "matrix": {
+        "A&S": {
+          "Done": 10,
+          "Doing": 41,
+          "Next": 19,
+          "Idea": 0,
+          "Issue": 3
+        },
+        "TMD": {
+          "Done": 3,
+          "Doing": 24,
+          "Next": 14,
+          "Idea": 1,
+          "Issue": 4
+        },
+        "HROPAI": {
+          "Done": 6,
+          "Doing": 8,
+          "Next": 10,
+          "Idea": 1,
+          "Issue": 1
+        },
+        "C&E": {
+          "Done": 0,
+          "Doing": 5,
+          "Next": 9,
+          "Idea": 0,
+          "Issue": 1
+        },
+        "WTT": {
+          "Done": 0,
+          "Doing": 0,
+          "Next": 1,
+          "Idea": 0,
+          "Issue": 0
+        },
+        "HRT": {
+          "Done": 0,
+          "Doing": 0,
+          "Next": 0,
+          "Idea": 0,
+          "Issue": 0
+        },
+        "S&G": {
+          "Done": 0,
+          "Doing": 2,
+          "Next": 4,
+          "Idea": 1,
+          "Issue": 0
+        }
+      },
+      "row_totals": {
+        "A&S": 73,
+        "TMD": 46,
+        "HROPAI": 26,
+        "C&E": 15,
+        "WTT": 1,
+        "HRT": 0,
+        "S&G": 7
+      },
+      "col_totals": {
+        "Done": 19,
+        "Doing": 80,
+        "Next": 57,
+        "Idea": 3,
+        "Issue": 9
+      },
+      "grand_total": 168,
+      "total_posts": 168
+    }
+  }
+}

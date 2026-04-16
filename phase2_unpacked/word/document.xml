@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16du="http://schemas.microsoft.com/office/word/2023/wordml/word16du" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16sdtfl="http://schemas.microsoft.com/office/word/2024/wordml/sdtformatlock" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh w16sdtfl w16du wp14">
+  <w:body>
+    <w:p w14:paraId="657C9CD0" w14:textId="60956DEF" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>実装指示書：Phase 2 (Full Automation &amp; Analytics)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7898C5B5" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>1. プロジェクト概要</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="17E5A20C" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:r>
+        <w:t>本フェーズの目的は、Phase 1で作成された master_list.csv を基に、SNSデータの収集から高度な分析、レポート生成までを完全に自動化する「インサイト・エンジン」の実装である。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5F867269" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>プロジェクト名</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: CHRO-Strategic-Insight-Engine (CHRO-SIE)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="43E00DFF" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>作業ディレクトリ</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: C:\Users\hashi\Documents\CHRO-Strategic-Insight-Engine</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0585C00A" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>2. 実装すべきスキル (Skills) と自動化プロセス</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7724EF49" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:r>
+        <w:t>以下の5つの処理をSkillとして実装し、スーパーバイザー（Supervisor）がこれらを連動させて実行する仕組みを構築せよ。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5EFCB170" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>① データ収集：fetch_sns_data</w:t>
+      </w:r>
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="1F300183" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>実行タイミング</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 毎月第2営業日。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0FB6C0AE" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>対象</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: master_list.csv に記載された全URL。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="710A8EA0" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ロジック</w:t>
+      </w:r>
+      <w:r>
+        <w:t>:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3D0E91E7" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>last30days 機能を活用し、各CHROの直近30日間の投稿（X, LinkedIn）を取得。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="73001578" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>仕事に関係のない投稿（ランチ、プライベートな挨拶等）はキーワードフィルタリングまたはLLMによる判定で除外。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="65449287" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>取得結果を raw_data_YYYYMM.json として保存。</w:t>
+      </w:r>
+      
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="12B641A7" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>② 情報分類：classify_content</w:t>
+      </w:r>
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="750159C3" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ロジック</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 各投稿を以下の「コンテキスト軸」と「活動区分軸」の2軸で機械的に分類。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4FDD9396" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>活動区分</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: Done（完了）, Doing（進行中）, Next（着手予定）, Idea（検討中）, Issue（課題・悩み） </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0273C42D" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>コンテキスト軸 (7分類)</w:t>
+      </w:r>
+      <w:r>
+        <w:t>:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2E39AE4B" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>S&amp;G (Succession &amp; Governance)</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: 役員指名・サクセッションの文脈での次世代経営人材の選抜・育成、ガバナンス体制 </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="75E032B6" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>A&amp;S (Agenda &amp; Strategy)</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: 企業価値向上、および経営戦略実現のための人材戦略・ポートフォリオ・人的投資ROI </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="35065B31" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>HRT (HR Transformation)</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: 人事機能の変革、HRBP等の専門性向上、人事組織の問題解決 </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4FE53001" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>WTT (Workforce &amp; Talent Transformation)</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: テクノロジーを用いた人材ポートフォリオの現状把握や分析 </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="266F81F6" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>TMD (Talent Market &amp; Development)</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: 調達戦略、社内労働市場、キャリア自律、ピープルマネージャー育成 </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1ED98DEA" w14:textId="0E4574B7" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>HR</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>OP&amp;AI (HR Operation &amp; AI)</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: AI活用による人事業務の再構築・BPR、</w:t>
+      <w:lastRenderedPageBreak/><w:t xml:space="preserve">人事特化型AI実装 </w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="1B2611CB" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>C&amp;E (Culture &amp; Engagement)</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: エンゲージメント向上、AIネイティブ組織の構築 </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1E854CAC" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>③ 深層分析：generate_analytics</w:t>
+      </w:r>
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="7ADB379A" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ロジック</w:t>
+      </w:r>
+      <w:r>
+        <w:t>:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="46F0F5F9" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>比較分析</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 国別（日・米・英・独）の傾向差、および前月データとの時系列比較。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="25192202" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ワードクラウド</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 頻出キーワードの可視化。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="503A6451" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>役割分析</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">: 「現状の労務管理中心の姿」と「経営パートナー・AIワークフォースアーキテクトとしての在るべき姿」を対比させ、JPと海外の差分をフラットに抽出。 </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6B275D1A" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>④ 戦略立案：ideate_business_strategy</w:t>
+      </w:r>
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="602B9AF1" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="5"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ロジック</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 分析結果を基に、人事・ガバナンス・テクノロジー（人事/ガバナンス関連）領域で広くビジネスアイデアを企画。事業戦略との掛け算や、企業価値向上に直結する示唆を出すこと。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="03E3E9FE" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>⑤ レポート作成：produce_report</w:t>
+      </w:r>
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="599471F7" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>構成</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 以下の2章構成でMarkdown/PDF出力。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2EE4EF84" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>第1章：CHROトレンド分析（yyyy/mm）</w:t>
+      </w:r>
+      
+      
+      
+      
+      <w:r>
+        <w:t>:</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1FC56C2D" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="2"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>サマリーと詳細。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="73D3D04A" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="2"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>客観事実 (Fact)</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 統計や具体例。「〜という事実がある」と記述。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1FEA8DD6" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="2"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>鋭い示唆 (Insight)</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: コンサルタント視点の提言。「〜すべきである」と記述。両者を明確にセクション分けすること。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="04501467" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="1"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>第2章：ビジネスインサイト</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 戦略立案官によるビジネスアイデアの提案。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0F2B55BD" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>3. 定期メンテナンスサイクル (Scheduled Maintenance)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0C84EE7B" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:r>
+        <w:t>スーパーバイザーに以下の定期タスクを組み込むこと。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="62BDAEB6" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="7"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>リスト更新</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 1, 4, 7, 10, 11月の第1営業日に update_master_list を実行し、指名指数（TOPIX100等）の顔ぶれやCHROの交代を確認。</w:t>
+      </w:r>
+      
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="21E467A4" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="7"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>月次レポート</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 毎月第2営業日に①〜⑤を連続実行。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5268CB27" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>4. スーパーバイザーの挙動設定</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="19468970" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="8"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>あなた（ユーザー）との唯一の窓口として機能。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4213413D" w14:textId="77777777" w:rsidR="00844160" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="8"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>各エージェント（調査・整理・分析・立案・執筆）に仕事を振り、進捗を管理。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="391F1D59" w14:textId="6A127167" w:rsidR="00D80A01" w:rsidRPr="00844160" w:rsidRDefault="00844160" w:rsidP="00844160">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="8"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>「あやふやに進まない」</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: LinkedInの認証切れ、APIエラー、想定外の投稿パターンの発生時には、直ちにあなたに報告し、指示を仰ぐこと。</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="00D80A01" w:rsidRPr="00844160">
+      <w:pgSz w:w="11906" w:h="16838"/>
+      <w:pgMar w:top="1985" w:right="1701" w:bottom="1701" w:left="1701" w:header="851" w:footer="992" w:gutter="0"/>
+      <w:cols w:space="425"/>
+      <w:docGrid w:type="lines" w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

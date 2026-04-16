@@ -1,0 +1,9 @@
+=== 分類完了: 35件 ===
+
+--- コンテキスト軸 ---
+Traceback (most recent call last):
+  File "C:\Users\hashi\Documents\CHRO-Strategic-Insight-Engine\scripts\classify_content.py", line 207, in <module>
+    main()
+  File "C:\Users\hashi\Documents\CHRO-Strategic-Insight-Engine\scripts\classify_content.py", line 188, in main
+    print(f'  {ctx:8s} ({label:40s}): {count:2d} {bar}')
+UnicodeEncodeError: 'cp932' codec can't encode character '\u2588' in position 58: illegal multibyte sequence

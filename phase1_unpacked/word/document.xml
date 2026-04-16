@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16du="http://schemas.microsoft.com/office/word/2023/wordml/word16du" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16sdtfl="http://schemas.microsoft.com/office/word/2024/wordml/sdtformatlock" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh w16sdtfl w16du wp14">
+  <w:body>
+    <w:p w14:paraId="60AE3DAE" w14:textId="2277BA65" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>実装指示書：Phase 1 (Account Discovery)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="17812689" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>1. プロジェクト基本情報</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="50B025F1" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>名称</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: CHRO-Strategic-Insight-Engine (CHRO-SIE)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="10AC7608" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ディレクトリ</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: C:\Users\hashi\Documents\CHRO-Strategic-Insight-Engine</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4338BE76" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>目標</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 対象企業のCHRO（または人事担当役員）のSNSアカウント（X, LinkedIn）を特定し、マスタリストを作成する。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="72EF9F7D" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>2. 実行上の絶対ルール（フェーズゲート）</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6DC66A74" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>重要</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 今回は「リスト化」までの工程を完了させた時点で作業を一旦停止し、ユーザー（私）に報告すること。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6FEEE1A5" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>取得できたアカウントの数や質を私が確認し、次フェーズ（データ収集・分析）に進む判断を下す。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3A535A5F" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>勝手にデータ収集（API実行や大規模スクレイピング）を開始しないこと。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2ABEC9DA" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>3. 調査対象とロジック (Researcher Agent)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="745273C7" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:r>
+        <w:t>以下の優先順位とルールに従って、340社のアカウント特定を行うこと。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1A30935B" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>A. 対象企業群</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5491B97D" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>JP</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: TOPIX100 構成銘柄</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7585C96C" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>US</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: S&amp;P100 構成銘柄</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="288D2C59" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>UK</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: FTSE100 構成銘柄</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4AEB0C67" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>DE</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: DAX40 構成銘柄</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="36479C7E" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>B. 人物特定ルール</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="744B55C7" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>役職名に「CHRO」を含む人物を最優先で探す。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0926A27D" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>日本企業でCHROが不在の場合は、「人事担当役員」または「人事を管轄する取締役」を第2候補として探す 。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2A345E2B" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="4"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>スキップ条件</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 10分程度の検索で当該人物のXまたはLinkedInアカウントが特定できない場合、その企業は「特定不可」としてログに残し、深追いせずに次の企業へ進むこと。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="360D5969" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>C. SNS情報取得の技術的手法（指示）</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="392BD70E" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:r>
+        <w:t>以下のツール・スキルを活用して情報を探ること。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="61E5F99E" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="5"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>X (Twitter)</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: last30daysスキルを用いて、企業名＋氏名＋「CHRO」などのキーワードで検索し、本人のアカウント（認証済み、またはフォロワー等から本人と断定できるもの）を特定。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4EA611D1" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="5"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>LinkedIn</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: Claude Codeの「Browser Use」または「Google Search MCP」を活用し、氏名・所属・役職からプロフィールURLを特定。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="54065C96" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="5"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>ノイズ除外</w:t>
+      </w:r>
+      <w:r>
+        <w:t>: 本人と確証が持てないアカウント（同姓同名の別人等）はリストに含めない。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="131AC248" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>4. 期待するアウトプット (Phase 1)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="049C0B31" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>ディレクトリ内に master_list.csv を作成し、以下の項目を整理せよ。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="716611C4" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>企業名 (Index名含む)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="73C48A88" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>国</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="560366D6" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>氏名</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5B8CFB14" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>役職（CHRO or その他）</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4A891837" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>X URL (特定できた場合のみ)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0872C9AE" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>LinkedIn URL (特定できた場合のみ)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="36AFC791" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="6"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>備考（特定できなかった理由など）</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1087D7BA" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>5. 次のステップ（実装準備）</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="466BAA13" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="7"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t>C:\Users\hashi\Documents\CHRO-Strategic-Insight-Engine 内にプロジェクト環境を初期化。</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2B687AE3" w14:textId="77777777" w:rsidR="003A60B4" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="7"/>
+        </w:numPr>
+      </w:pPr>
+      
+      <w:r>
+        <w:t>update_master_list スキル（Python等）のプロトタイプを構築。</w:t>
+      </w:r>
+      
+      
+    </w:p>
+    <w:p w14:paraId="03D6E470" w14:textId="251E9CF2" w:rsidR="00D80A01" w:rsidRPr="003A60B4" w:rsidRDefault="003A60B4" w:rsidP="003A60B4">
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="7"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">調査を開始し、完了後に </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+        </w:rPr>
+        <w:t>「Phase 1：リスト作成が完了しました。〇〇件のアカウントを特定しました」</w:t>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve"> と報告せよ。</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="00D80A01" w:rsidRPr="003A60B4">
+      <w:pgSz w:w="11906" w:h="16838"/>
+      <w:pgMar w:top="1985" w:right="1701" w:bottom="1701" w:left="1701" w:header="851" w:footer="992" w:gutter="0"/>
+      <w:cols w:space="425"/>
+      <w:docGrid w:type="lines" w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

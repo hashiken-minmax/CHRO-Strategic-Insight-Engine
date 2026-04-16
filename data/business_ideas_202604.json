@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-16T19:39:57.106265",
+    "period": "202604",
+    "ideas_count": 5
+  },
+  "ideas": [
+    {
+      "id": "B001",
+      "title": "AI-Powered HR Governance Platform",
+      "context": "HROPAI Transformation",
+      "insight": "CHROが注力: 141件 (12.2%)",
+      "opportunity": "AI活用による人事機能の最適化・標準化。データ駆動型の人材ポートフォリオ管理プラットフォーム。",
+      "target_market": [
+        "Large enterprises",
+        "APAC",
+        "Europe"
+      ],
+      "value_prop": [
+        "Reduce HR administrative burden by 30-40%",
+        "Enable data-driven talent decisions",
+        "Improve compliance through AI governance"
+      ],
+      "timeline": "6-12 months"
+    },
+    {
+      "id": "B002",
+      "title": "Global HR Strategy Consulting",
+      "context": "Agenda & Strategy",
+      "insight": "US CHROs: 251 strategic focus | JP CHROs: 141 strategic focus",
+      "opportunity": "Japan's CHROs shifting from operational to strategic. First-mover advantage in emerging market for strategic HR advisory.",
+      "target_market": [
+        "Japanese enterprises",
+        "SME & Mid-market",
+        "Cross-border M&A"
+      ],
+      "value_prop": [
+        "Bridge Japan-Global HR gap",
+        "Talent strategy aligned with business growth",
+        "M&A talent integration expertise"
+      ],
+      "timeline": "3-6 months"
+    },
+    {
+      "id": "B003",
+      "title": "Internal Talent Marketplace & Reskilling Platform",
+      "context": "Talent Market & Development",
+      "insight": "TMD focal area: 344 posts | Global talent mobility focus",
+      "opportunity": "Internal labor market automation. Continuous reskilling matching algorithmic talent allocation.",
+      "target_market": [
+        "Enterprise 5000+",
+        "Tech & Financial services",
+        "Global workforces"
+      ],
+      "value_prop": [
+        "Reduce time-to-fill by 50%",
+        "Enable internal talent mobility",
+        "Reskilling path recommendations"
+      ],
+      "timeline": "9-15 months"
+    },
+    {
+      "id": "B004",
+      "title": "Digital Culture & Engagement Engine",
+      "context": "Culture & Engagement",
+      "insight": "C&E focus: 125 posts | Rising post-pandemic culture priority",
+      "opportunity": "Hybrid work culture scaling. AI-driven belonging & community experience.",
+      "target_market": [
+        "Remote-first & hybrid companies",
+        "Gen Z/Millennial workforces"
+      ],
+      "value_prop": [
+        "Strengthen culture in distributed teams",
+        "Real-time engagement analytics",
+        "Community-building automation"
+      ],
+      "timeline": "4-8 months"
+    },
+    {
+      "id": "B005",
+      "title": "Executive Succession & Governance Suite",
+      "context": "Succession & Governance",
+      "insight": "S&G focus: 23 posts | Board/C-suite continuity challenge",
+      "opportunity": "Regulated sector (finance, pharma, energy) demands succession planning. Governance automation.",
+      "target_market": [
+        "Financial services",
+        "Pharma & Healthcare",
+        "Manufacturing"
+      ],
+      "value_prop": [
+        "90-day succession readiness assurance",
+        "Board-level compliance automation",
+        "Leadership pipeline visibility"
+      ],
+      "timeline": "8-12 months"
+    }
+  ]
+}

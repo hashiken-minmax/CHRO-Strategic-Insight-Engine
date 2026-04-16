@@ -18,15 +18,89 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Image as RLImage
 from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.fonts import addMapping
 from io import BytesIO
 import textwrap
+
+# 日本語フォント登録
+try:
+    from reportlab.CJK.CJKFont import registerCJKFont
+    registerCJKFont()
+except:
+    pass
 
 # ページ設定
 st.set_page_config(page_title="CHRO Trends Dashboard", layout="wide")
 
+# Session State 初期化
+if 'generate_integrated_pdf' not in st.session_state:
+    st.session_state.generate_integrated_pdf = False
+
 # タイトル
 st.title("🌐 CHRO Strategic Insight Engine")
 st.markdown("### 📊 Unified Analysis Dashboard (Phase A/B/C)")
+
+# サイドバー：統合レポート出力
+with st.sidebar:
+    st.markdown("---")
+    st.markdown("### 📄 統合レポート")
+    st.markdown("すべてのタブを統合したレポートを出力します")
+
+    if st.button("📥 全タブ統合レポートをPDF出力", key="pdf_integrated_all"):
+        st.session_state.generate_integrated_pdf = True
+
+    if st.session_state.get('generate_integrated_pdf', False):
+        # 期間情報を取得（後で定義されるため、ここではプレースホルダー使用）
+        integrated_pdf_content = """
+CHRO Strategic Insight Engine - Integrated Report
+
+【統合レポートの内容】
+
+このレポートはダッシュボード全体の統合分析結果です。
+
+1. 前提と方法
+  - 調査目的：CHRO向けビジネス創出
+  - 調査対象SNS：LinkedinとX
+  - 対象企業：TOPIX400、S&P100、FTSE100、DAX40
+  - 分析フレームワーク：7Context x 5Activity x 4国
+
+2. SNS情報サマリー
+  - 投稿数、地域分布、プラットフォーム別集計
+
+3. Context×Activity分析
+  - 各国の戦略マトリックス分析
+
+4. キーワード分析
+  - Context別の主要キーワード抽出
+
+5. 統合分析と戦略的インサイト
+  - エグゼクティブサマリー
+  - 地域別プロファイル
+
+6. ビジネス機会
+  - 単一Context推奨事項
+  - CrossContext推奨事項
+
+詳細はダッシュボードの各タブをご確認ください。
+        """
+
+        try:
+            integrated_pdf = generate_pdf_report("CHRO Strategic Insight Engine - 統合レポート", integrated_pdf_content)
+            st.download_button(
+                label="📥 ダウンロード実行",
+                data=integrated_pdf,
+                file_name=f"CHRO_Integrated_Report_20260417.pdf",
+                mime="application/pdf",
+                key="download_integrated_pdf"
+            )
+            st.session_state.generate_integrated_pdf = False
+        except Exception as e:
+            st.error(f"レポート生成エラー: {e}")
+            st.session_state.generate_integrated_pdf = False
+
+    st.markdown("---")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # データ読み込み関数
@@ -107,41 +181,39 @@ if posts is None:
 # PDF生成関数
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-def generate_pdf_report(page_title, content_html):
-    """HTML コンテンツをPDFに変換"""
+def generate_pdf_report(page_title, content_text):
+    """テキストコンテンツをPDFに変換（日本語対応）"""
     from reportlab.pdfgen import canvas
     from reportlab.lib.pagesizes import A4
-    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
-    from reportlab.lib.units import inch
 
     buffer = BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
-    story = []
-    styles = getSampleStyleSheet()
+    c = canvas.Canvas(buffer, pagesize=A4)
+    width, height = A4
+
+    # フォント設定（日本語対応）
+    try:
+        font_name = 'HeiseiMin-W3'  # CJKフォント
+    except:
+        font_name = 'Helvetica'
 
     # タイトル
-    title_style = ParagraphStyle(
-        'CustomTitle',
-        parent=styles['Heading1'],
-        fontSize=16,
-        textColor=colors.HexColor('#1f77b4'),
-        spaceAfter=12,
-        alignment=1  # center
-    )
-
-    story.append(Paragraph(page_title, title_style))
-    story.append(Spacer(1, 0.3*inch))
+    c.setFont(font_name, 16)
+    c.drawString(0.5*inch, height - 0.5*inch, page_title)
 
     # コンテンツ
-    content_style = styles['Normal']
-    content_style.fontSize = 10
-    content_style.leading = 14
+    c.setFont(font_name, 10)
+    y_position = height - 1.0*inch
+    line_height = 14
 
-    # シンプルなテキストコンテンツ
-    story.append(Paragraph(content_html, content_style))
+    for line in content_text.split('\n'):
+        if y_position < 0.5*inch:
+            c.showPage()
+            y_position = height - 0.5*inch
 
-    doc.build(story)
+        c.drawString(0.5*inch, y_position, line)
+        y_position -= line_height
+
+    c.save()
     buffer.seek(0)
     return buffer
 
@@ -280,27 +352,27 @@ with tab1:
     # PDF出力ボタン
     col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
     with col_pdf2:
-        if st.button("📥 PDFダウンロード", key="pdf_tab1"):
-            pdf_content = f"""
-            <b>SNS Summary Report</b><br/>
-            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+        pdf_content = f"""
+SNS Information Report
 
-            <b>データ概要</b><br/>
-            総投稿数: {len(posts)}<br/>
-            業務関連投稿: {sum(1 for p in posts if p.get('is_work_related'))}件<br/>
-            追跡CHRO数: {len(set(p.get('person') for p in posts))}<br/>
-            カバー地域: {len(set(p.get('country') for p in posts))}カ国<br/><br/>
+期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}
 
-            詳細はダッシュボードの各タブをご確認ください。
-            """
-            pdf = generate_pdf_report("SNS情報レポート", pdf_content)
-            st.download_button(
-                label="📥 ダウンロード",
-                data=pdf,
-                file_name=f"CHRO_SNS_Report_{selected_period}.pdf",
-                mime="application/pdf",
-                key="download_pdf_tab1"
-            )
+データ概要
+総投稿数: {len(posts)}件
+業務関連投稿: {sum(1 for p in posts if p.get('is_work_related'))}件
+追跡CHRO数: {len(set(p.get('person') for p in posts))}
+カバー地域: {len(set(p.get('country') for p in posts))}カ国
+
+詳細はダッシュボードの各タブをご確認ください。
+        """
+        pdf = generate_pdf_report("SNS情報レポート", pdf_content)
+        st.download_button(
+            label="📥 SNS情報をPDF出力",
+            data=pdf,
+            file_name=f"CHRO_SNS_Report_{selected_period}.pdf",
+            mime="application/pdf",
+            key="download_pdf_tab1"
+        )
 
     st.divider()
 
@@ -385,26 +457,26 @@ with tab2:
     # PDF出力ボタン
     col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
     with col_pdf2:
-        if st.button("📥 PDFダウンロード", key="pdf_tab2"):
-            pdf_content = f"""
-            <b>Context × Activity Matrix Report</b><br/>
-            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+        pdf_content = f"""
+Context × Activity Matrix Report
 
-            <b>分析概要</b><br/>
-            7つの戦略コンテキスト × 5つのアクティビティレベル × 4カ国<br/>
-            合計投稿数: {len(posts)}件<br/><br/>
+期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}
 
-            各国の Context × Activity マトリックスを分析対象としています。<br/>
-            詳細は各タブをご参照ください。
-            """
-            pdf = generate_pdf_report("Context×Activity分析レポート", pdf_content)
-            st.download_button(
-                label="📥 ダウンロード",
-                data=pdf,
-                file_name=f"CHRO_ContextActivity_Report_{selected_period}.pdf",
-                mime="application/pdf",
-                key="download_pdf_tab2"
-            )
+分析概要
+7つの戦略コンテキスト × 5つのアクティビティレベル × 4カ国
+合計投稿数: {len(posts)}件
+
+各国の Context × Activity マトリックスを分析対象としています。
+詳細は各タブをご参照ください。
+        """
+        pdf = generate_pdf_report("Context×Activity分析レポート", pdf_content)
+        st.download_button(
+            label="📥 Context×ActivityをPDF出力",
+            data=pdf,
+            file_name=f"CHRO_ContextActivity_Report_{selected_period}.pdf",
+            mime="application/pdf",
+            key="download_pdf_tab2"
+        )
 
     st.divider()
 
@@ -482,26 +554,26 @@ with tab3:
     # PDF出力ボタン
     col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
     with col_pdf2:
-        if st.button("📥 PDFダウンロード", key="pdf_tab3"):
-            pdf_content = f"""
-            <b>キーワード分析レポート</b><br/>
-            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+        pdf_content = f"""
+Keyword Analysis Report
 
-            <b>分析概要</b><br/>
-            7つのコンテキスト × 4カ国 = 28パターンのキーワード分析<br/>
-            合計キーワード抽出数: 数百件<br/><br/>
+期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}
 
-            各コンテキストにおける国別の主要キーワードを抽出し、<br/>
-            戦略トレンドの地域差異を可視化しています。
-            """
-            pdf = generate_pdf_report("キーワード分析レポート", pdf_content)
-            st.download_button(
-                label="📥 ダウンロード",
-                data=pdf,
-                file_name=f"CHRO_Keywords_Report_{selected_period}.pdf",
-                mime="application/pdf",
-                key="download_pdf_tab3"
-            )
+分析概要
+7つのコンテキスト × 4カ国 = 28パターンのキーワード分析
+合計キーワード抽出数: 数百件
+
+各コンテキストにおける国別の主要キーワードを抽出し、
+戦略トレンドの地域差異を可視化しています。
+        """
+        pdf = generate_pdf_report("キーワード分析レポート", pdf_content)
+        st.download_button(
+            label="📥 キーワードをPDF出力",
+            data=pdf,
+            file_name=f"CHRO_Keywords_Report_{selected_period}.pdf",
+            mime="application/pdf",
+            key="download_pdf_tab3"
+        )
 
     st.divider()
 
@@ -578,28 +650,28 @@ with tab4:
     # PDF出力ボタン
     col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
     with col_pdf2:
-        if st.button("📥 PDFダウンロード", key="pdf_tab4"):
-            pdf_content = f"""
-            <b>統合分析レポート</b><br/>
-            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+        pdf_content = f"""
+Integrated Analysis Report
 
-            <b>分析内容</b><br/>
-            • エグゼクティブサマリー<br/>
-            • 地域別戦略プロファイル（日本、米国、英国、ドイツ）<br/>
-            • 国別の重点領域と課題<br/>
-            • 推奨施策<br/><br/>
+期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}
 
-            本レポートは Phase A/B/C の統合分析結果を<br/>
-            戦略的インサイトとしてまとめたものです。
-            """
-            pdf = generate_pdf_report("統合分析レポート", pdf_content)
-            st.download_button(
-                label="📥 ダウンロード",
-                data=pdf,
-                file_name=f"CHRO_Integrated_Analysis_{selected_period}.pdf",
-                mime="application/pdf",
-                key="download_pdf_tab4"
-            )
+分析内容
+- エグゼクティブサマリー
+- 地域別戦略プロファイル（日本、米国、英国、ドイツ）
+- 国別の重点領域と課題
+- 推奨施策
+
+本レポートは Phase A/B/C の統合分析結果を
+戦略的インサイトとしてまとめたものです。
+        """
+        pdf = generate_pdf_report("統合分析レポート", pdf_content)
+        st.download_button(
+            label="📥 統合分析をPDF出力",
+            data=pdf,
+            file_name=f"CHRO_Integrated_Analysis_{selected_period}.pdf",
+            mime="application/pdf",
+            key="download_pdf_tab4"
+        )
 
     st.divider()
 
@@ -688,27 +760,27 @@ with tab5:
     # PDF出力ボタン
     col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
     with col_pdf2:
-        if st.button("📥 PDFダウンロード", key="pdf_tab5"):
-            pdf_content = f"""
-            <b>ビジネス機会レポート</b><br/>
-            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+        pdf_content = f"""
+Business Ideas Report
 
-            <b>レポート内容</b><br/>
-            • 単一コンテキスト推奨事項（7提案）<br/>
-            • クロスコンテキスト推奨事項（5+提案）<br/>
-            • 国別ギャップ分析に基づくビジネスアイデア<br/><br/>
+期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}
 
-            本レポートでは、CHROの関心事項の国別・領域別の<br/>
-            ギャップから導き出されたビジネス機会を整理しています。
-            """
-            pdf = generate_pdf_report("ビジネス機会レポート", pdf_content)
-            st.download_button(
-                label="📥 ダウンロード",
-                data=pdf,
-                file_name=f"CHRO_Business_Ideas_{selected_period}.pdf",
-                mime="application/pdf",
-                key="download_pdf_tab5"
-            )
+レポート内容
+- 単一コンテキスト推奨事項（7提案）
+- クロスコンテキスト推奨事項（5+提案）
+- 国別ギャップ分析に基づくビジネスアイデア
+
+本レポートでは、CHROの関心事項の国別・領域別の
+ギャップから導き出されたビジネス機会を整理しています。
+        """
+        pdf = generate_pdf_report("ビジネス機会レポート", pdf_content)
+        st.download_button(
+            label="📥 ビジネス機会をPDF出力",
+            data=pdf,
+            file_name=f"CHRO_Business_Ideas_{selected_period}.pdf",
+            mime="application/pdf",
+            key="download_pdf_tab5"
+        )
 
     st.divider()
 

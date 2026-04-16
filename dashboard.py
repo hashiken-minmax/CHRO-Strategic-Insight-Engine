@@ -38,6 +38,47 @@ st.set_page_config(page_title="CHRO Trends Dashboard", layout="wide")
 st.title("🌐 CHRO Strategic Insight Engine")
 st.markdown("### 📊 Unified Analysis Dashboard (Phase A/B/C)")
 
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# PDF生成関数（サイドバーより先に定義）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def generate_pdf_report(page_title, content_text):
+    """テキストコンテンツをPDFに変換"""
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import A4
+
+    try:
+        buffer = BytesIO()
+        c = canvas.Canvas(buffer, pagesize=A4)
+        width, height = A4
+
+        # タイトル（デフォルトフォント使用）
+        c.drawString(inch, height - 0.7*inch, page_title)
+
+        # 線引き
+        c.setLineWidth(0.5)
+        c.line(inch, height - 0.85*inch, width - inch, height - 0.85*inch)
+
+        # コンテンツ
+        y_position = height - 1.2*inch
+        line_height = 12
+
+        for line in content_text.split('\n'):
+            if y_position < 0.7*inch:
+                c.showPage()
+                y_position = height - 0.5*inch
+
+            if line.strip():  # 空行をスキップ
+                c.drawString(inch, y_position, line[:100])  # 長行は切り詰め
+            y_position -= line_height
+
+        c.save()
+        buffer.seek(0)
+        return buffer
+    except Exception as e:
+        st.error(f"PDF生成エラー: {str(e)}")
+        return BytesIO()
+
 # サイドバー：統合レポート出力
 with st.sidebar:
     st.markdown("---")
@@ -165,47 +206,6 @@ posts, analytics, business, phase_a, phase_b, phase_c = load_all_data(selected_p
 if posts is None:
     st.error(f"Failed to load data for {selected_period}")
     st.stop()
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# PDF生成関数
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-def generate_pdf_report(page_title, content_text):
-    """テキストコンテンツをPDFに変換"""
-    from reportlab.pdfgen import canvas
-    from reportlab.lib.pagesizes import A4
-
-    try:
-        buffer = BytesIO()
-        c = canvas.Canvas(buffer, pagesize=A4)
-        width, height = A4
-
-        # タイトル（デフォルトフォント使用）
-        c.drawString(inch, height - 0.7*inch, page_title)
-
-        # 線引き
-        c.setLineWidth(0.5)
-        c.line(inch, height - 0.85*inch, width - inch, height - 0.85*inch)
-
-        # コンテンツ
-        y_position = height - 1.2*inch
-        line_height = 12
-
-        for line in content_text.split('\n'):
-            if y_position < 0.7*inch:
-                c.showPage()
-                y_position = height - 0.5*inch
-
-            if line.strip():  # 空行をスキップ
-                c.drawString(inch, y_position, line[:100])  # 長行は切り詰め
-            y_position -= line_height
-
-        c.save()
-        buffer.seek(0)
-        return buffer
-    except Exception as e:
-        st.error(f"PDF生成エラー: {str(e)}")
-        return BytesIO()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # TAB設定

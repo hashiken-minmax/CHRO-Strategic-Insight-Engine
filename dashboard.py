@@ -34,10 +34,6 @@ except:
 # ページ設定
 st.set_page_config(page_title="CHRO Trends Dashboard", layout="wide")
 
-# Session State 初期化
-if 'generate_integrated_pdf' not in st.session_state:
-    st.session_state.generate_integrated_pdf = False
-
 # タイトル
 st.title("🌐 CHRO Strategic Insight Engine")
 st.markdown("### 📊 Unified Analysis Dashboard (Phase A/B/C)")
@@ -46,59 +42,52 @@ st.markdown("### 📊 Unified Analysis Dashboard (Phase A/B/C)")
 with st.sidebar:
     st.markdown("---")
     st.markdown("### 📄 統合レポート")
-    st.markdown("すべてのタブを統合したレポートを出力します")
+    st.markdown("全タブを統合したレポートを出力")
 
-    if st.button("📥 全タブ統合レポートをPDF出力", key="pdf_integrated_all"):
-        st.session_state.generate_integrated_pdf = True
-
-    if st.session_state.get('generate_integrated_pdf', False):
-        # 期間情報を取得（後で定義されるため、ここではプレースホルダー使用）
-        integrated_pdf_content = """
+    integrated_pdf_content = """
 CHRO Strategic Insight Engine - Integrated Report
 
-【統合レポートの内容】
+REPORT CONTENT
 
-このレポートはダッシュボード全体の統合分析結果です。
+1. Survey Background
+   - Purpose: Create business opportunities for CHROs
+   - Target SNS: LinkedIn and X
+   - Target Companies: TOPIX400, S&P100, FTSE100, DAX40
+   - Analysis Framework: 7 Contexts x 5 Activities x 4 Countries
 
-1. 前提と方法
-  - 調査目的：CHRO向けビジネス創出
-  - 調査対象SNS：LinkedinとX
-  - 対象企業：TOPIX400、S&P100、FTSE100、DAX40
-  - 分析フレームワーク：7Context x 5Activity x 4国
+2. SNS Information Summary
+   - Post count by country
+   - Regional distribution
+   - Platform breakdown
 
-2. SNS情報サマリー
-  - 投稿数、地域分布、プラットフォーム別集計
+3. Context x Activity Analysis
+   - Matrix analysis by country
 
-3. Context×Activity分析
-  - 各国の戦略マトリックス分析
+4. Keyword Analysis
+   - Top keywords by context and country
 
-4. キーワード分析
-  - Context別の主要キーワード抽出
+5. Integrated Analysis and Strategic Insights
+   - Executive summary
+   - Regional strategic profiles
 
-5. 統合分析と戦略的インサイト
-  - エグゼクティブサマリー
-  - 地域別プロファイル
+6. Business Opportunities
+   - Single-context recommendations
+   - Cross-context recommendations
 
-6. ビジネス機会
-  - 単一Context推奨事項
-  - CrossContext推奨事項
+Please refer to each tab in the dashboard for detailed information.
+    """
 
-詳細はダッシュボードの各タブをご確認ください。
-        """
-
-        try:
-            integrated_pdf = generate_pdf_report("CHRO Strategic Insight Engine - 統合レポート", integrated_pdf_content)
-            st.download_button(
-                label="📥 ダウンロード実行",
-                data=integrated_pdf,
-                file_name=f"CHRO_Integrated_Report_20260417.pdf",
-                mime="application/pdf",
-                key="download_integrated_pdf"
-            )
-            st.session_state.generate_integrated_pdf = False
-        except Exception as e:
-            st.error(f"レポート生成エラー: {e}")
-            st.session_state.generate_integrated_pdf = False
+    try:
+        integrated_pdf = generate_pdf_report("CHRO Strategic Insight Engine - Integrated Report", integrated_pdf_content)
+        st.download_button(
+            label="📥 統合レポートをPDF出力",
+            data=integrated_pdf,
+            file_name=f"CHRO_Integrated_Report_20260417.pdf",
+            mime="application/pdf",
+            key="download_integrated_pdf"
+        )
+    except Exception as e:
+        st.error(f"エラー: {str(e)}")
 
     st.markdown("---")
 
@@ -186,36 +175,43 @@ def generate_pdf_report(page_title, content_text):
     from reportlab.pdfgen import canvas
     from reportlab.lib.pagesizes import A4
 
-    buffer = BytesIO()
-    c = canvas.Canvas(buffer, pagesize=A4)
-    width, height = A4
-
-    # フォント設定（日本語対応）
     try:
-        font_name = 'HeiseiMin-W3'  # CJKフォント
-    except:
+        buffer = BytesIO()
+        c = canvas.Canvas(buffer, pagesize=A4)
+        width, height = A4
+
+        # フォント設定
         font_name = 'Helvetica'
 
-    # タイトル
-    c.setFont(font_name, 16)
-    c.drawString(0.5*inch, height - 0.5*inch, page_title)
+        # タイトル
+        c.setFont(font_name, 14)
+        c.drawString(inch, height - 0.7*inch, page_title)
 
-    # コンテンツ
-    c.setFont(font_name, 10)
-    y_position = height - 1.0*inch
-    line_height = 14
+        # 線引き
+        c.setLineWidth(0.5)
+        c.line(inch, height - 0.85*inch, width - inch, height - 0.85*inch)
 
-    for line in content_text.split('\n'):
-        if y_position < 0.5*inch:
-            c.showPage()
-            y_position = height - 0.5*inch
+        # コンテンツ
+        c.setFont(font_name, 10)
+        y_position = height - 1.2*inch
+        line_height = 12
 
-        c.drawString(0.5*inch, y_position, line)
-        y_position -= line_height
+        for line in content_text.split('\n'):
+            if y_position < 0.7*inch:
+                c.showPage()
+                c.setFont(font_name, 10)
+                y_position = height - 0.5*inch
 
-    c.save()
-    buffer.seek(0)
-    return buffer
+            if line.strip():  # 空行をスキップ
+                c.drawString(inch, y_position, line[:100])  # 長行は切り詰め
+            y_position -= line_height
+
+        c.save()
+        buffer.seek(0)
+        return buffer
+    except Exception as e:
+        st.error(f"PDF生成エラー: {str(e)}")
+        return BytesIO()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # TAB設定

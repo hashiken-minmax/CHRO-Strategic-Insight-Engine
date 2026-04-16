@@ -171,7 +171,7 @@ if posts is None:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def generate_pdf_report(page_title, content_text):
-    """テキストコンテンツをPDFに変換（日本語対応）"""
+    """テキストコンテンツをPDFに変換"""
     from reportlab.pdfgen import canvas
     from reportlab.lib.pagesizes import A4
 
@@ -180,11 +180,7 @@ def generate_pdf_report(page_title, content_text):
         c = canvas.Canvas(buffer, pagesize=A4)
         width, height = A4
 
-        # フォント設定
-        font_name = 'Helvetica'
-
-        # タイトル
-        c.setFont(font_name, 14)
+        # タイトル（デフォルトフォント使用）
         c.drawString(inch, height - 0.7*inch, page_title)
 
         # 線引き
@@ -192,14 +188,12 @@ def generate_pdf_report(page_title, content_text):
         c.line(inch, height - 0.85*inch, width - inch, height - 0.85*inch)
 
         # コンテンツ
-        c.setFont(font_name, 10)
         y_position = height - 1.2*inch
         line_height = 12
 
         for line in content_text.split('\n'):
             if y_position < 0.7*inch:
                 c.showPage()
-                c.setFont(font_name, 10)
                 y_position = height - 0.5*inch
 
             if line.strip():  # 空行をスキップ

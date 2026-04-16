@@ -12,6 +12,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 from collections import Counter
+from reportlab.lib.pagesizes import A4, letter
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Image as RLImage
+from reportlab.pdfgen import canvas
+from io import BytesIO
+import textwrap
 
 # ページ設定
 st.set_page_config(page_title="CHRO Trends Dashboard", layout="wide")
@@ -96,10 +104,53 @@ if posts is None:
     st.stop()
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# PDF生成関数
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def generate_pdf_report(page_title, content_html):
+    """HTML コンテンツをPDFに変換"""
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import A4
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
+    from reportlab.lib.units import inch
+
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+    story = []
+    styles = getSampleStyleSheet()
+
+    # タイトル
+    title_style = ParagraphStyle(
+        'CustomTitle',
+        parent=styles['Heading1'],
+        fontSize=16,
+        textColor=colors.HexColor('#1f77b4'),
+        spaceAfter=12,
+        alignment=1  # center
+    )
+
+    story.append(Paragraph(page_title, title_style))
+    story.append(Spacer(1, 0.3*inch))
+
+    # コンテンツ
+    content_style = styles['Normal']
+    content_style.fontSize = 10
+    content_style.leading = 14
+
+    # シンプルなテキストコンテンツ
+    story.append(Paragraph(content_html, content_style))
+
+    doc.build(story)
+    buffer.seek(0)
+    return buffer
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # TAB設定
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "📋 前提",
     "📊 SNS情報",
     "📈 Context×Activity",
     "🔑 キーワード",
@@ -108,11 +159,150 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 ])
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TAB 0: 前提
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+with tab0:
+    st.markdown("## 📋 調査前提と方法")
+
+    st.markdown("### 調査目的")
+    st.markdown("""
+    CHRO（Chief Human Resource Officer）向けのビジネス創出、ビジネス機会の獲得にあたり、検討材料として日本・米国・英国・ドイツの主要なCHROの SNS情報を分析し、戦略的なトレンド、実行状況、課題を可視化するもの。
+    """)
+
+    st.markdown("### 調査方法")
+    st.markdown("""
+    LinkedIn および X（旧 Twitter）上のCHRO関連アカウントの投稿を収集・分析。各投稿を以下の分類軸に基づいて整理し、国別・コンテキスト別・段階別に集計・可視化。
+    """)
+
+    st.markdown("### 調査対象SNS")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("**LinkedIn**")
+        st.markdown("プロフェッショナル向けソーシャルメディア。CHROの戦略発表、論考、事例紹介が中心")
+
+    with col2:
+        st.markdown("**X（旧Twitter）**")
+        st.markdown("リアルタイム情報交換。CHROのトレンド発信、意見表明が中心")
+
+    st.divider()
+
+    st.markdown("### 対象企業群")
+    st.markdown("調査対象CHROは、以下の各国の代表的な上場企業の経営層から選定：")
+
+    company_data = {
+        '🇯🇵 日本': 'TOPIX400 構成銘柄',
+        '🇺🇸 米国': 'S&P100 構成銘柄',
+        '🇬🇧 英国': 'FTSE100 構成銘柄',
+        '🇩🇪 ドイツ': 'DAX40 構成銘柄'
+    }
+
+    col1, col2 = st.columns(2)
+    for idx, (country, index) in enumerate(company_data.items()):
+        with col1 if idx % 2 == 0 else col2:
+            st.markdown(f"**{country}:** {index}")
+
+    st.divider()
+
+    st.markdown("### Contextの定義")
+    st.markdown("組織人事戦略における7つの戦略領域：")
+
+    context_def = {
+        'A&S': ('経営・戦略', '企業の経営戦略、組織戦略、グローバル展開戦略'),
+        'TMD': ('タレント・市場・育成', '人材獲得、市場動向分析、人材育成・キャリア開発'),
+        'HROPAI': ('HR業務・AI', '人事業務プロセス、AI/DX活用、業務効率化'),
+        'C&E': ('文化・エンゲージメント', '企業文化醸成、従業員エンゲージメント、心理的安全性'),
+        'WTT': ('労働力変革', '労働力の構成変化、ジョブ型人事、スキル変革'),
+        'HRT': ('HR変革', 'HR部門のデジタル化、組織再編、人事機能の高度化'),
+        'S&G': ('後継者育成・ガバナンス', '経営者育成、後継者育成、コーポレートガバナンス')
+    }
+
+    for ctx, (ja_name, description) in context_def.items():
+        with st.expander(f"**{ctx}** - {ja_name}"):
+            st.write(description)
+
+    st.divider()
+
+    st.markdown("### Activityの定義")
+    st.markdown("CHROが発信する内容の実行段階（成熟度）：")
+
+    activity_def = {
+        'Done': '実現・完了済み',
+        'Doing': '実行中',
+        'Next': '次期計画',
+        'Idea': '構想・アイデア',
+        'Issue': '課題・問題点'
+    }
+
+    activity_desc = {
+        'Done': '施策を導入完了し、成果を実証した段階',
+        'Doing': '現在進行中で実装・運用している段階',
+        'Next': '今後1年以内に実施予定の段階',
+        'Idea': '検討段階・提案段階',
+        'Issue': '取り組むべき課題、解決すべき問題'
+    }
+
+    for activity, ja_name in activity_def.items():
+        with st.expander(f"**{activity}** - {ja_name}"):
+            st.write(activity_desc[activity])
+
+    st.divider()
+
+    st.markdown("### 調査ルーティン")
+    st.markdown("本ダッシュボードのデータは、毎月定期的に更新されます：")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("**第1営業日**")
+        st.markdown("""
+        前月分のCHRO SNS投稿を収集し、戦略的コンテキスト（7つの領域）と実行段階（5段階）に基づいて分類・分析を実施
+        """)
+
+    with col2:
+        st.markdown("**第2営業日**")
+        st.markdown("""
+        分析結果を統合レポートとして作成し、本ダッシュボードに反映。新規トレンド、国別の特性、ビジネス機会を可視化
+        """)
+
+    st.markdown("""
+    これにより、月次ベースでCHROの関心事項の変化、国・産業別の戦略フォーカスの動向を継続的に把握できます。
+    """)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # TAB 1: PHASE A - SNS Summary
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 with tab1:
     st.markdown("## SNS Information Summary & Context Distribution")
+
+    # PDF出力ボタン
+    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
+    with col_pdf2:
+        if st.button("📥 PDFダウンロード", key="pdf_tab1"):
+            pdf_content = f"""
+            <b>SNS Summary Report</b><br/>
+            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+
+            <b>データ概要</b><br/>
+            総投稿数: {len(posts)}<br/>
+            業務関連投稿: {sum(1 for p in posts if p.get('is_work_related'))}件<br/>
+            追跡CHRO数: {len(set(p.get('person') for p in posts))}<br/>
+            カバー地域: {len(set(p.get('country') for p in posts))}カ国<br/><br/>
+
+            詳細はダッシュボードの各タブをご確認ください。
+            """
+            pdf = generate_pdf_report("SNS情報レポート", pdf_content)
+            st.download_button(
+                label="📥 ダウンロード",
+                data=pdf,
+                file_name=f"CHRO_SNS_Report_{selected_period}.pdf",
+                mime="application/pdf",
+                key="download_pdf_tab1"
+            )
+
+    st.divider()
 
     # KPI Metrics
     col1, col2, col3, col4 = st.columns(4)
@@ -192,6 +382,32 @@ with tab1:
 with tab2:
     st.markdown("## Context × Activity Level Matrix Analysis")
 
+    # PDF出力ボタン
+    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
+    with col_pdf2:
+        if st.button("📥 PDFダウンロード", key="pdf_tab2"):
+            pdf_content = f"""
+            <b>Context × Activity Matrix Report</b><br/>
+            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+
+            <b>分析概要</b><br/>
+            7つの戦略コンテキスト × 5つのアクティビティレベル × 4カ国<br/>
+            合計投稿数: {len(posts)}件<br/><br/>
+
+            各国の Context × Activity マトリックスを分析対象としています。<br/>
+            詳細は各タブをご参照ください。
+            """
+            pdf = generate_pdf_report("Context×Activity分析レポート", pdf_content)
+            st.download_button(
+                label="📥 ダウンロード",
+                data=pdf,
+                file_name=f"CHRO_ContextActivity_Report_{selected_period}.pdf",
+                mime="application/pdf",
+                key="download_pdf_tab2"
+            )
+
+    st.divider()
+
     # Country Selector
     selected_country = st.selectbox("Select Country:", ['JP', 'US', 'UK', 'DE'],
                                    key="phaseB_country")
@@ -263,6 +479,32 @@ with tab2:
 with tab3:
     st.markdown("## Keyword Rankings by Context")
 
+    # PDF出力ボタン
+    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
+    with col_pdf2:
+        if st.button("📥 PDFダウンロード", key="pdf_tab3"):
+            pdf_content = f"""
+            <b>キーワード分析レポート</b><br/>
+            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+
+            <b>分析概要</b><br/>
+            7つのコンテキスト × 4カ国 = 28パターンのキーワード分析<br/>
+            合計キーワード抽出数: 数百件<br/><br/>
+
+            各コンテキストにおける国別の主要キーワードを抽出し、<br/>
+            戦略トレンドの地域差異を可視化しています。
+            """
+            pdf = generate_pdf_report("キーワード分析レポート", pdf_content)
+            st.download_button(
+                label="📥 ダウンロード",
+                data=pdf,
+                file_name=f"CHRO_Keywords_Report_{selected_period}.pdf",
+                mime="application/pdf",
+                key="download_pdf_tab3"
+            )
+
+    st.divider()
+
     ctx_order = ['A&S', 'TMD', 'HROPAI', 'C&E', 'WTT', 'HRT', 'S&G']
     context_labels = {
         'A&S': 'Agenda & Strategy',
@@ -332,6 +574,34 @@ with tab3:
 
 with tab4:
     st.markdown("## 統合分析と戦略的インサイト")
+
+    # PDF出力ボタン
+    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
+    with col_pdf2:
+        if st.button("📥 PDFダウンロード", key="pdf_tab4"):
+            pdf_content = f"""
+            <b>統合分析レポート</b><br/>
+            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+
+            <b>分析内容</b><br/>
+            • エグゼクティブサマリー<br/>
+            • 地域別戦略プロファイル（日本、米国、英国、ドイツ）<br/>
+            • 国別の重点領域と課題<br/>
+            • 推奨施策<br/><br/>
+
+            本レポートは Phase A/B/C の統合分析結果を<br/>
+            戦略的インサイトとしてまとめたものです。
+            """
+            pdf = generate_pdf_report("統合分析レポート", pdf_content)
+            st.download_button(
+                label="📥 ダウンロード",
+                data=pdf,
+                file_name=f"CHRO_Integrated_Analysis_{selected_period}.pdf",
+                mime="application/pdf",
+                key="download_pdf_tab4"
+            )
+
+    st.divider()
 
     # Executive Summary
     st.markdown("### エグゼクティブサマリー")
@@ -414,6 +684,33 @@ with tab4:
 
 with tab5:
     st.markdown("## ビジネス機会と推奨施策")
+
+    # PDF出力ボタン
+    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
+    with col_pdf2:
+        if st.button("📥 PDFダウンロード", key="pdf_tab5"):
+            pdf_content = f"""
+            <b>ビジネス機会レポート</b><br/>
+            期間: {selected_period if selected_period != 'custom' else f'{selected_start_date} ～ {selected_end_date}'}<br/><br/>
+
+            <b>レポート内容</b><br/>
+            • 単一コンテキスト推奨事項（7提案）<br/>
+            • クロスコンテキスト推奨事項（5+提案）<br/>
+            • 国別ギャップ分析に基づくビジネスアイデア<br/><br/>
+
+            本レポートでは、CHROの関心事項の国別・領域別の<br/>
+            ギャップから導き出されたビジネス機会を整理しています。
+            """
+            pdf = generate_pdf_report("ビジネス機会レポート", pdf_content)
+            st.download_button(
+                label="📥 ダウンロード",
+                data=pdf,
+                file_name=f"CHRO_Business_Ideas_{selected_period}.pdf",
+                mime="application/pdf",
+                key="download_pdf_tab5"
+            )
+
+    st.divider()
 
     st.markdown("### 単一コンテキスト推奨事項")
     st.markdown("各コンテキスト領域での国別ギャップから導き出された推奨施策")

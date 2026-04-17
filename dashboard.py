@@ -114,88 +114,6 @@ def create_pdf_buffer(title, data_dict):
         st.error(f"PDF生成エラー: {str(e)}")
         return BytesIO()
 
-# サイドバー：統合レポート出力
-with st.sidebar:
-    st.markdown("---")
-    st.markdown("### 📄 統合レポート")
-    st.markdown("全タブを統合したレポートを出力")
-
-    integrated_pdf_content = """
-CHRO Strategic Insight Engine - Integrated Report
-
-REPORT CONTENT
-
-1. Survey Background
-   - Purpose: Create business opportunities for CHROs
-   - Target SNS: LinkedIn and X
-   - Target Companies: TOPIX400, S&P100, FTSE100, DAX40
-   - Analysis Framework: 7 Contexts x 5 Activities x 4 Countries
-
-2. SNS Information Summary
-   - Post count by country
-   - Regional distribution
-   - Platform breakdown
-
-3. Context x Activity Analysis
-   - Matrix analysis by country
-
-4. Keyword Analysis
-   - Top keywords by context and country
-
-5. Integrated Analysis and Strategic Insights
-   - Executive summary
-   - Regional strategic profiles
-
-6. Business Opportunities
-   - Single-context recommendations
-   - Cross-context recommendations
-
-Please refer to each tab in the dashboard for detailed information.
-    """
-
-    try:
-        # 統合レポート用データを構築
-        integrated_data = {
-            '1. Analysis Overview': [
-                {'Metric': 'Analysis Period', 'Value': f"{selected_period if selected_period != 'custom' else f'{selected_start_date} to {selected_end_date}'}"},
-                {'Metric': 'Total Posts Analyzed', 'Value': len(posts)},
-                {'Metric': 'Countries Covered', 'Value': '4 (Japan, USA, UK, Germany)'},
-                {'Metric': 'Strategic Contexts', 'Value': '7 (A&S, TMD, HROPAI, C&E, WTT, HRT, S&G)'},
-                {'Metric': 'Activity Levels', 'Value': '5 (Done, Doing, Next, Idea, Issue)'}
-            ],
-            '2. SNS Information': [
-                {'Country': 'JP', 'Platform': 'LinkedIn', 'Type': 'Professional Network'},
-                {'Country': 'JP', 'Platform': 'X', 'Type': 'Real-time Discussion'},
-                {'Country': 'US', 'Platform': 'LinkedIn', 'Type': 'Professional Network'},
-                {'Country': 'US', 'Platform': 'X', 'Type': 'Real-time Discussion'},
-            ],
-            '3. Key Findings': [
-                {'Finding': 'A&S Context dominates (30%+ posts across regions)'},
-                {'Finding': 'Doing Phase represents 50%+ of all posts'},
-                {'Finding': 'Japan leads HROPAI (19% vs global average)'},
-                {'Finding': 'Regional differences in strategic priorities'},
-                {'Finding': 'Keywords: AI, talent, culture, transformation'}
-            ],
-            '4. Business Recommendations': [
-                {'Type': 'Single-Context', 'Count': '7 recommendations'},
-                {'Type': 'Cross-Context', 'Count': '5+ recommendations'},
-                {'Type': 'Total', 'Count': '12+ strategic opportunities'}
-            ]
-        }
-
-        integrated_pdf = create_pdf_buffer("CHRO Strategic Insight Engine - Integrated Report", integrated_data)
-        st.download_button(
-            label="📥 統合レポートをPDF出力",
-            data=integrated_pdf,
-            file_name=f"CHRO_Integrated_Report_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_integrated_pdf"
-        )
-    except Exception as e:
-        st.error(f"エラー: {str(e)}")
-
-    st.markdown("---")
-
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # データ読み込み関数
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -920,6 +838,58 @@ with tab5:
                     st.write("**実施項目:**")
                     for item in idea['action_items']:
                         st.write(f"- {item}")
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# サイドバー：統合レポート出力（期間選択後に実行）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+with st.sidebar:
+    st.markdown("---")
+    st.markdown("### 📄 統合レポート")
+    st.markdown("全タブを統合したレポートを出力")
+
+    try:
+        # 統合レポート用データを構築
+        integrated_data = {
+            '1. Analysis Overview': [
+                {'Metric': 'Analysis Period', 'Value': f"{selected_period if selected_period != 'custom' else f'{selected_start_date} to {selected_end_date}'}"},
+                {'Metric': 'Total Posts Analyzed', 'Value': len(posts)},
+                {'Metric': 'Countries Covered', 'Value': '4 (Japan, USA, UK, Germany)'},
+                {'Metric': 'Strategic Contexts', 'Value': '7 (A&S, TMD, HROPAI, C&E, WTT, HRT, S&G)'},
+                {'Metric': 'Activity Levels', 'Value': '5 (Done, Doing, Next, Idea, Issue)'}
+            ],
+            '2. SNS Information': [
+                {'Country': 'JP', 'Platform': 'LinkedIn', 'Type': 'Professional Network'},
+                {'Country': 'JP', 'Platform': 'X', 'Type': 'Real-time Discussion'},
+                {'Country': 'US', 'Platform': 'LinkedIn', 'Type': 'Professional Network'},
+                {'Country': 'US', 'Platform': 'X', 'Type': 'Real-time Discussion'},
+            ],
+            '3. Key Findings': [
+                {'Finding': 'A&S Context dominates (30%+ posts across regions)'},
+                {'Finding': 'Doing Phase represents 50%+ of all posts'},
+                {'Finding': 'Japan leads HROPAI (19% vs global average)'},
+                {'Finding': 'Regional differences in strategic priorities'},
+                {'Finding': 'Keywords: AI, talent, culture, transformation'}
+            ],
+            '4. Business Recommendations': [
+                {'Type': 'Single-Context', 'Count': '7 recommendations'},
+                {'Type': 'Cross-Context', 'Count': '5+ recommendations'},
+                {'Type': 'Total', 'Count': '12+ strategic opportunities'}
+            ]
+        }
+
+        integrated_pdf = create_pdf_buffer("CHRO Strategic Insight Engine - Integrated Report", integrated_data)
+        st.download_button(
+            label="📥 統合レポートをPDF出力",
+            data=integrated_pdf,
+            file_name=f"CHRO_Integrated_Report_{selected_period}.pdf",
+            mime="application/pdf",
+            key="download_integrated_pdf"
+        )
+    except Exception as e:
+        st.error(f"エラー: {str(e)}")
+
+    st.markdown("---")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Footer

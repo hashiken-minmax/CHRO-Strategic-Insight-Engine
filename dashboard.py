@@ -23,6 +23,16 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.fonts import addMapping
 from io import BytesIO
 import textwrap
+import sys
+from pathlib import Path as PathlibPath
+
+# 統合レポート生成関数をインポート
+sys.path.insert(0, str(PathlibPath(__file__).parent / "scripts"))
+try:
+    from produce_report_unified_ja import generate_unified_report
+except ImportError as e:
+    generate_unified_report = None
+    print(f"Warning: Could not import generate_unified_report: {e}")
 
 # 日本語フォント登録
 try:
@@ -321,42 +331,6 @@ with tab0:
 with tab1:
     st.markdown("## SNS Information Summary & Context Distribution")
 
-    # PDF出力ボタン
-    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
-    with col_pdf2:
-        # SNS Summary データを収集
-        sns_summary = phase_a.get('sns_summary', {})
-        summary_data = []
-        for country in ['JP', 'US', 'UK', 'DE']:
-            data = sns_summary.get(country, {})
-            total = data.get('total_posts', 0)
-            work = data.get('work_posts', 0)
-            work_rate = (work / total * 100) if total > 0 else 100.0
-            summary_data.append({
-                'Country': country,
-                'CHRO Count': data.get('chro_count', 0),
-                'Total Posts': data.get('total_posts', 0),
-                'Work Posts': data.get('work_posts', 0),
-                'Business %': f"{work_rate:.1f}%",
-                'LinkedIn': data.get('linkedin_posts', 0),
-                'X': data.get('x_posts', 0)
-            })
-
-        pdf_data = {
-            'SNS Summary by Country': summary_data,
-            'Report Period': f"{selected_period if selected_period != 'custom' else f'{selected_start_date} to {selected_end_date}'}",
-            'Total Posts Analyzed': len(posts),
-            'Total CHROs Tracked': len(set(p.get('person') for p in posts))
-        }
-        pdf = create_pdf_buffer("SNS Information Report", pdf_data)
-        st.download_button(
-            label="📥 SNS情報をPDF出力",
-            data=pdf,
-            file_name=f"CHRO_SNS_Report_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_pdf_tab1"
-        )
-
     st.divider()
 
     # KPI Metrics
@@ -437,38 +411,6 @@ with tab1:
 with tab2:
     st.markdown("## Context × Activity Level Matrix Analysis")
 
-    # PDF出力ボタン
-    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
-    with col_pdf2:
-        # 4カ国分のマトリックスを収集
-        phaseB_data = phase_b.get('matrix_by_country', {})
-        ctx_order = ['A&S', 'TMD', 'HROPAI', 'C&E', 'WTT', 'HRT', 'S&G']
-        act_order = ['Done', 'Doing', 'Next', 'Idea', 'Issue']
-
-        pdf_data_dict = {}
-        for country in ['JP', 'US', 'UK', 'DE']:
-            country_names = {'JP': 'Japan', 'US': 'USA', 'UK': 'UK', 'DE': 'Germany'}
-            country_data = phaseB_data.get(country, {})
-            country_matrix = country_data.get('matrix', {})
-
-            matrix_data = []
-            for ctx in ctx_order:
-                row_data = {'Context': ctx}
-                for act in act_order:
-                    row_data[act] = country_matrix.get(ctx, {}).get(act, 0)
-                matrix_data.append(row_data)
-
-            pdf_data_dict[f'{country_names[country]} Matrix'] = matrix_data
-
-        pdf = create_pdf_buffer("Context x Activity Analysis Report", pdf_data_dict)
-        st.download_button(
-            label="📥 Context×ActivityをPDF出力",
-            data=pdf,
-            file_name=f"CHRO_ContextActivity_Report_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_pdf_tab2"
-        )
-
     st.divider()
 
     # Country Selector
@@ -542,39 +484,6 @@ with tab2:
 with tab3:
     st.markdown("## Keyword Rankings by Context")
 
-    # PDF出力ボタン
-    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
-    with col_pdf2:
-        # キーワードデータを4カ国分収集
-        phaseC_data = phase_c.get('keyword_by_ctx_country', {})
-        ctx_order = ['A&S', 'TMD', 'HROPAI', 'C&E', 'WTT', 'HRT', 'S&G']
-
-        pdf_data_dict = {}
-        for ctx in ctx_order:
-            ctx_keywords = []
-            for country in ['JP', 'US', 'UK', 'DE']:
-                key = f"{ctx}_{country}"
-                ctx_kw_data = phaseC_data.get(key, {})
-                keywords = ctx_kw_data.get('keywords', [])
-                for rank, kw_data in enumerate(keywords[:5], 1):  # Top 5
-                    ctx_keywords.append({
-                        'Country': country,
-                        'Rank': rank,
-                        'Keyword': kw_data.get('word', ''),
-                        'Count': kw_data.get('count', 0)
-                    })
-            if ctx_keywords:
-                pdf_data_dict[f'Context: {ctx}'] = ctx_keywords
-
-        pdf = create_pdf_buffer("Keyword Analysis Report", pdf_data_dict)
-        st.download_button(
-            label="📥 キーワードをPDF出力",
-            data=pdf,
-            file_name=f"CHRO_Keywords_Report_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_pdf_tab3"
-        )
-
     st.divider()
 
     ctx_order = ['A&S', 'TMD', 'HROPAI', 'C&E', 'WTT', 'HRT', 'S&G']
@@ -646,31 +555,6 @@ with tab3:
 
 with tab4:
     st.markdown("## 統合分析と戦略的インサイト")
-
-    # PDF出力ボタン
-    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
-    with col_pdf2:
-        pdf_data_dict = {
-            'Analysis Period': f"{selected_period if selected_period != 'custom' else f'{selected_start_date} to {selected_end_date}'}",
-            'Total Posts': len(posts),
-            'Report Contents': [
-                {'Section': 'Executive Summary'},
-                {'Section': 'Regional Strategic Profiles'},
-                {'Section': 'Japan Profile', 'Focus': 'Technology & AI Integration'},
-                {'Section': 'USA Profile', 'Focus': 'Talent Autonomy'},
-                {'Section': 'UK Profile', 'Focus': 'Culture & Engagement'},
-                {'Section': 'Germany Profile', 'Focus': 'Process Efficiency'},
-                {'Section': 'Recommended Strategies', 'Count': '7 Single-context + 5+ Cross-context'}
-            ]
-        }
-        pdf = create_pdf_buffer("Integrated Analysis Report", pdf_data_dict)
-        st.download_button(
-            label="📥 統合分析をPDF出力",
-            data=pdf,
-            file_name=f"CHRO_Integrated_Analysis_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_pdf_tab4"
-        )
 
     st.divider()
 
@@ -756,36 +640,6 @@ with tab4:
 with tab5:
     st.markdown("## ビジネス機会と推奨施策")
 
-    # PDF出力ボタン
-    col_pdf1, col_pdf2, col_pdf3 = st.columns([2, 1, 1])
-    with col_pdf2:
-        pdf_data_dict = {
-            'Single-Context Recommendations': [
-                {'Context': 'A&S', 'Idea': 'Global strategy standardization'},
-                {'Context': 'TMD', 'Idea': 'Multilingual career platform'},
-                {'Context': 'HROPAI', 'Idea': 'AI talent development program'},
-                {'Context': 'C&E', 'Idea': 'Psychological safety service'},
-                {'Context': 'WTT', 'Idea': 'Skill gap analysis AI tool'},
-                {'Context': 'HRT', 'Idea': 'HR DX consulting'},
-                {'Context': 'S&G', 'Idea': 'Succession system standardization'}
-            ],
-            'Cross-Context Recommendations': [
-                {'Combination': 'A&S x TMD', 'Idea': 'Strategy-linked talent strategy'},
-                {'Combination': 'A&S x HROPAI', 'Idea': 'AI roadmap integration'},
-                {'Combination': 'TMD x C&E', 'Idea': 'Career autonomy + culture'},
-                {'Combination': 'HROPAI x WTT', 'Idea': 'AI skill matching'},
-                {'Combination': 'C&E x HRT', 'Idea': 'Organization development'}
-            ]
-        }
-        pdf = create_pdf_buffer("Business Opportunities Report", pdf_data_dict)
-        st.download_button(
-            label="📥 ビジネス機会をPDF出力",
-            data=pdf,
-            file_name=f"CHRO_Business_Ideas_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_pdf_tab5"
-        )
-
     st.divider()
 
     st.markdown("### 単一コンテキスト推奨事項")
@@ -846,48 +700,52 @@ with tab5:
 with st.sidebar:
     st.markdown("---")
     st.markdown("### 📄 統合レポート")
-    st.markdown("全タブを統合したレポートを出力")
+    st.markdown("全タブデータをまとめたPDFレポートを出力")
 
-    try:
-        # 統合レポート用データを構築
-        integrated_data = {
-            '1. Analysis Overview': [
-                {'Metric': 'Analysis Period', 'Value': f"{selected_period if selected_period != 'custom' else f'{selected_start_date} to {selected_end_date}'}"},
-                {'Metric': 'Total Posts Analyzed', 'Value': len(posts)},
-                {'Metric': 'Countries Covered', 'Value': '4 (Japan, USA, UK, Germany)'},
-                {'Metric': 'Strategic Contexts', 'Value': '7 (A&S, TMD, HROPAI, C&E, WTT, HRT, S&G)'},
-                {'Metric': 'Activity Levels', 'Value': '5 (Done, Doing, Next, Idea, Issue)'}
-            ],
-            '2. SNS Information': [
-                {'Country': 'JP', 'Platform': 'LinkedIn', 'Type': 'Professional Network'},
-                {'Country': 'JP', 'Platform': 'X', 'Type': 'Real-time Discussion'},
-                {'Country': 'US', 'Platform': 'LinkedIn', 'Type': 'Professional Network'},
-                {'Country': 'US', 'Platform': 'X', 'Type': 'Real-time Discussion'},
-            ],
-            '3. Key Findings': [
-                {'Finding': 'A&S Context dominates (30%+ posts across regions)'},
-                {'Finding': 'Doing Phase represents 50%+ of all posts'},
-                {'Finding': 'Japan leads HROPAI (19% vs global average)'},
-                {'Finding': 'Regional differences in strategic priorities'},
-                {'Finding': 'Keywords: AI, talent, culture, transformation'}
-            ],
-            '4. Business Recommendations': [
-                {'Type': 'Single-Context', 'Count': '7 recommendations'},
-                {'Type': 'Cross-Context', 'Count': '5+ recommendations'},
-                {'Type': 'Total', 'Count': '12+ strategic opportunities'}
-            ]
-        }
+    if st.button("📥 統合レポートをPDF出力", key="unified_report_button"):
+        if generate_unified_report is None:
+            st.error("❌ 統合レポート機能が利用できません")
+        else:
+            try:
+                # 集計期間末日を計算
+                if selected_period == "custom":
+                    # カスタム期間の場合、選択された終了日を使用
+                    collection_end_date = selected_end_date.strftime("%Y%m%d")
+                else:
+                    # 標準期間の場合、その月の末日を使用
+                    year = int(selected_period[:4])
+                    month = int(selected_period[4:6])
+                    from datetime import timedelta
+                    if month == 12:
+                        next_month = datetime(year + 1, 1, 1)
+                    else:
+                        next_month = datetime(year, month + 1, 1)
+                    last_day = (next_month - timedelta(days=1)).day
+                    collection_end_date = f"{year}{month:02d}{last_day:02d}"
 
-        integrated_pdf = create_pdf_buffer("CHRO Strategic Insight Engine - Integrated Report", integrated_data)
-        st.download_button(
-            label="📥 統合レポートをPDF出力",
-            data=integrated_pdf,
-            file_name=f"CHRO_Integrated_Report_{selected_period}.pdf",
-            mime="application/pdf",
-            key="download_integrated_pdf"
-        )
-    except Exception as e:
-        st.error(f"エラー: {str(e)}")
+                with st.spinner("📝 レポートを生成中..."):
+                    # PDF形式で統合レポートを生成
+                    pdf_buffer = generate_unified_report(
+                        period=selected_period if selected_period != "custom" else "202604",
+                        collection_end_date=collection_end_date,
+                        return_format="pdf"
+                    )
+
+                    if pdf_buffer is not None:
+                        st.success("✅ レポート生成完了！")
+                        st.download_button(
+                            label="📥 ダウンロード",
+                            data=pdf_buffer,
+                            file_name=f"CHRO_Strategic_Insight_Engine_{collection_end_date}.pdf",
+                            mime="application/pdf",
+                            key="download_unified_pdf"
+                        )
+                    else:
+                        st.error("❌ レポート生成に失敗しました")
+            except Exception as e:
+                st.error(f"❌ エラー: {str(e)}")
+                import traceback
+                traceback.print_exc()
 
     st.markdown("---")
 

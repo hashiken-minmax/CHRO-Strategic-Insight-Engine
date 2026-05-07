@@ -167,8 +167,32 @@ available_periods = sorted(
     reverse=True
 )
 
+def load_posts_for_custom_range(start_date, end_date, periods, use_v2=False):
+    """複数期間のpostsをマージし、日付範囲でフィルター"""
+    import datetime as _dt
+    merged = []
+    for period in periods:
+        v2_file = DATA_DIR / f"classified_data_{period}_v2.json"
+        std_file = DATA_DIR / f"classified_data_{period}.json"
+        fpath = v2_file if (use_v2 and v2_file.exists()) else std_file
+        if not fpath.exists():
+            continue
+        with open(fpath, encoding="utf-8") as f:
+            period_posts = json.load(f)
+        for p in period_posts:
+            d = p.get("date", "")
+            try:
+                post_date = _dt.date.fromisoformat(d[:10])
+                if start_date <= post_date <= end_date:
+                    merged.append(p)
+            except Exception:
+                merged.append(p)
+    return merged
+
 st.markdown("### データ期間の選択")
 selection_mode = st.radio("期間選択方法:", ["単一期間", "カスタム日付範囲"], horizontal=True)
+
+use_v2 = True
 
 if selection_mode == "単一期間":
     if available_periods:
@@ -179,22 +203,29 @@ if selection_mode == "単一期間":
     selected_start_date = None
     selected_end_date   = None
     data_period         = selected_period
+    posts, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2)
+    if posts is None:
+        st.error(f"Failed to load data for {selected_period}")
+        st.stop()
 else:
+    import datetime as _dt
+    default_start = _dt.date.fromisoformat(f"{available_periods[-1][:4]}-{available_periods[-1][4:6]}-01") if available_periods else _dt.date(2026, 3, 1)
+    default_end   = _dt.date.today()
     col1, col2 = st.columns(2)
     with col1:
-        selected_start_date = st.date_input("開始日:", value=__import__('datetime').date(2026, 3, 17))
+        selected_start_date = st.date_input("開始日:", value=default_start)
     with col2:
-        selected_end_date = st.date_input("終了日:", value=__import__('datetime').date(2026, 4, 16))
+        selected_end_date = st.date_input("終了日:", value=default_end)
     selected_period = "custom"
     data_period     = available_periods[0] if available_periods else "202604"
 
-# v2分類データを使用（新分類データが正式データ）
-use_v2 = True
-
-posts, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2)
-if posts is None:
-    st.error(f"Failed to load data for {selected_period}")
-    st.stop()
+    posts = load_posts_for_custom_range(selected_start_date, selected_end_date, available_periods, use_v2=use_v2)
+    if not posts:
+        st.error("指定期間にデータがありません")
+        st.stop()
+    # analytics/business/phase は最新期間のものを使用
+    _, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2)
+    st.info(f"📅 {selected_start_date} ～ {selected_end_date}：**{len(posts):,}件** のポストを表示中（{len(available_periods)}期間分を結合）")
 
 # 集計（キャッシュ不要の軽量処理）
 post_action_dist  = build_post_action_dist(posts)

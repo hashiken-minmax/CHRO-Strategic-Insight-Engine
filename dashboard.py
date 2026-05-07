@@ -69,25 +69,22 @@ DATA_DIR = Path("data")
 
 @st.cache_data
 def load_all_data(period="202604", use_v2=False):
+    def _load(path):
+        if path.exists():
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
+        return None
+
     try:
-        # Use v2 classified data if available and requested
         v2_file = DATA_DIR / f"classified_data_{period}_v2.json"
-        if use_v2 and v2_file.exists():
-            classified_file = v2_file
-        else:
-            classified_file = DATA_DIR / f"classified_data_{period}.json"
+        classified_file = v2_file if (use_v2 and v2_file.exists()) else DATA_DIR / f"classified_data_{period}.json"
         with open(classified_file, encoding="utf-8") as f:
             posts = json.load(f)
-        with open(DATA_DIR / f"analytics_{period}.json", encoding="utf-8") as f:
-            analytics = json.load(f)
-        with open(DATA_DIR / f"business_ideas_{period}.json", encoding="utf-8") as f:
-            business = json.load(f)
-        with open(DATA_DIR / f"analytics_phaseA_{period}.json", encoding="utf-8") as f:
-            phase_a = json.load(f)
-        with open(DATA_DIR / f"analytics_phaseB_{period}.json", encoding="utf-8") as f:
-            phase_b = json.load(f)
-        with open(DATA_DIR / f"analytics_phaseC_{period}.json", encoding="utf-8") as f:
-            phase_c = json.load(f)
+        analytics = _load(DATA_DIR / f"analytics_{period}.json")
+        business  = _load(DATA_DIR / f"business_ideas_{period}.json")
+        phase_a   = _load(DATA_DIR / f"analytics_phaseA_{period}.json")
+        phase_b   = _load(DATA_DIR / f"analytics_phaseB_{period}.json")
+        phase_c   = _load(DATA_DIR / f"analytics_phaseC_{period}.json")
         return posts, analytics, business, phase_a, phase_b, phase_c
     except Exception as e:
         st.error(f"Failed to load data: {e}")

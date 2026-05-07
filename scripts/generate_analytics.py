@@ -14,10 +14,19 @@ from collections import Counter
 from datetime import datetime
 import re
 
+import sys as _sys
+def _get_arg(flag, default=None):
+    try:
+        idx = _sys.argv.index(flag)
+        return _sys.argv[idx + 1]
+    except (ValueError, IndexError):
+        return default
+
 DATA_DIR = Path(__file__).parent.parent / "data"
-INPUT_FILE = DATA_DIR / "classified_data_202604.json"
-OUTPUT_FILE = DATA_DIR / "analytics_202604.json"
-SUMMARY_FILE = DATA_DIR / "analytics_summary_202604.txt"
+_period     = _get_arg('--period') or datetime.now().strftime('%Y%m')
+INPUT_FILE   = DATA_DIR / f"classified_data_{_period}.json"
+OUTPUT_FILE  = DATA_DIR / f"analytics_{_period}.json"
+SUMMARY_FILE = DATA_DIR / f"analytics_summary_{_period}.txt"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # データ読み込み

@@ -21,10 +21,19 @@ if sys.platform == "win32":
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
+import sys as _sys
+def _get_arg(flag, default=None):
+    try:
+        idx = _sys.argv.index(flag)
+        return _sys.argv[idx + 1]
+    except (ValueError, IndexError):
+        return default
+
 DATA_DIR = Path(__file__).parent.parent / "data"
-CLASSIFIED_FILE = DATA_DIR / "classified_data_202604.json"
-OUTPUT_JSON = DATA_DIR / "analytics_phaseA_202604.json"
-OUTPUT_MD = DATA_DIR / "analytics_phaseA_202604.md"
+_period         = _get_arg('--period') or datetime.now().strftime('%Y%m')
+CLASSIFIED_FILE = DATA_DIR / f"classified_data_{_period}.json"
+OUTPUT_JSON     = DATA_DIR / f"analytics_phaseA_{_period}.json"
+OUTPUT_MD       = DATA_DIR / f"analytics_phaseA_{_period}.md"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # データ読み込み
@@ -104,7 +113,7 @@ for country in ['JP', 'US', 'UK', 'DE']:
 analysis_result = {
     "metadata": {
         "generated_at": datetime.now().isoformat(),
-        "period": "202604",
+        "period": _period,
         "phase": "A",
         "description": "SNS Information Summary + Context Distribution"
     },
@@ -126,7 +135,7 @@ md_lines = [
     "## SNS情報サマリー + コンテキスト分布",
     "",
     f"**生成日時**: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}",
-    f"**対象期間**: 2026年3月17日 ～ 2026年4月16日",
+    f"**対象期間**: {_period[:4]}年{int(_period[4:6])-1 or 12}月 ～ {_period[:4]}年{_period[4:6]}月",
     "",
     "---",
     "",

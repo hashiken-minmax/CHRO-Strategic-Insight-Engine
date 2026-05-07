@@ -1,0 +1,498 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-07T19:35:55.910603",
+    "total_posts": 1305,
+    "period": "202604"
+  },
+  "country_overview": {
+    "JP": {
+      "count": 329,
+      "context_dist": {
+        "TMD": 152,
+        "C&E": 30,
+        "HROPAI": 43,
+        "A&S": 92,
+        "S&G": 6,
+        "WTT": 3,
+        "HRT": 3
+      },
+      "activity_dist": {
+        "Issue": 21,
+        "Doing": 180,
+        "Done": 37,
+        "Next": 70,
+        "Idea": 21
+      },
+      "role_focus": {
+        "Strategic": 249,
+        "Neutral": 76,
+        "Admin": 4
+      },
+      "top_keywords": [
+        [
+          "company",
+          1679
+        ],
+        [
+          "linkedin",
+          1109
+        ],
+        [
+          "https",
+          1072
+        ],
+        [
+          "com",
+          1041
+        ],
+        [
+          "www",
+          886
+        ],
+        [
+          "months",
+          695
+        ],
+        [
+          "employees",
+          630
+        ],
+        [
+          "level",
+          531
+        ],
+        [
+          "years",
+          523
+        ],
+        [
+          "department",
+          481
+        ],
+        [
+          "experience",
+          425
+        ],
+        [
+          "founded",
+          407
+        ],
+        [
+          "japan",
+          362
+        ],
+        [
+          "you",
+          353
+        ],
+        [
+          "held",
+          319
+        ]
+      ]
+    },
+    "US": {
+      "count": 437,
+      "context_dist": {
+        "C&E": 46,
+        "HROPAI": 46,
+        "TMD": 193,
+        "HRT": 5,
+        "A&S": 135,
+        "WTT": 7,
+        "S&G": 5
+      },
+      "activity_dist": {
+        "Next": 124,
+        "Doing": 169,
+        "Done": 95,
+        "Issue": 36,
+        "Idea": 12,
+        "null": 1
+      },
+      "role_focus": {
+        "Strategic": 359,
+        "Admin": 6,
+        "Neutral": 72
+      },
+      "top_keywords": [
+        [
+          "company",
+          2922
+        ],
+        [
+          "com",
+          1966
+        ],
+        [
+          "https",
+          1904
+        ],
+        [
+          "linkedin",
+          1893
+        ],
+        [
+          "www",
+          1528
+        ],
+        [
+          "years",
+          1106
+        ],
+        [
+          "months",
+          1096
+        ],
+        [
+          "employees",
+          1065
+        ],
+        [
+          "level",
+          849
+        ],
+        [
+          "department",
+          779
+        ],
+        [
+          "experience",
+          775
+        ],
+        [
+          "founded",
+          615
+        ],
+        [
+          "followers",
+          584
+        ],
+        [
+          "you",
+          550
+        ],
+        [
+          "business",
+          516
+        ]
+      ]
+    },
+    "UK": {
+      "count": 332,
+      "context_dist": {
+        "TMD": 137,
+        "C&E": 35,
+        "HRT": 6,
+        "HROPAI": 10,
+        "A&S": 130,
+        "WTT": 4,
+        "S&G": 10
+      },
+      "activity_dist": {
+        "Doing": 133,
+        "Next": 102,
+        "Done": 66,
+        "Issue": 21,
+        "Idea": 10
+      },
+      "role_focus": {
+        "Strategic": 272,
+        "Neutral": 57,
+        "Admin": 3
+      },
+      "top_keywords": [
+        [
+          "company",
+          2090
+        ],
+        [
+          "linkedin",
+          1340
+        ],
+        [
+          "com",
+          1288
+        ],
+        [
+          "https",
+          1270
+        ],
+        [
+          "www",
+          1150
+        ],
+        [
+          "months",
+          894
+        ],
+        [
+          "years",
+          847
+        ],
+        [
+          "employees",
+          771
+        ],
+        [
+          "level",
+          726
+        ],
+        [
+          "department",
+          649
+        ],
+        [
+          "experience",
+          578
+        ],
+        [
+          "business",
+          519
+        ],
+        [
+          "founded",
+          462
+        ],
+        [
+          "current",
+          426
+        ],
+        [
+          "present",
+          414
+        ]
+      ]
+    },
+    "DE": {
+      "count": 207,
+      "context_dist": {
+        "TMD": 65,
+        "C&E": 20,
+        "HRT": 3,
+        "A&S": 79,
+        "HROPAI": 28,
+        "S&G": 11,
+        "WTT": 1
+      },
+      "activity_dist": {
+        "Doing": 102,
+        "Next": 57,
+        "Done": 37,
+        "Idea": 4,
+        "Issue": 7
+      },
+      "role_focus": {
+        "Strategic": 158,
+        "Neutral": 42,
+        "Admin": 7
+      },
+      "top_keywords": [
+        [
+          "company",
+          1222
+        ],
+        [
+          "linkedin",
+          771
+        ],
+        [
+          "https",
+          749
+        ],
+        [
+          "com",
+          721
+        ],
+        [
+          "www",
+          667
+        ],
+        [
+          "months",
+          492
+        ],
+        [
+          "years",
+          479
+        ],
+        [
+          "employees",
+          453
+        ],
+        [
+          "level",
+          385
+        ],
+        [
+          "department",
+          329
+        ],
+        [
+          "experience",
+          296
+        ],
+        [
+          "founded",
+          294
+        ],
+        [
+          "current",
+          265
+        ],
+        [
+          "present",
+          239
+        ],
+        [
+          "business",
+          237
+        ]
+      ]
+    }
+  },
+  "global_metrics": {
+    "context_distribution": {
+      "TMD": 547,
+      "C&E": 131,
+      "HROPAI": 127,
+      "A&S": 436,
+      "S&G": 32,
+      "WTT": 15,
+      "HRT": 17
+    },
+    "activity_distribution": {
+      "Issue": 85,
+      "Doing": 584,
+      "Done": 235,
+      "Next": 353,
+      "Idea": 47,
+      "null": 1
+    },
+    "role_focus_distribution": {
+      "Strategic": 1038,
+      "Neutral": 247,
+      "Admin": 20
+    },
+    "top_keywords": [
+      [
+        "company",
+        7913
+      ],
+      [
+        "linkedin",
+        5113
+      ],
+      [
+        "com",
+        5016
+      ],
+      [
+        "https",
+        4995
+      ],
+      [
+        "www",
+        4231
+      ],
+      [
+        "months",
+        3177
+      ],
+      [
+        "years",
+        2955
+      ],
+      [
+        "employees",
+        2919
+      ],
+      [
+        "level",
+        2491
+      ],
+      [
+        "department",
+        2238
+      ],
+      [
+        "experience",
+        2074
+      ],
+      [
+        "founded",
+        1778
+      ],
+      [
+        "business",
+        1550
+      ],
+      [
+        "current",
+        1465
+      ],
+      [
+        "followers",
+        1452
+      ],
+      [
+        "present",
+        1408
+      ],
+      [
+        "you",
+        1362
+      ],
+      [
+        "services",
+        1352
+      ],
+      [
+        "development",
+        1271
+      ],
+      [
+        "public",
+        1263
+      ]
+    ]
+  },
+  "context_by_country": {
+    "JP": {
+      "S&G": 6,
+      "A&S": 92,
+      "HRT": 3,
+      "WTT": 3,
+      "TMD": 152,
+      "HROPAI": 43,
+      "C&E": 30
+    },
+    "US": {
+      "S&G": 5,
+      "A&S": 135,
+      "HRT": 5,
+      "WTT": 7,
+      "TMD": 193,
+      "HROPAI": 46,
+      "C&E": 46
+    },
+    "UK": {
+      "S&G": 10,
+      "A&S": 130,
+      "HRT": 6,
+      "WTT": 4,
+      "TMD": 137,
+      "HROPAI": 10,
+      "C&E": 35
+    },
+    "DE": {
+      "S&G": 11,
+      "A&S": 79,
+      "HRT": 3,
+      "WTT": 1,
+      "TMD": 65,
+      "HROPAI": 28,
+      "C&E": 20
+    }
+  }
+}

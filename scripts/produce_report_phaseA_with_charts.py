@@ -18,9 +18,18 @@ if sys.platform == "win32":
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
+import sys as _sys
+def _get_arg(flag, default=None):
+    try:
+        idx = _sys.argv.index(flag)
+        return _sys.argv[idx + 1]
+    except (ValueError, IndexError):
+        return default
+
 DATA_DIR = Path(__file__).parent.parent / "data"
-ANALYTICS_PHASEA_FILE = DATA_DIR / "analytics_phaseA_202604.json"
-OUTPUT_DOCX_FILE = DATA_DIR / "analytics_phaseA_202604.docx"
+_period = _get_arg('--period') or datetime.now().strftime('%Y%m')
+ANALYTICS_PHASEA_FILE = DATA_DIR / f"analytics_phaseA_{_period}.json"
+OUTPUT_DOCX_FILE      = DATA_DIR / f"analytics_phaseA_{_period}.docx"
 TEMP_DIR = DATA_DIR / "temp_charts"
 TEMP_DIR.mkdir(exist_ok=True)
 
@@ -215,7 +224,7 @@ try:
 
     period = doc.add_paragraph()
     period.add_run('対象期間: ').bold = True
-    period.add_run('2026年3月17日～2026年4月16日（30日間）')
+    period.add_run(f'{_period[:4]}年{_period[4:6]}月分（収集期間30日間）')
 
     doc.add_paragraph()  # 空行
 

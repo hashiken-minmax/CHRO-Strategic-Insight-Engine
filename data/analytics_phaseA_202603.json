@@ -1,18 +1,18 @@
 {
   "metadata": {
-    "generated_at": "2026-05-07T16:53:05.481509",
-    "period": "202604",
+    "generated_at": "2026-05-07T19:35:56.083609",
+    "period": "202603",
     "phase": "A",
     "description": "SNS Information Summary + Context Distribution"
   },
   "sns_summary": {
     "JP": {
       "country_ja": "日本",
-      "chro_count": 25,
-      "total_posts": 351,
-      "work_posts": 351,
-      "x_posts": 9,
-      "linkedin_posts": 342,
+      "chro_count": 26,
+      "total_posts": 329,
+      "work_posts": 329,
+      "x_posts": 10,
+      "linkedin_posts": 319,
       "chro_list": [
         "Katsuyoshi Sugita",
         "Lauren Duprey",
@@ -31,6 +31,7 @@
         "東 孝典 (Takanori Azuma)",
         "松本孝",
         "正鹿 照之 (Teruyuki Masaka)",
+        "江上 茂樹 (Shigeki Egami)",
         "瀬名波 文野 (Ayano Senaha)",
         "瀬名波文野",
         "神山 信弘 (Nobuhiro Kaminoyama)",
@@ -44,10 +45,10 @@
     "US": {
       "country_ja": "米国",
       "chro_count": 35,
-      "total_posts": 875,
-      "work_posts": 875,
+      "total_posts": 437,
+      "work_posts": 437,
       "x_posts": 40,
-      "linkedin_posts": 835,
+      "linkedin_posts": 397,
       "chro_list": [
         "Amanda Poole",
         "Amy Coleman",
@@ -89,10 +90,10 @@
     "UK": {
       "country_ja": "英国",
       "chro_count": 30,
-      "total_posts": 460,
-      "work_posts": 460,
-      "x_posts": 30,
-      "linkedin_posts": 430,
+      "total_posts": 332,
+      "work_posts": 332,
+      "x_posts": 26,
+      "linkedin_posts": 306,
       "chro_list": [
         "Aileen Taylor",
         "Ali Bebo",
@@ -129,10 +130,10 @@
     "DE": {
       "country_ja": "ドイツ",
       "chro_count": 15,
-      "total_posts": 627,
-      "work_posts": 627,
-      "x_posts": 19,
-      "linkedin_posts": 608,
+      "total_posts": 207,
+      "work_posts": 207,
+      "x_posts": 20,
+      "linkedin_posts": 187,
       "chro_list": [
         "Birgit Bohle",
         "Carmen-Maja Rex",
@@ -154,134 +155,134 @@
   },
   "context_distribution": {
     "JP": {
-      "total_posts": 351,
+      "total_posts": 329,
       "distribution": {
         "S&G": {
-          "count": 7,
-          "percentage": 1.9943019943019944
+          "count": 6,
+          "percentage": 1.8237082066869301
         },
         "A&S": {
-          "count": 139,
-          "percentage": 39.6011396011396
+          "count": 92,
+          "percentage": 27.96352583586626
         },
         "HRT": {
-          "count": 5,
-          "percentage": 1.4245014245014245
+          "count": 3,
+          "percentage": 0.9118541033434651
         },
         "WTT": {
-          "count": 1,
-          "percentage": 0.2849002849002849
+          "count": 3,
+          "percentage": 0.9118541033434651
         },
         "TMD": {
-          "count": 108,
-          "percentage": 30.76923076923077
+          "count": 152,
+          "percentage": 46.20060790273556
         },
         "HROPAI": {
-          "count": 46,
-          "percentage": 13.105413105413106
+          "count": 43,
+          "percentage": 13.069908814589665
         },
         "C&E": {
-          "count": 45,
-          "percentage": 12.820512820512821
+          "count": 30,
+          "percentage": 9.118541033434651
         }
       }
     },
     "US": {
-      "total_posts": 875,
+      "total_posts": 437,
       "distribution": {
         "S&G": {
-          "count": 10,
-          "percentage": 1.1428571428571428
+          "count": 5,
+          "percentage": 1.1441647597254005
         },
         "A&S": {
-          "count": 318,
-          "percentage": 36.34285714285714
+          "count": 135,
+          "percentage": 30.892448512585812
         },
         "HRT": {
-          "count": 16,
-          "percentage": 1.8285714285714285
+          "count": 5,
+          "percentage": 1.1441647597254005
         },
         "WTT": {
-          "count": 32,
-          "percentage": 3.657142857142857
+          "count": 7,
+          "percentage": 1.6018306636155606
         },
         "TMD": {
-          "count": 225,
-          "percentage": 25.714285714285715
+          "count": 193,
+          "percentage": 44.16475972540046
         },
         "HROPAI": {
-          "count": 60,
-          "percentage": 6.857142857142857
+          "count": 46,
+          "percentage": 10.526315789473685
         },
         "C&E": {
-          "count": 214,
-          "percentage": 24.457142857142856
+          "count": 46,
+          "percentage": 10.526315789473685
         }
       }
     },
     "UK": {
-      "total_posts": 460,
+      "total_posts": 332,
       "distribution": {
         "S&G": {
-          "count": 5,
-          "percentage": 1.0869565217391304
+          "count": 10,
+          "percentage": 3.0120481927710845
         },
         "A&S": {
-          "count": 199,
-          "percentage": 43.26086956521739
+          "count": 130,
+          "percentage": 39.1566265060241
         },
         "HRT": {
-          "count": 9,
-          "percentage": 1.9565217391304348
+          "count": 6,
+          "percentage": 1.8072289156626506
         },
         "WTT": {
-          "count": 14,
-          "percentage": 3.0434782608695654
+          "count": 4,
+          "percentage": 1.2048192771084338
         },
         "TMD": {
-          "count": 131,
-          "percentage": 28.47826086956522
+          "count": 137,
+          "percentage": 41.265060240963855
         },
         "HROPAI": {
-          "count": 17,
-          "percentage": 3.6956521739130435
+          "count": 10,
+          "percentage": 3.0120481927710845
         },
         "C&E": {
-          "count": 85,
-          "percentage": 18.47826086956522
+          "count": 35,
+          "percentage": 10.542168674698795
         }
       }
     },
     "DE": {
-      "total_posts": 627,
+      "total_posts": 207,
       "distribution": {
         "S&G": {
-          "count": 14,
-          "percentage": 2.2328548644338118
+          "count": 11,
+          "percentage": 5.314009661835748
         },
         "A&S": {
-          "count": 221,
-          "percentage": 35.24720893141946
+          "count": 79,
+          "percentage": 38.16425120772947
         },
         "HRT": {
-          "count": 10,
-          "percentage": 1.594896331738437
+          "count": 3,
+          "percentage": 1.4492753623188406
         },
         "WTT": {
-          "count": 18,
-          "percentage": 2.8708133971291865
+          "count": 1,
+          "percentage": 0.4830917874396135
         },
         "TMD": {
-          "count": 154,
-          "percentage": 24.56140350877193
+          "count": 65,
+          "percentage": 31.40096618357488
         },
         "HROPAI": {
-          "count": 47,
-          "percentage": 7.496012759170654
+          "count": 28,
+          "percentage": 13.526570048309178
         },
         "C&E": {
-          "count": 163,
-          "percentage": 25.996810207336523
+          "count": 20,
+          "percentage": 9.66183574879227
         }
       }
     }

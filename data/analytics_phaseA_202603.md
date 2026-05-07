@@ -1,8 +1,8 @@
 # CHRO トレンド分析 - Phase A
 ## SNS情報サマリー + コンテキスト分布
 
-**生成日時**: 2026年05月07日 16:53:05
-**対象期間**: 2026年3月17日 ～ 2026年4月16日
+**生成日時**: 2026年05月07日 19:35:56
+**対象期間**: 2026年2月 ～ 2026年03月
 
 ---
 
@@ -12,10 +12,10 @@
 
 | 企業群 | CHRO人数 | 総ポスト数 | 仕事関連 | Xポスト | LinkedInポスト |
 |--------|---------|----------|--------|--------|--------------|
-| 日本 (JP) | 25 | 351 | 351 | 9 | 342 |
-| 米国 (US) | 35 | 875 | 875 | 40 | 835 |
-| 英国 (UK) | 30 | 460 | 460 | 30 | 430 |
-| ドイツ (DE) | 15 | 627 | 627 | 19 | 608 |
+| 日本 (JP) | 26 | 329 | 329 | 10 | 319 |
+| 米国 (US) | 35 | 437 | 437 | 40 | 397 |
+| 英国 (UK) | 30 | 332 | 332 | 26 | 306 |
+| ドイツ (DE) | 15 | 207 | 207 | 20 | 187 |
 
 **注**: 仕事関連 = is_work_related フラグがTrue のポスト
 
@@ -35,49 +35,49 @@
 
 | コンテキスト | ポスト数 | 割合 | 説明 |
 |------------|--------|------|------|
-| A&S | 139 |  39.6% | Agenda & Strategy |
-| TMD | 108 |  30.8% | Talent Market & Development |
-| HROPAI |  46 |  13.1% | HR Operation & AI |
-| C&E |  45 |  12.8% | Culture & Engagement |
-| WTT |   1 |   0.3% | Workforce & Talent Transformation |
-| HRT |   5 |   1.4% | HR Transformation |
-| S&G |   7 |   2.0% | Succession & Governance |
+| A&S |  92 |  28.0% | Agenda & Strategy |
+| TMD | 152 |  46.2% | Talent Market & Development |
+| HROPAI |  43 |  13.1% | HR Operation & AI |
+| C&E |  30 |   9.1% | Culture & Engagement |
+| WTT |   3 |   0.9% | Workforce & Talent Transformation |
+| HRT |   3 |   0.9% | HR Transformation |
+| S&G |   6 |   1.8% | Succession & Governance |
 
 ### 表3: コンテキスト別ポスト数分布（米国）
 
 | コンテキスト | ポスト数 | 割合 | 説明 |
 |------------|--------|------|------|
-| A&S | 318 |  36.3% | Agenda & Strategy |
-| TMD | 225 |  25.7% | Talent Market & Development |
-| HROPAI |  60 |   6.9% | HR Operation & AI |
-| C&E | 214 |  24.5% | Culture & Engagement |
-| WTT |  32 |   3.7% | Workforce & Talent Transformation |
-| HRT |  16 |   1.8% | HR Transformation |
-| S&G |  10 |   1.1% | Succession & Governance |
+| A&S | 135 |  30.9% | Agenda & Strategy |
+| TMD | 193 |  44.2% | Talent Market & Development |
+| HROPAI |  46 |  10.5% | HR Operation & AI |
+| C&E |  46 |  10.5% | Culture & Engagement |
+| WTT |   7 |   1.6% | Workforce & Talent Transformation |
+| HRT |   5 |   1.1% | HR Transformation |
+| S&G |   5 |   1.1% | Succession & Governance |
 
 ### 表4: コンテキスト別ポスト数分布（英国）
 
 | コンテキスト | ポスト数 | 割合 | 説明 |
 |------------|--------|------|------|
-| A&S | 199 |  43.3% | Agenda & Strategy |
-| TMD | 131 |  28.5% | Talent Market & Development |
-| HROPAI |  17 |   3.7% | HR Operation & AI |
-| C&E |  85 |  18.5% | Culture & Engagement |
-| WTT |  14 |   3.0% | Workforce & Talent Transformation |
-| HRT |   9 |   2.0% | HR Transformation |
-| S&G |   5 |   1.1% | Succession & Governance |
+| A&S | 130 |  39.2% | Agenda & Strategy |
+| TMD | 137 |  41.3% | Talent Market & Development |
+| HROPAI |  10 |   3.0% | HR Operation & AI |
+| C&E |  35 |  10.5% | Culture & Engagement |
+| WTT |   4 |   1.2% | Workforce & Talent Transformation |
+| HRT |   6 |   1.8% | HR Transformation |
+| S&G |  10 |   3.0% | Succession & Governance |
 
 ### 表5: コンテキスト別ポスト数分布（ドイツ）
 
 | コンテキスト | ポスト数 | 割合 | 説明 |
 |------------|--------|------|------|
-| A&S | 221 |  35.2% | Agenda & Strategy |
-| TMD | 154 |  24.6% | Talent Market & Development |
-| HROPAI |  47 |   7.5% | HR Operation & AI |
-| C&E | 163 |  26.0% | Culture & Engagement |
-| WTT |  18 |   2.9% | Workforce & Talent Transformation |
-| HRT |  10 |   1.6% | HR Transformation |
-| S&G |  14 |   2.2% | Succession & Governance |
+| A&S |  79 |  38.2% | Agenda & Strategy |
+| TMD |  65 |  31.4% | Talent Market & Development |
+| HROPAI |  28 |  13.5% | HR Operation & AI |
+| C&E |  20 |   9.7% | Culture & Engagement |
+| WTT |   1 |   0.5% | Workforce & Talent Transformation |
+| HRT |   3 |   1.4% | HR Transformation |
+| S&G |  11 |   5.3% | Succession & Governance |
 
 ---
 
@@ -86,16 +86,16 @@
 ### コンテキスト別の地域比較
 
 **A&S（経営戦略）における国別差異:**
-- 日本: 39.6%（戦略重視）
-- 米国: 36.3%（戦略最優先）
-- 英国: 43.3%（高い戦略意識）
-- ドイツ: 35.2%（堅実な戦略志向）
+- 日本: 28.0%（戦略重視）
+- 米国: 30.9%（戦略最優先）
+- 英国: 39.2%（高い戦略意識）
+- ドイツ: 38.2%（堅実な戦略志向）
 
 **HROPAI（HR DX・AI）における国別差異:**
 - 日本: 13.1%（急速成長中）
-- 米国: 6.9%（テクノロジー先進地）
-- 英国: 3.7%
-- ドイツ: 7.5%（デジタル化推進）
+- 米国: 10.5%（テクノロジー先進地）
+- 英国: 3.0%
+- ドイツ: 13.5%（デジタル化推進）
 
 ---
 

@@ -25,12 +25,309 @@ except ImportError as e:
     generate_unified_report = None
     print(f"Warning: Could not import generate_unified_report: {e}")
 
-# ページ設定
-st.set_page_config(page_title="CHRO Trends Dashboard", layout="wide")
+# ──────────────────────────────────────────────────────────────────────────────
+# Luxury Theme  (taste-skill: Cold Luxury Enterprise, DESIGN_VARIANCE=4,
+#               MOTION_INTENSITY=2, VISUAL_DENSITY=7)
+# ──────────────────────────────────────────────────────────────────────────────
 
-# タイトル
-st.title("🌐 CHRO Strategic Insight Engine")
-st.markdown("### 📊 Unified Analysis Dashboard (Phase A/B/C)")
+LUXURY_CSS = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --sie-bg:           #07090f;
+    --sie-surface:      #0c1220;
+    --sie-card:         #111d32;
+    --sie-elevated:     #162540;
+    --sie-border:       rgba(148,178,220,0.07);
+    --sie-border-acc:   rgba(59,130,246,0.28);
+    --sie-accent:       #3b82f6;
+    --sie-accent-dim:   rgba(59,130,246,0.10);
+    --sie-text:         #dce6f5;
+    --sie-text-2:       #7a9ab8;
+    --sie-text-muted:   #3a5068;
+    --sie-radius:       10px;
+    --sie-radius-sm:    6px;
+    --sie-shadow:       0 4px 20px rgba(0,0,0,0.45);
+}
+
+.stApp {
+    background-color: var(--sie-bg) !important;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+.main .block-container {
+    max-width: 1400px;
+    padding: 0.5rem 2.5rem 3rem;
+}
+
+/* Header */
+.sie-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 0 1.3rem;
+    border-bottom: 1px solid var(--sie-border);
+    margin-bottom: 1.4rem;
+}
+.sie-wordmark {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--sie-text);
+    line-height: 1.1;
+}
+.sie-wordmark span { color: var(--sie-accent); }
+.sie-tagline {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--sie-text-2);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin-top: 0.45rem;
+}
+.sie-badge {
+    background: var(--sie-accent-dim);
+    border: 1px solid var(--sie-border-acc);
+    color: var(--sie-accent);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    padding: 5px 13px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: var(--sie-surface);
+    border-radius: var(--sie-radius);
+    padding: 4px;
+    border: 1px solid var(--sie-border);
+    gap: 2px;
+}
+.stTabs [data-baseweb="tab"] {
+    background-color: transparent;
+    border-radius: var(--sie-radius-sm);
+    color: var(--sie-text-2);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 8px 18px;
+    border: none;
+    transition: all 0.18s ease;
+}
+.stTabs [aria-selected="true"] {
+    background-color: var(--sie-card);
+    color: var(--sie-accent);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+/* Metrics */
+[data-testid="metric-container"] {
+    background-color: var(--sie-card);
+    border: 1px solid var(--sie-border);
+    border-radius: var(--sie-radius);
+    padding: 1.1rem 1.4rem;
+    box-shadow: var(--sie-shadow);
+}
+[data-testid="stMetricValue"] {
+    font-size: 1.9rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.04em;
+    color: var(--sie-text) !important;
+}
+[data-testid="stMetricLabel"] {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    color: var(--sie-text-2) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* DataFrames */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--sie-border);
+    border-radius: var(--sie-radius);
+    overflow: hidden;
+    box-shadow: var(--sie-shadow);
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: var(--sie-surface);
+    border-right: 1px solid var(--sie-border);
+}
+[data-testid="stSidebar"] .stButton > button {
+    background: var(--sie-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--sie-radius-sm);
+    font-weight: 600;
+    font-size: 0.875rem;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
+}
+[data-testid="stSidebar"] .stButton > button:hover {
+    background: #2563eb;
+    box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+    transform: translateY(-1px);
+}
+[data-testid="stSidebar"] .stButton > button:active {
+    transform: scale(0.98);
+}
+
+/* Headings */
+h2 {
+    font-weight: 700;
+    font-size: 1.22rem;
+    letter-spacing: -0.022em;
+    color: var(--sie-text);
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--sie-accent);
+    margin: 0.4rem 0 0.7rem;
+    line-height: 1.35;
+}
+h3 {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--sie-text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 1rem 0 0.4rem;
+}
+h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sie-text);
+    margin: 0.7rem 0 0.3rem;
+}
+
+/* Expanders */
+[data-testid="stExpander"] {
+    border: 1px solid var(--sie-border) !important;
+    border-radius: var(--sie-radius-sm) !important;
+    background-color: var(--sie-card);
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+[data-testid="stExpander"] summary {
+    color: var(--sie-text);
+    font-weight: 500;
+    font-size: 0.88rem;
+    padding: 0.65rem 1rem;
+}
+
+/* Alerts */
+.stInfo {
+    background-color: rgba(59,130,246,0.07) !important;
+    border: 1px solid rgba(59,130,246,0.18) !important;
+    border-radius: var(--sie-radius-sm) !important;
+}
+.stWarning {
+    background-color: rgba(240,165,0,0.07) !important;
+    border: 1px solid rgba(240,165,0,0.2) !important;
+    border-radius: var(--sie-radius-sm) !important;
+}
+
+/* Dividers */
+hr {
+    border: none;
+    border-top: 1px solid var(--sie-border);
+    margin: 1.1rem 0;
+}
+
+/* Caption */
+.stCaption, [data-testid="stCaptionContainer"] {
+    color: var(--sie-text-muted) !important;
+    font-size: 0.76rem;
+}
+
+/* Body text */
+.stMarkdown p, .stMarkdown li {
+    color: var(--sie-text);
+    font-size: 0.91rem;
+    line-height: 1.65;
+}
+strong { color: var(--sie-text); font-weight: 600; }
+
+/* Footer */
+.sie-footer {
+    margin-top: 2rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--sie-border);
+    font-size: 0.71rem;
+    color: var(--sie-text-muted);
+    letter-spacing: 0.04em;
+}
+</style>
+"""
+
+PREMIUM_CTX_COLORS = [
+    '#3b82f6', '#34d399', '#f59e0b',
+    '#a78bfa', '#f472b6', '#38bdf8', '#fb923c',
+]
+PREMIUM_PALETTE = [
+    '#3b82f6', '#34c77b', '#f59e0b',
+    '#8b5cf6', '#ec4899', '#06b6d4', '#f97316',
+]
+HEATMAP_SCALE = [
+    [0.0, '#07090f'], [0.25, '#0f2040'],
+    [0.5, '#1e3a6e'], [0.75, '#2d6bc4'],
+    [1.0, '#60a5fa'],
+]
+
+
+def _px_dark(fig):
+    """Apply premium dark theme to a Plotly figure in-place and return it."""
+    fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#7a9ab8', family='Outfit, sans-serif', size=12),
+        title_font=dict(color='#dce6f5', size=14, family='Outfit, sans-serif'),
+        legend=dict(
+            bgcolor='rgba(11,18,32,0.85)',
+            bordercolor='rgba(148,178,220,0.12)',
+            borderwidth=1,
+            font=dict(color='#7a9ab8', size=11),
+        ),
+    )
+    fig.update_xaxes(
+        gridcolor='rgba(255,255,255,0.04)',
+        linecolor='rgba(148,178,220,0.1)',
+        zerolinecolor='rgba(148,178,220,0.06)',
+        tickfont=dict(color='#7a9ab8'),
+        title_font=dict(color='#7a9ab8'),
+    )
+    fig.update_yaxes(
+        gridcolor='rgba(255,255,255,0.04)',
+        linecolor='rgba(148,178,220,0.1)',
+        zerolinecolor='rgba(148,178,220,0.06)',
+        tickfont=dict(color='#7a9ab8'),
+        title_font=dict(color='#7a9ab8'),
+    )
+    return fig
+
+# ──────────────────────────────────────────────────────────────────────────────
+
+# ページ設定
+st.set_page_config(
+    page_title="CHRO Strategic Insight Engine",
+    page_icon="📊",
+    layout="wide",
+)
+st.markdown(LUXURY_CSS, unsafe_allow_html=True)
+
+# ヘッダー
+st.markdown("""
+<div class="sie-header">
+    <div>
+        <div class="sie-wordmark">CHRO <span>Strategic</span> Insight Engine</div>
+        <div class="sie-tagline">Unified Analysis Dashboard · Phase A / B / C</div>
+    </div>
+    <div class="sie-badge">Live</div>
+</div>
+""", unsafe_allow_html=True)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 定数
@@ -412,9 +709,6 @@ with tab2:
     # Context Distribution Pie Charts（4カ国）統一色パレット
     st.markdown("### Context Distribution by Country (4 Pie Charts)")
 
-    # 統一された色パレット（7つのコンテキストに対応）
-    CTX_COLORS = px.colors.qualitative.Set2[:7]
-
     col1, col2 = st.columns(2)
     for idx, country in enumerate(COUNTRIES):
         col = col1 if idx % 2 == 0 else col2
@@ -431,10 +725,16 @@ with tab2:
             fig_pie = px.pie(
                 df_pie, values='Count', names='Context',
                 title=f'{COUNTRY_NAMES[country]}（{country}）Context Distribution',
-                color_discrete_sequence=CTX_COLORS,
+                color_discrete_sequence=PREMIUM_CTX_COLORS,
                 category_orders={'Context': CTX_ORDER}
             )
-            fig_pie.update_traces(textposition='inside', textinfo='percent+label')
+            fig_pie.update_traces(
+                textposition='inside',
+                textinfo='percent+label',
+                textfont=dict(color='#ffffff', size=11),
+                marker=dict(line=dict(color='#07090f', width=2)),
+            )
+            _px_dark(fig_pie)
             with col:
                 st.plotly_chart(fig_pie, use_container_width=True)
 
@@ -472,8 +772,9 @@ with tab2:
             df_bar, x='Context', y='件数', color='国',
             barmode='group',
             title='コンテキスト別 国間比較（全パターン対象）',
-            color_discrete_sequence=px.colors.qualitative.Set1,
+            color_discrete_sequence=PREMIUM_PALETTE,
         )
+        _px_dark(fig_bar)
         st.plotly_chart(fig_bar, use_container_width=True)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -520,10 +821,10 @@ with tab3:
         z=normalized_z,
         x=ACT_ORDER,
         y=CTX_ORDER,
-        colorscale='Blues',
+        colorscale=HEATMAP_SCALE,
         text=raw_values,
         texttemplate='%{text}',
-        textfont={"size": 12},
+        textfont={"size": 12, "color": "#dce6f5"},
         hovertemplate='Context: %{y}<br>Activity: %{x}<br>件数: %{text}<extra></extra>',
     ))
     fig_heatmap.update_layout(
@@ -532,6 +833,7 @@ with tab3:
         yaxis_title='Context',
         height=420,
     )
+    _px_dark(fig_heatmap)
     st.plotly_chart(fig_heatmap, use_container_width=True)
 
     with st.expander("📌 Key Insights"):
@@ -589,11 +891,11 @@ with tab3:
                     z=z_values,
                     x=ACT_ORDER,
                     y=[COUNTRY_NAMES[c] for c in COUNTRIES],
-                    colorscale='Blues',
-                    showscale=(ctx_idx == 0),  # 最初のチャートだけscaleを表示
+                    colorscale=HEATMAP_SCALE,
+                    showscale=(ctx_idx == 0),
                     text=text_values,
                     texttemplate='%{text}',
-                    textfont={"size": 11},
+                    textfont={"size": 11, "color": "#dce6f5"},
                     hovertemplate='国: %{y}<br>Activity: %{x}<br>件数: %{text}<extra></extra>',
                 )
             )
@@ -602,9 +904,9 @@ with tab3:
                 xaxis_title='Activity Level',
                 yaxis_title='Country',
                 height=320,
-                margin=dict(l=80, r=50, t=60, b=50)
+                margin=dict(l=80, r=50, t=60, b=50),
             )
-
+            _px_dark(fig_hm)
             st.plotly_chart(fig_hm, use_container_width=True)
             col_idx += 1
 
@@ -701,22 +1003,41 @@ with tab4:
                 )
                 st.caption(f"対象投稿数: {post_count}件")
 
-                # HTML表を構築（ヘッダー行を薄い青、クロス国キーワードを薄いグレー）
-                html_table = '<table style="width:100%; border-collapse:collapse; border:1px solid #ddd; font-size:0.9em;">'
-                html_table += '<tr style="background-color: #e6f2ff; font-weight:bold;">'
-                html_table += '<th style="padding:8px; border:1px solid #ddd; text-align:center;">順位</th>'
-                html_table += '<th style="padding:8px; border:1px solid #ddd; text-align:left;">キーワード</th>'
-                html_table += '<th style="padding:8px; border:1px solid #ddd; text-align:center;">出現数</th>'
-                html_table += '</tr>'
+                # HTML表を構築（ダーク高級テーマ）
+                _bd = 'rgba(148,178,220,0.1)'
+                _hdr_bg = '#162540'
+                _cross_bg = 'rgba(59,130,246,0.08)'
+                _row_bg = 'rgba(17,29,50,0.6)'
+                html_table = (
+                    f'<table style="width:100%;border-collapse:collapse;'
+                    f'border:1px solid {_bd};font-size:0.85em;'
+                    f'font-family:Outfit,sans-serif;border-radius:8px;overflow:hidden;">'
+                )
+                html_table += (
+                    f'<tr style="background:{_hdr_bg};font-weight:600;color:#dce6f5;">'
+                    f'<th style="padding:8px 6px;border:1px solid {_bd};text-align:center;'
+                    f'font-size:0.75em;letter-spacing:0.08em;text-transform:uppercase;">順位</th>'
+                    f'<th style="padding:8px 6px;border:1px solid {_bd};text-align:left;'
+                    f'font-size:0.75em;letter-spacing:0.08em;text-transform:uppercase;">キーワード</th>'
+                    f'<th style="padding:8px 6px;border:1px solid {_bd};text-align:center;'
+                    f'font-size:0.75em;letter-spacing:0.08em;text-transform:uppercase;">出現数</th>'
+                    f'</tr>'
+                )
 
                 for _, row in df_kw.iterrows():
                     kw = str(row['キーワード']).lower()
-                    bg_color = '#f0f0f0' if kw in cross_country_keywords else 'white'
-                    html_table += f'<tr style="background-color: {bg_color};">'
-                    html_table += f'<td style="padding:8px; border:1px solid #ddd; text-align:center;">{row["順位"]}</td>'
-                    html_table += f'<td style="padding:8px; border:1px solid #ddd;">{row["キーワード"]}</td>'
-                    html_table += f'<td style="padding:8px; border:1px solid #ddd; text-align:center;">{row["出現数"]}</td>'
-                    html_table += '</tr>'
+                    bg = _cross_bg if kw in cross_country_keywords else _row_bg
+                    kw_color = '#60a5fa' if kw in cross_country_keywords else '#dce6f5'
+                    html_table += (
+                        f'<tr style="background:{bg};">'
+                        f'<td style="padding:7px 6px;border:1px solid {_bd};'
+                        f'text-align:center;color:#7a9ab8;">{row["順位"]}</td>'
+                        f'<td style="padding:7px 6px;border:1px solid {_bd};'
+                        f'color:{kw_color};font-weight:500;">{row["キーワード"]}</td>'
+                        f'<td style="padding:7px 6px;border:1px solid {_bd};'
+                        f'text-align:center;color:#dce6f5;font-weight:600;">{row["出現数"]}</td>'
+                        f'</tr>'
+                    )
 
                 html_table += '</table>'
                 st.markdown(html_table, unsafe_allow_html=True)
@@ -736,9 +1057,11 @@ with tab4:
             fig_kw = px.bar(
                 df_chart_top15, x='出現数', y='キーワード', orientation='h',
                 title=f'{COUNTRY_NAMES[country]}（{country}） — {selected_context}',
-                color='出現数', color_continuous_scale='Blues',
+                color='出現数',
+                color_continuous_scale=[[0, '#1e3a6e'], [0.5, '#2d6bc4'], [1.0, '#60a5fa']],
             )
             fig_kw.update_layout(height=450, yaxis={'categoryorder': 'total ascending'})
+            _px_dark(fig_kw)
             st.plotly_chart(fig_kw, use_container_width=True)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -980,9 +1303,10 @@ with st.sidebar:
 # Footer
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-st.divider()
-st.markdown(
-    f"**Last Updated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | "
-    f"**Period:** {selected_period[:4]}-{selected_period[4:6] if len(selected_period) >= 6 else '--'} | "
-    f"**Dashboard Version:** 3.0 (Post Action Pattern対応)"
-)
+st.markdown(f"""
+<div class="sie-footer">
+    Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} &nbsp;&nbsp;·&nbsp;&nbsp;
+    Period: {selected_period[:4]}-{selected_period[4:6] if len(selected_period) >= 6 else '--'} &nbsp;&nbsp;·&nbsp;&nbsp;
+    Version 3.0
+</div>
+""", unsafe_allow_html=True)

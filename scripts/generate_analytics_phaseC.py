@@ -69,7 +69,8 @@ CONTEXT_KEYWORDS = {
     ],
     'A&S': [
         # Multi-word phrases
-        'Human Capital Management', 'Enhancement of Corporate Value',
+        # 'Human Capital'(人的資本) を独立キーワードとして明示し、財務資本の 'capital' と区別する
+        'Human Capital Management', 'Human Capital', 'Enhancement of Corporate Value',
         'Business Strategy', 'HR Strategy', 'Talent Portfolio',
         'Human Capital ROI', 'Intangible Assets', 'Mandatory Disclosure',
         'Guidelines for Human Capital Visualization',
@@ -205,23 +206,26 @@ def extract_keywords_for_context(text, context):
     if not text:
         return []
 
-    text_lower = text.lower()
+    work_text = text.lower()
     found_keywords = []
 
-    # キーワードを長さで降順ソート（長いフレーズを先にマッチさせる）
+    # キーワードを長さで降順ソート（長いフレーズを先にマッチさせ、原子単位として扱う）
     keywords = sorted(CONTEXT_KEYWORDS.get(context, []),
                      key=len, reverse=True)
 
     for keyword in keywords:
-        # キーワードを小文字に統一
         keyword_lower = keyword.lower()
-
-        # 単語境界を含むパターンで検索
         pattern = r'\b' + re.escape(keyword_lower) + r'\b'
 
-        for match in re.finditer(pattern, text_lower, re.IGNORECASE):
-            # 常に小文字版を追加して大文字小文字を統一
-            found_keywords.append(keyword_lower)
+        # マッチを記録し、その領域を空白でマスクする。
+        # これにより、より短いキーワード（例: 'capital'=財務資本）が、
+        # 長いフレーズ（例: 'human capital'=人的資本）の内側を二重カウントしない。
+        # → 人的資本と財務資本が別キーワードとして区別して集計される。
+        def _record_and_mask(m, _kw=keyword_lower):
+            found_keywords.append(_kw)
+            return ' ' * (m.end() - m.start())
+
+        work_text = re.sub(pattern, _record_and_mask, work_text)
 
     return found_keywords
 

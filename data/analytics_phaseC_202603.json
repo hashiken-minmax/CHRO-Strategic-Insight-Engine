@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-05T15:51:10.050429",
+    "generated_at": "2026-06-05T16:10:38.225452",
     "period": "202603",
     "phase": "C",
     "description": "Context-based Keyword Ranking (HR & Governance Theme Only) + Deep Insights"
@@ -20,11 +20,11 @@
           "count": 20
         },
         {
-          "word": "portfolio",
-          "count": 7
+          "word": "efficiency",
+          "count": 6
         },
         {
-          "word": "efficiency",
+          "word": "portfolio",
           "count": 6
         },
         {
@@ -59,12 +59,12 @@
       "post_count": 152,
       "keywords": [
         {
-          "word": "career",
-          "count": 96
+          "word": "talent",
+          "count": 95
         },
         {
-          "word": "talent",
-          "count": 96
+          "word": "career",
+          "count": 94
         },
         {
           "word": "learning",
@@ -79,24 +79,24 @@
           "count": 34
         },
         {
-          "word": "coaching",
-          "count": 30
-        },
-        {
           "word": "employer branding",
           "count": 28
+        },
+        {
+          "word": "coaching",
+          "count": 15
         },
         {
           "word": "mentoring",
           "count": 8
         },
         {
-          "word": "diversity",
+          "word": "women",
           "count": 5
         },
         {
-          "word": "women",
-          "count": 5
+          "word": "diversity",
+          "count": 4
         }
       ]
     },
@@ -111,7 +111,7 @@
         },
         {
           "word": "ai",
-          "count": 131
+          "count": 127
         },
         {
           "word": "cloud",
@@ -127,19 +127,19 @@
         },
         {
           "word": "generative",
-          "count": 7
-        },
-        {
-          "word": "agent",
-          "count": 7
-        },
-        {
-          "word": "efficiency",
           "count": 5
         },
         {
           "word": "system",
           "count": 5
+        },
+        {
+          "word": "agent",
+          "count": 5
+        },
+        {
+          "word": "efficiency",
+          "count": 3
         },
         {
           "word": "operational efficiency",
@@ -162,7 +162,7 @@
         },
         {
           "word": "engagement",
-          "count": 10
+          "count": 9
         },
         {
           "word": "transformation",
@@ -242,15 +242,15 @@
           "count": 8
         },
         {
-          "word": "board",
-          "count": 7
-        },
-        {
           "word": "risk",
           "count": 6
         },
         {
           "word": "governance",
+          "count": 4
+        },
+        {
+          "word": "board",
           "count": 4
         },
         {
@@ -321,11 +321,11 @@
       "keywords": [
         {
           "word": "talent",
-          "count": 105
+          "count": 104
         },
         {
           "word": "career",
-          "count": 104
+          "count": 101
         },
         {
           "word": "learning",
@@ -337,7 +337,7 @@
         },
         {
           "word": "training",
-          "count": 62
+          "count": 60
         },
         {
           "word": "recruiting",
@@ -345,7 +345,7 @@
         },
         {
           "word": "coaching",
-          "count": 30
+          "count": 15
         },
         {
           "word": "diversity",
@@ -368,14 +368,14 @@
       "keywords": [
         {
           "word": "ai",
-          "count": 243
-        },
-        {
-          "word": "agent",
-          "count": 28
+          "count": 230
         },
         {
           "word": "cloud",
+          "count": 24
+        },
+        {
+          "word": "agent",
           "count": 24
         },
         {
@@ -384,10 +384,6 @@
         },
         {
           "word": "generative ai",
-          "count": 9
-        },
-        {
-          "word": "generative",
           "count": 9
         },
         {
@@ -405,6 +401,10 @@
         {
           "word": "efficiency",
           "count": 2
+        },
+        {
+          "word": "interview",
+          "count": 1
         }
       ]
     },
@@ -419,11 +419,11 @@
         },
         {
           "word": "engagement",
-          "count": 27
+          "count": 26
         },
         {
           "word": "team",
-          "count": 17
+          "count": 16
         },
         {
           "word": "purpose",
@@ -442,12 +442,12 @@
           "count": 6
         },
         {
-          "word": "well-being",
-          "count": 6
-        },
-        {
           "word": "communication",
           "count": 5
+        },
+        {
+          "word": "well-being",
+          "count": 3
         },
         {
           "word": "safety",
@@ -528,7 +528,7 @@
         },
         {
           "word": "board",
-          "count": 3
+          "count": 2
         },
         {
           "word": "board of directors",
@@ -597,12 +597,8 @@
       "post_count": 137,
       "keywords": [
         {
-          "word": "coaching",
-          "count": 76
-        },
-        {
           "word": "career",
-          "count": 68
+          "count": 66
         },
         {
           "word": "learning",
@@ -617,8 +613,12 @@
           "count": 35
         },
         {
+          "word": "coaching",
+          "count": 33
+        },
+        {
           "word": "talent",
-          "count": 29
+          "count": 28
         },
         {
           "word": "recruiting",
@@ -629,12 +629,12 @@
           "count": 13
         },
         {
-          "word": "upskilling",
-          "count": 6
-        },
-        {
           "word": "executive coaching",
           "count": 5
+        },
+        {
+          "word": "employer branding",
+          "count": 3
         }
       ]
     },
@@ -672,7 +672,7 @@
       "keywords": [
         {
           "word": "culture",
-          "count": 27
+          "count": 25
         },
         {
           "word": "diversity",
@@ -687,10 +687,6 @@
           "count": 10
         },
         {
-          "word": "engagement",
-          "count": 8
-        },
-        {
           "word": "purpose",
           "count": 8
         },
@@ -699,15 +695,19 @@
           "count": 7
         },
         {
+          "word": "engagement",
+          "count": 6
+        },
+        {
           "word": "communication",
           "count": 5
         },
         {
-          "word": "satisfaction",
-          "count": 3
+          "word": "employee engagement",
+          "count": 2
         },
         {
-          "word": "employee engagement",
+          "word": "psychological",
           "count": 2
         }
       ]
@@ -846,12 +846,8 @@
       "post_count": 65,
       "keywords": [
         {
-          "word": "coaching",
-          "count": 66
-        },
-        {
           "word": "career",
-          "count": 30
+          "count": 29
         },
         {
           "word": "training",
@@ -860,6 +856,10 @@
         {
           "word": "learning",
           "count": 24
+        },
+        {
+          "word": "coaching",
+          "count": 21
         },
         {
           "word": "recruiting",
@@ -894,7 +894,7 @@
       "keywords": [
         {
           "word": "ai",
-          "count": 58
+          "count": 54
         },
         {
           "word": "automation",
@@ -906,7 +906,7 @@
         },
         {
           "word": "agent",
-          "count": 6
+          "count": 5
         },
         {
           "word": "efficiency",
@@ -914,10 +914,6 @@
         },
         {
           "word": "generative ai",
-          "count": 3
-        },
-        {
-          "word": "generative",
           "count": 3
         },
         {
@@ -995,7 +991,7 @@
       "keywords": [
         {
           "word": "transformation",
-          "count": 8
+          "count": 6
         },
         {
           "word": "development",
@@ -1030,19 +1026,19 @@
       "keywords": [
         {
           "word": "board",
-          "count": 35
+          "count": 32
         },
         {
           "word": "director",
           "count": 24
         },
         {
-          "word": "management",
+          "word": "executive",
           "count": 12
         },
         {
-          "word": "executive",
-          "count": 12
+          "word": "management",
+          "count": 10
         },
         {
           "word": "governance",

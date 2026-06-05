@@ -1,7 +1,7 @@
 # CHRO トレンド分析 - Phase C
 ## コンテキスト別キーワードランキング（コンテキスト固有キーワード）
 
-**生成日時**: 2026年06月05日 15:51:10
+**生成日時**: 2026年06月05日 16:10:38
 **対象期間**: 202603
 **抽出手法**: 各コンテキスト固有のキーワード（keyword_example.docxから抽出）
 **重要**: 複数単語フレーズ（例：「Audit and Supervisory Committee」）は1単語として計数
@@ -17,8 +17,8 @@
 |--------|----------|-------|
 | 1 | report | 33 |
 | 2 | capital | 20 |
-| 3 | portfolio | 7 |
-| 4 | efficiency | 6 |
+| 3 | efficiency | 6 |
+| 4 | portfolio | 6 |
 | 5 | investor | 6 |
 | 6 | business strategy | 5 |
 | 7 | engagement | 5 |
@@ -81,29 +81,29 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | career | 96 |
-| 2 | talent | 96 |
+| 1 | talent | 95 |
+| 2 | career | 94 |
 | 3 | learning | 53 |
 | 4 | recruiting | 50 |
 | 5 | training | 34 |
-| 6 | coaching | 30 |
-| 7 | employer branding | 28 |
+| 6 | employer branding | 28 |
+| 7 | coaching | 15 |
 | 8 | mentoring | 8 |
-| 9 | diversity | 5 |
-| 10 | women | 5 |
+| 9 | women | 5 |
+| 10 | diversity | 4 |
 
 ### 米国（US）
 ポスト数: 193件
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | talent | 105 |
-| 2 | career | 104 |
+| 1 | talent | 104 |
+| 2 | career | 101 |
 | 3 | learning | 89 |
 | 4 | women | 76 |
-| 5 | training | 62 |
+| 5 | training | 60 |
 | 6 | recruiting | 49 |
-| 7 | coaching | 30 |
+| 7 | coaching | 15 |
 | 8 | diversity | 11 |
 | 9 | candidate experience | 6 |
 | 10 | employer branding | 6 |
@@ -113,26 +113,26 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | coaching | 76 |
-| 2 | career | 68 |
-| 3 | learning | 45 |
-| 4 | training | 37 |
-| 5 | women | 35 |
-| 6 | talent | 29 |
+| 1 | career | 66 |
+| 2 | learning | 45 |
+| 3 | training | 37 |
+| 4 | women | 35 |
+| 5 | coaching | 33 |
+| 6 | talent | 28 |
 | 7 | recruiting | 21 |
 | 8 | diversity | 13 |
-| 9 | upskilling | 6 |
-| 10 | executive coaching | 5 |
+| 9 | executive coaching | 5 |
+| 10 | employer branding | 3 |
 
 ### ドイツ（DE）
 ポスト数: 65件
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | coaching | 66 |
-| 2 | career | 30 |
-| 3 | training | 27 |
-| 4 | learning | 24 |
+| 1 | career | 29 |
+| 2 | training | 27 |
+| 3 | learning | 24 |
+| 4 | coaching | 21 |
 | 5 | recruiting | 18 |
 | 6 | talent | 18 |
 | 7 | women | 13 |
@@ -150,14 +150,14 @@
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
 | 1 | security | 154 |
-| 2 | ai | 131 |
+| 2 | ai | 127 |
 | 3 | cloud | 69 |
 | 4 | automation | 27 |
 | 5 | interview | 11 |
-| 6 | generative | 7 |
-| 7 | agent | 7 |
-| 8 | efficiency | 5 |
-| 9 | system | 5 |
+| 6 | generative | 5 |
+| 7 | system | 5 |
+| 8 | agent | 5 |
+| 9 | efficiency | 3 |
 | 10 | operational efficiency | 2 |
 
 ### 米国（US）
@@ -165,16 +165,16 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | ai | 243 |
-| 2 | agent | 28 |
-| 3 | cloud | 24 |
+| 1 | ai | 230 |
+| 2 | cloud | 24 |
+| 3 | agent | 24 |
 | 4 | automation | 17 |
 | 5 | generative ai | 9 |
-| 6 | generative | 9 |
-| 7 | security | 6 |
-| 8 | system | 6 |
-| 9 | ai agent | 4 |
-| 10 | efficiency | 2 |
+| 6 | security | 6 |
+| 7 | system | 6 |
+| 8 | ai agent | 4 |
+| 9 | efficiency | 2 |
+| 10 | interview | 1 |
 
 ### 英国（UK）
 ポスト数: 10件
@@ -192,16 +192,15 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | ai | 58 |
+| 1 | ai | 54 |
 | 2 | automation | 32 |
 | 3 | system | 16 |
-| 4 | agent | 6 |
+| 4 | agent | 5 |
 | 5 | efficiency | 4 |
 | 6 | generative ai | 3 |
-| 7 | generative | 3 |
-| 8 | security | 2 |
-| 9 | ai agent | 1 |
-| 10 | cloud | 1 |
+| 7 | security | 2 |
+| 8 | ai agent | 1 |
+| 9 | cloud | 1 |
 
 ---
 
@@ -214,7 +213,7 @@
 |--------|----------|-------|
 | 1 | team | 21 |
 | 2 | culture | 16 |
-| 3 | engagement | 10 |
+| 3 | engagement | 9 |
 | 4 | transformation | 8 |
 | 5 | purpose | 8 |
 | 6 | safety | 8 |
@@ -229,14 +228,14 @@
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
 | 1 | culture | 30 |
-| 2 | engagement | 27 |
-| 3 | team | 17 |
+| 2 | engagement | 26 |
+| 3 | team | 16 |
 | 4 | purpose | 15 |
 | 5 | diversity | 14 |
 | 6 | working | 12 |
 | 7 | transformation | 6 |
-| 8 | well-being | 6 |
-| 9 | communication | 5 |
+| 8 | communication | 5 |
+| 9 | well-being | 3 |
 | 10 | safety | 3 |
 
 ### 英国（UK）
@@ -244,16 +243,16 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | culture | 27 |
+| 1 | culture | 25 |
 | 2 | diversity | 24 |
 | 3 | transformation | 11 |
 | 4 | team | 10 |
-| 5 | engagement | 8 |
-| 6 | purpose | 8 |
-| 7 | working | 7 |
+| 5 | purpose | 8 |
+| 6 | working | 7 |
+| 7 | engagement | 6 |
 | 8 | communication | 5 |
-| 9 | satisfaction | 3 |
-| 10 | employee engagement | 2 |
+| 9 | employee engagement | 2 |
+| 10 | psychological | 2 |
 
 ### ドイツ（DE）
 ポスト数: 20件
@@ -351,7 +350,7 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | transformation | 8 |
+| 1 | transformation | 6 |
 | 2 | development | 6 |
 | 3 | hr transformation | 2 |
 | 4 | strategic | 2 |
@@ -370,9 +369,9 @@
 |--------|----------|-------|
 | 1 | director | 19 |
 | 2 | executive | 8 |
-| 3 | board | 7 |
-| 4 | risk | 6 |
-| 5 | governance | 4 |
+| 3 | risk | 6 |
+| 4 | governance | 4 |
+| 5 | board | 4 |
 | 6 | board of directors | 3 |
 | 7 | management | 3 |
 | 8 | development | 2 |
@@ -384,7 +383,7 @@
 |--------|----------|-------|
 | 1 | director | 4 |
 | 2 | risk | 4 |
-| 3 | board | 3 |
+| 3 | board | 2 |
 | 4 | board of directors | 1 |
 | 5 | governance | 1 |
 | 6 | management | 1 |
@@ -408,10 +407,10 @@
 
 | ランク | キーワード | 出現数 |
 |--------|----------|-------|
-| 1 | board | 35 |
+| 1 | board | 32 |
 | 2 | director | 24 |
-| 3 | management | 12 |
-| 4 | executive | 12 |
+| 3 | executive | 12 |
+| 4 | management | 10 |
 | 5 | governance | 5 |
 | 6 | development | 4 |
 | 7 | planning | 4 |

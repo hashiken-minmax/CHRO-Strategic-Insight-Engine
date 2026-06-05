@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-06-05T15:34:06.716418",
+    "generated_at": "2026-06-05T16:10:43.650454",
     "period": "202605",
     "phase": "C",
     "description": "Context-based Keyword Ranking (HR & Governance Theme Only) + Deep Insights"
@@ -13,7 +13,7 @@
       "keywords": [
         {
           "word": "capital",
-          "count": 10
+          "count": 9
         },
         {
           "word": "efficiency",
@@ -68,7 +68,7 @@
         },
         {
           "word": "career",
-          "count": 45
+          "count": 42
         },
         {
           "word": "recruiting",
@@ -91,12 +91,12 @@
           "count": 6
         },
         {
-          "word": "alumni",
-          "count": 6
-        },
-        {
           "word": "participation",
           "count": 4
+        },
+        {
+          "word": "alumni",
+          "count": 3
         }
       ]
     },
@@ -107,7 +107,7 @@
       "keywords": [
         {
           "word": "ai",
-          "count": 55
+          "count": 52
         },
         {
           "word": "cloud",
@@ -115,15 +115,11 @@
         },
         {
           "word": "agent",
-          "count": 9
+          "count": 7
         },
         {
           "word": "automation",
           "count": 6
-        },
-        {
-          "word": "generative",
-          "count": 2
         },
         {
           "word": "efficiency",
@@ -139,6 +135,10 @@
         },
         {
           "word": "generative ai",
+          "count": 1
+        },
+        {
+          "word": "generative",
           "count": 1
         },
         {
@@ -158,7 +158,7 @@
         },
         {
           "word": "engagement",
-          "count": 25
+          "count": 24
         },
         {
           "word": "culture",
@@ -177,10 +177,6 @@
           "count": 7
         },
         {
-          "word": "well-being",
-          "count": 6
-        },
-        {
           "word": "transformation",
           "count": 5
         },
@@ -191,6 +187,10 @@
         {
           "word": "safety",
           "count": 5
+        },
+        {
+          "word": "communication",
+          "count": 3
         }
       ]
     },
@@ -281,7 +281,7 @@
       "keywords": [
         {
           "word": "career",
-          "count": 147
+          "count": 132
         },
         {
           "word": "learning",
@@ -293,7 +293,7 @@
         },
         {
           "word": "talent",
-          "count": 49
+          "count": 48
         },
         {
           "word": "training",
@@ -304,20 +304,20 @@
           "count": 12
         },
         {
-          "word": "coaching",
-          "count": 10
-        },
-        {
           "word": "recruiting",
           "count": 7
         },
         {
-          "word": "upskilling",
+          "word": "mentoring",
           "count": 6
         },
         {
-          "word": "mentoring",
+          "word": "inclusion",
           "count": 6
+        },
+        {
+          "word": "coaching",
+          "count": 5
         }
       ]
     },
@@ -328,11 +328,11 @@
       "keywords": [
         {
           "word": "ai",
-          "count": 266
+          "count": 263
         },
         {
           "word": "agent",
-          "count": 18
+          "count": 15
         },
         {
           "word": "automation",
@@ -375,7 +375,7 @@
       "keywords": [
         {
           "word": "culture",
-          "count": 136
+          "count": 135
         },
         {
           "word": "team",
@@ -387,15 +387,11 @@
         },
         {
           "word": "well-being",
-          "count": 36
+          "count": 18
         },
         {
           "word": "transformation",
-          "count": 17
-        },
-        {
-          "word": "engagement",
-          "count": 14
+          "count": 16
         },
         {
           "word": "mindset",
@@ -404,6 +400,10 @@
         {
           "word": "working",
           "count": 13
+        },
+        {
+          "word": "engagement",
+          "count": 11
         },
         {
           "word": "sense of belonging",
@@ -473,7 +473,7 @@
         },
         {
           "word": "transformation",
-          "count": 3
+          "count": 2
         },
         {
           "word": "strategic",
@@ -527,15 +527,7 @@
           "count": 1
         },
         {
-          "word": "succession",
-          "count": 1
-        },
-        {
           "word": "director",
-          "count": 1
-        },
-        {
-          "word": "planning",
           "count": 1
         }
       ]
@@ -598,11 +590,11 @@
         },
         {
           "word": "talent",
-          "count": 40
+          "count": 39
         },
         {
           "word": "career",
-          "count": 39
+          "count": 37
         },
         {
           "word": "training",
@@ -613,20 +605,20 @@
           "count": 6
         },
         {
-          "word": "upskilling",
-          "count": 4
-        },
-        {
-          "word": "coaching",
-          "count": 4
-        },
-        {
-          "word": "alumni",
-          "count": 4
-        },
-        {
           "word": "employability",
           "count": 3
+        },
+        {
+          "word": "inclusion",
+          "count": 3
+        },
+        {
+          "word": "career path",
+          "count": 2
+        },
+        {
+          "word": "upskilling",
+          "count": 2
         }
       ]
     },
@@ -637,11 +629,11 @@
       "keywords": [
         {
           "word": "ai",
-          "count": 91
+          "count": 90
         },
         {
           "word": "agent",
-          "count": 14
+          "count": 13
         },
         {
           "word": "automation",
@@ -687,16 +679,16 @@
           "count": 34
         },
         {
-          "word": "working",
-          "count": 16
-        },
-        {
           "word": "transformation",
           "count": 15
         },
         {
-          "word": "engagement",
+          "word": "working",
           "count": 14
+        },
+        {
+          "word": "engagement",
+          "count": 12
         },
         {
           "word": "diversity",
@@ -855,39 +847,39 @@
         },
         {
           "word": "talent",
-          "count": 45
+          "count": 44
         },
         {
           "word": "training",
           "count": 43
         },
         {
-          "word": "career",
-          "count": 37
-        },
-        {
           "word": "women",
           "count": 34
         },
         {
-          "word": "diversity",
-          "count": 11
-        },
-        {
-          "word": "upskilling",
-          "count": 10
+          "word": "career",
+          "count": 33
         },
         {
           "word": "mentoring",
           "count": 10
         },
         {
+          "word": "diversity",
+          "count": 10
+        },
+        {
           "word": "inclusion",
-          "count": 9
+          "count": 8
         },
         {
           "word": "recruiting",
           "count": 6
+        },
+        {
+          "word": "upskilling",
+          "count": 5
         }
       ]
     },
@@ -898,7 +890,7 @@
       "keywords": [
         {
           "word": "ai",
-          "count": 223
+          "count": 221
         },
         {
           "word": "automation",
@@ -911,10 +903,6 @@
         {
           "word": "system",
           "count": 4
-        },
-        {
-          "word": "agent",
-          "count": 3
         },
         {
           "word": "generative",
@@ -935,6 +923,10 @@
         {
           "word": "security",
           "count": 2
+        },
+        {
+          "word": "agent",
+          "count": 1
         }
       ]
     },
@@ -961,11 +953,7 @@
         },
         {
           "word": "engagement",
-          "count": 56
-        },
-        {
-          "word": "working",
-          "count": 20
+          "count": 54
         },
         {
           "word": "mindset",
@@ -976,12 +964,16 @@
           "count": 19
         },
         {
-          "word": "well-being",
-          "count": 10
+          "word": "working",
+          "count": 19
         },
         {
           "word": "motivation",
           "count": 6
+        },
+        {
+          "word": "well-being",
+          "count": 5
         }
       ]
     },

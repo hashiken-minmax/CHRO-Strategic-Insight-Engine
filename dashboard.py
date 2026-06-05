@@ -364,8 +364,26 @@ POST_ACTION_LABELS = {
 
 DATA_DIR = Path("data")
 
-@st.cache_data
-def load_all_data(period="202604", use_v2=False):
+def _data_sig(period):
+    """対象期間のデータファイルの更新時刻(mtime)を集めたシグネチャ。
+    ファイルが更新されると値が変わり、load_all_data の @st.cache_data を
+    自動的に無効化する（= デプロイ後はブラウザのリロードだけで最新データが
+    反映され、手動 Reboot が基本不要になる）。"""
+    sig = []
+    for name in (
+        f"classified_data_{period}.json", f"classified_data_{period}_v2.json",
+        f"analytics_{period}.json", f"business_ideas_{period}.json",
+        f"analytics_phaseA_{period}.json", f"analytics_phaseB_{period}.json",
+        f"analytics_phaseC_{period}.json",
+    ):
+        p = DATA_DIR / name
+        if p.exists():
+            sig.append((name, p.stat().st_mtime))
+    return tuple(sig)
+
+# ttl=600 は保険（最大10分で自動更新）。通常は data_sig(mtime) で即時無効化される。
+@st.cache_data(ttl=600)
+def load_all_data(period="202604", use_v2=False, data_sig=None):
     def _load(path):
         if path.exists():
             with open(path, encoding="utf-8") as f:
@@ -497,7 +515,7 @@ if selection_mode == "単一期間":
     selected_start_date = None
     selected_end_date   = None
     data_period         = selected_period
-    posts, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2)
+    posts, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2, data_sig=_data_sig(data_period))
     if posts is None:
         st.error(f"Failed to load data for {selected_period}")
         st.stop()
@@ -518,7 +536,7 @@ else:
         st.error("指定期間にデータがありません")
         st.stop()
     # analytics/business/phase は最新期間のものを使用
-    _, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2)
+    _, analytics, business, phase_a, phase_b, phase_c = load_all_data(data_period, use_v2=use_v2, data_sig=_data_sig(data_period))
     st.info(f"📅 {selected_start_date} ～ {selected_end_date}：**{len(posts):,}件** のポストを表示中（{len(available_periods)}期間分を結合）")
 
 # 集計（キャッシュ不要の軽量処理）

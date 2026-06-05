@@ -725,7 +725,8 @@ with tab2:
             fig_pie = px.pie(
                 df_pie, values='Count', names='Context',
                 title=f'{COUNTRY_NAMES[country]}（{country}）Context Distribution',
-                color_discrete_sequence=PREMIUM_CTX_COLORS,
+                color='Context',
+                color_discrete_map=dict(zip(CTX_ORDER, PREMIUM_CTX_COLORS)),
                 category_orders={'Context': CTX_ORDER}
             )
             fig_pie.update_traces(

@@ -655,7 +655,7 @@ with tab1:
 
     # SNS Summary Table
     st.markdown("### SNS Summary by Country")
-    sns_summary = phase_a.get('sns_summary', {})
+    sns_summary = (phase_a or {}).get('sns_summary', {})
     summary_data = []
     for country in COUNTRIES:
         data  = sns_summary.get(country, {})
@@ -928,7 +928,7 @@ with tab4:
         key="phaseC_context",
     )
 
-    phaseC_data = phase_c.get('keyword_by_ctx_country', {})
+    phaseC_data = (phase_c or {}).get('keyword_by_ctx_country', {})
 
     st.markdown("### キーワード ランキング（国別比較）")
     st.caption("4国のキーワード出現ランキングを横並びで比較")

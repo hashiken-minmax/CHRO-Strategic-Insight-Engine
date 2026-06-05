@@ -1,0 +1,1074 @@
+{
+  "metadata": {
+    "generated_at": "2026-06-05T15:34:06.716418",
+    "period": "202605",
+    "phase": "C",
+    "description": "Context-based Keyword Ranking (HR & Governance Theme Only) + Deep Insights"
+  },
+  "keyword_by_ctx_country": {
+    "A&S_JP": {
+      "context": "A&S",
+      "country": "JP",
+      "post_count": 135,
+      "keywords": [
+        {
+          "word": "capital",
+          "count": 10
+        },
+        {
+          "word": "efficiency",
+          "count": 6
+        },
+        {
+          "word": "investor",
+          "count": 6
+        },
+        {
+          "word": "value",
+          "count": 6
+        },
+        {
+          "word": "report",
+          "count": 5
+        },
+        {
+          "word": "roi",
+          "count": 4
+        },
+        {
+          "word": "business strategy",
+          "count": 3
+        },
+        {
+          "word": "engagement",
+          "count": 3
+        },
+        {
+          "word": "portfolio",
+          "count": 3
+        },
+        {
+          "word": "human capital management",
+          "count": 1
+        }
+      ]
+    },
+    "TMD_JP": {
+      "context": "TMD",
+      "country": "JP",
+      "post_count": 128,
+      "keywords": [
+        {
+          "word": "talent",
+          "count": 55
+        },
+        {
+          "word": "learning",
+          "count": 49
+        },
+        {
+          "word": "career",
+          "count": 45
+        },
+        {
+          "word": "recruiting",
+          "count": 33
+        },
+        {
+          "word": "キャリア",
+          "count": 17
+        },
+        {
+          "word": "training",
+          "count": 12
+        },
+        {
+          "word": "women",
+          "count": 8
+        },
+        {
+          "word": "candidate experience",
+          "count": 6
+        },
+        {
+          "word": "alumni",
+          "count": 6
+        },
+        {
+          "word": "participation",
+          "count": 4
+        }
+      ]
+    },
+    "HROPAI_JP": {
+      "context": "HROPAI",
+      "country": "JP",
+      "post_count": 24,
+      "keywords": [
+        {
+          "word": "ai",
+          "count": 55
+        },
+        {
+          "word": "cloud",
+          "count": 9
+        },
+        {
+          "word": "agent",
+          "count": 9
+        },
+        {
+          "word": "automation",
+          "count": 6
+        },
+        {
+          "word": "generative",
+          "count": 2
+        },
+        {
+          "word": "efficiency",
+          "count": 2
+        },
+        {
+          "word": "ai agent",
+          "count": 2
+        },
+        {
+          "word": "prompt engineering",
+          "count": 1
+        },
+        {
+          "word": "generative ai",
+          "count": 1
+        },
+        {
+          "word": "security",
+          "count": 1
+        }
+      ]
+    },
+    "C&E_JP": {
+      "context": "C&E",
+      "country": "JP",
+      "post_count": 60,
+      "keywords": [
+        {
+          "word": "team",
+          "count": 31
+        },
+        {
+          "word": "engagement",
+          "count": 25
+        },
+        {
+          "word": "culture",
+          "count": 24
+        },
+        {
+          "word": "diversity",
+          "count": 11
+        },
+        {
+          "word": "purpose",
+          "count": 10
+        },
+        {
+          "word": "working",
+          "count": 7
+        },
+        {
+          "word": "well-being",
+          "count": 6
+        },
+        {
+          "word": "transformation",
+          "count": 5
+        },
+        {
+          "word": "mindset",
+          "count": 5
+        },
+        {
+          "word": "safety",
+          "count": 5
+        }
+      ]
+    },
+    "WTT_JP": {
+      "keywords": [],
+      "post_count": 0
+    },
+    "HRT_JP": {
+      "context": "HRT",
+      "country": "JP",
+      "post_count": 1,
+      "keywords": []
+    },
+    "S&G_JP": {
+      "context": "S&G",
+      "country": "JP",
+      "post_count": 17,
+      "keywords": [
+        {
+          "word": "governance",
+          "count": 4
+        },
+        {
+          "word": "director",
+          "count": 3
+        },
+        {
+          "word": "leadership",
+          "count": 2
+        },
+        {
+          "word": "talent",
+          "count": 2
+        }
+      ]
+    },
+    "A&S_US": {
+      "context": "A&S",
+      "country": "US",
+      "post_count": 334,
+      "keywords": [
+        {
+          "word": "value",
+          "count": 17
+        },
+        {
+          "word": "capital",
+          "count": 13
+        },
+        {
+          "word": "efficiency",
+          "count": 5
+        },
+        {
+          "word": "report",
+          "count": 5
+        },
+        {
+          "word": "investor",
+          "count": 4
+        },
+        {
+          "word": "roi",
+          "count": 3
+        },
+        {
+          "word": "business strategy",
+          "count": 1
+        },
+        {
+          "word": "hr strategy",
+          "count": 1
+        },
+        {
+          "word": "engagement",
+          "count": 1
+        },
+        {
+          "word": "portfolio",
+          "count": 1
+        }
+      ]
+    },
+    "TMD_US": {
+      "context": "TMD",
+      "country": "US",
+      "post_count": 217,
+      "keywords": [
+        {
+          "word": "career",
+          "count": 147
+        },
+        {
+          "word": "learning",
+          "count": 96
+        },
+        {
+          "word": "women",
+          "count": 70
+        },
+        {
+          "word": "talent",
+          "count": 49
+        },
+        {
+          "word": "training",
+          "count": 19
+        },
+        {
+          "word": "career development",
+          "count": 12
+        },
+        {
+          "word": "coaching",
+          "count": 10
+        },
+        {
+          "word": "recruiting",
+          "count": 7
+        },
+        {
+          "word": "upskilling",
+          "count": 6
+        },
+        {
+          "word": "mentoring",
+          "count": 6
+        }
+      ]
+    },
+    "HROPAI_US": {
+      "context": "HROPAI",
+      "country": "US",
+      "post_count": 70,
+      "keywords": [
+        {
+          "word": "ai",
+          "count": 266
+        },
+        {
+          "word": "agent",
+          "count": 18
+        },
+        {
+          "word": "automation",
+          "count": 9
+        },
+        {
+          "word": "cloud",
+          "count": 7
+        },
+        {
+          "word": "system",
+          "count": 5
+        },
+        {
+          "word": "efficiency",
+          "count": 4
+        },
+        {
+          "word": "ai agent",
+          "count": 3
+        },
+        {
+          "word": "interview",
+          "count": 1
+        },
+        {
+          "word": "security",
+          "count": 1
+        },
+        {
+          "word": "chatbot",
+          "count": 1
+        }
+      ]
+    },
+    "C&E_US": {
+      "context": "C&E",
+      "country": "US",
+      "post_count": 226,
+      "keywords": [
+        {
+          "word": "culture",
+          "count": 136
+        },
+        {
+          "word": "team",
+          "count": 99
+        },
+        {
+          "word": "purpose",
+          "count": 63
+        },
+        {
+          "word": "well-being",
+          "count": 36
+        },
+        {
+          "word": "transformation",
+          "count": 17
+        },
+        {
+          "word": "engagement",
+          "count": 14
+        },
+        {
+          "word": "mindset",
+          "count": 14
+        },
+        {
+          "word": "working",
+          "count": 13
+        },
+        {
+          "word": "sense of belonging",
+          "count": 8
+        },
+        {
+          "word": "employee experience",
+          "count": 7
+        }
+      ]
+    },
+    "WTT_US": {
+      "context": "WTT",
+      "country": "US",
+      "post_count": 36,
+      "keywords": [
+        {
+          "word": "workforce",
+          "count": 27
+        },
+        {
+          "word": "technology",
+          "count": 18
+        },
+        {
+          "word": "talent",
+          "count": 12
+        },
+        {
+          "word": "data",
+          "count": 9
+        },
+        {
+          "word": "skill",
+          "count": 3
+        },
+        {
+          "word": "performance",
+          "count": 2
+        },
+        {
+          "word": "governance",
+          "count": 2
+        },
+        {
+          "word": "analytics",
+          "count": 2
+        },
+        {
+          "word": "platform",
+          "count": 2
+        },
+        {
+          "word": "cloud",
+          "count": 2
+        }
+      ]
+    },
+    "HRT_US": {
+      "context": "HRT",
+      "country": "US",
+      "post_count": 15,
+      "keywords": [
+        {
+          "word": "change",
+          "count": 5
+        },
+        {
+          "word": "transformation",
+          "count": 3
+        },
+        {
+          "word": "strategic",
+          "count": 2
+        },
+        {
+          "word": "hr transformation",
+          "count": 1
+        },
+        {
+          "word": "organization",
+          "count": 1
+        },
+        {
+          "word": "excellence",
+          "count": 1
+        }
+      ]
+    },
+    "S&G_US": {
+      "context": "S&G",
+      "country": "US",
+      "post_count": 10,
+      "keywords": [
+        {
+          "word": "leadership",
+          "count": 7
+        },
+        {
+          "word": "executive",
+          "count": 6
+        },
+        {
+          "word": "board",
+          "count": 5
+        },
+        {
+          "word": "management",
+          "count": 3
+        },
+        {
+          "word": "governance",
+          "count": 2
+        },
+        {
+          "word": "risk",
+          "count": 2
+        },
+        {
+          "word": "succession planning",
+          "count": 1
+        },
+        {
+          "word": "succession",
+          "count": 1
+        },
+        {
+          "word": "director",
+          "count": 1
+        },
+        {
+          "word": "planning",
+          "count": 1
+        }
+      ]
+    },
+    "A&S_UK": {
+      "context": "A&S",
+      "country": "UK",
+      "post_count": 201,
+      "keywords": [
+        {
+          "word": "capital",
+          "count": 10
+        },
+        {
+          "word": "value",
+          "count": 9
+        },
+        {
+          "word": "report",
+          "count": 8
+        },
+        {
+          "word": "roi",
+          "count": 5
+        },
+        {
+          "word": "business strategy",
+          "count": 3
+        },
+        {
+          "word": "engagement",
+          "count": 3
+        },
+        {
+          "word": "investor",
+          "count": 3
+        },
+        {
+          "word": "esg",
+          "count": 3
+        },
+        {
+          "word": "portfolio",
+          "count": 2
+        }
+      ]
+    },
+    "TMD_UK": {
+      "context": "TMD",
+      "country": "UK",
+      "post_count": 118,
+      "keywords": [
+        {
+          "word": "learning",
+          "count": 66
+        },
+        {
+          "word": "women",
+          "count": 57
+        },
+        {
+          "word": "talent",
+          "count": 40
+        },
+        {
+          "word": "career",
+          "count": 39
+        },
+        {
+          "word": "training",
+          "count": 12
+        },
+        {
+          "word": "recruiting",
+          "count": 6
+        },
+        {
+          "word": "upskilling",
+          "count": 4
+        },
+        {
+          "word": "coaching",
+          "count": 4
+        },
+        {
+          "word": "alumni",
+          "count": 4
+        },
+        {
+          "word": "employability",
+          "count": 3
+        }
+      ]
+    },
+    "HROPAI_UK": {
+      "context": "HROPAI",
+      "country": "UK",
+      "post_count": 25,
+      "keywords": [
+        {
+          "word": "ai",
+          "count": 91
+        },
+        {
+          "word": "agent",
+          "count": 14
+        },
+        {
+          "word": "automation",
+          "count": 5
+        },
+        {
+          "word": "efficiency",
+          "count": 3
+        },
+        {
+          "word": "system",
+          "count": 3
+        },
+        {
+          "word": "cloud",
+          "count": 2
+        },
+        {
+          "word": "ai agent",
+          "count": 1
+        },
+        {
+          "word": "security",
+          "count": 1
+        }
+      ]
+    },
+    "C&E_UK": {
+      "context": "C&E",
+      "country": "UK",
+      "post_count": 97,
+      "keywords": [
+        {
+          "word": "culture",
+          "count": 54
+        },
+        {
+          "word": "purpose",
+          "count": 37
+        },
+        {
+          "word": "team",
+          "count": 34
+        },
+        {
+          "word": "working",
+          "count": 16
+        },
+        {
+          "word": "transformation",
+          "count": 15
+        },
+        {
+          "word": "engagement",
+          "count": 14
+        },
+        {
+          "word": "diversity",
+          "count": 12
+        },
+        {
+          "word": "safety",
+          "count": 4
+        },
+        {
+          "word": "mindset",
+          "count": 3
+        },
+        {
+          "word": "employee engagement",
+          "count": 2
+        }
+      ]
+    },
+    "WTT_UK": {
+      "context": "WTT",
+      "country": "UK",
+      "post_count": 15,
+      "keywords": [
+        {
+          "word": "workforce",
+          "count": 15
+        },
+        {
+          "word": "technology",
+          "count": 7
+        },
+        {
+          "word": "talent",
+          "count": 4
+        },
+        {
+          "word": "skill",
+          "count": 2
+        }
+      ]
+    },
+    "HRT_UK": {
+      "context": "HRT",
+      "country": "UK",
+      "post_count": 9,
+      "keywords": [
+        {
+          "word": "change",
+          "count": 4
+        },
+        {
+          "word": "transformation",
+          "count": 2
+        },
+        {
+          "word": "development",
+          "count": 2
+        },
+        {
+          "word": "skill",
+          "count": 2
+        },
+        {
+          "word": "strategic",
+          "count": 1
+        },
+        {
+          "word": "system",
+          "count": 1
+        }
+      ]
+    },
+    "S&G_UK": {
+      "context": "S&G",
+      "country": "UK",
+      "post_count": 9,
+      "keywords": [
+        {
+          "word": "leadership",
+          "count": 10
+        },
+        {
+          "word": "board",
+          "count": 4
+        },
+        {
+          "word": "executive",
+          "count": 3
+        },
+        {
+          "word": "succession",
+          "count": 2
+        },
+        {
+          "word": "governance",
+          "count": 1
+        },
+        {
+          "word": "director",
+          "count": 1
+        },
+        {
+          "word": "risk",
+          "count": 1
+        }
+      ]
+    },
+    "A&S_DE": {
+      "context": "A&S",
+      "country": "DE",
+      "post_count": 217,
+      "keywords": [
+        {
+          "word": "portfolio",
+          "count": 8
+        },
+        {
+          "word": "capital",
+          "count": 6
+        },
+        {
+          "word": "efficiency",
+          "count": 4
+        },
+        {
+          "word": "report",
+          "count": 4
+        },
+        {
+          "word": "value",
+          "count": 4
+        },
+        {
+          "word": "hr strategy",
+          "count": 2
+        },
+        {
+          "word": "engagement",
+          "count": 2
+        },
+        {
+          "word": "esg",
+          "count": 2
+        }
+      ]
+    },
+    "TMD_DE": {
+      "context": "TMD",
+      "country": "DE",
+      "post_count": 148,
+      "keywords": [
+        {
+          "word": "learning",
+          "count": 84
+        },
+        {
+          "word": "talent",
+          "count": 45
+        },
+        {
+          "word": "training",
+          "count": 43
+        },
+        {
+          "word": "career",
+          "count": 37
+        },
+        {
+          "word": "women",
+          "count": 34
+        },
+        {
+          "word": "diversity",
+          "count": 11
+        },
+        {
+          "word": "upskilling",
+          "count": 10
+        },
+        {
+          "word": "mentoring",
+          "count": 10
+        },
+        {
+          "word": "inclusion",
+          "count": 9
+        },
+        {
+          "word": "recruiting",
+          "count": 6
+        }
+      ]
+    },
+    "HROPAI_DE": {
+      "context": "HROPAI",
+      "country": "DE",
+      "post_count": 55,
+      "keywords": [
+        {
+          "word": "ai",
+          "count": 223
+        },
+        {
+          "word": "automation",
+          "count": 18
+        },
+        {
+          "word": "efficiency",
+          "count": 11
+        },
+        {
+          "word": "system",
+          "count": 4
+        },
+        {
+          "word": "agent",
+          "count": 3
+        },
+        {
+          "word": "generative",
+          "count": 2
+        },
+        {
+          "word": "prediction",
+          "count": 2
+        },
+        {
+          "word": "interview",
+          "count": 2
+        },
+        {
+          "word": "ai agent",
+          "count": 2
+        },
+        {
+          "word": "security",
+          "count": 2
+        }
+      ]
+    },
+    "C&E_DE": {
+      "context": "C&E",
+      "country": "DE",
+      "post_count": 177,
+      "keywords": [
+        {
+          "word": "culture",
+          "count": 129
+        },
+        {
+          "word": "team",
+          "count": 109
+        },
+        {
+          "word": "transformation",
+          "count": 59
+        },
+        {
+          "word": "purpose",
+          "count": 58
+        },
+        {
+          "word": "engagement",
+          "count": 56
+        },
+        {
+          "word": "working",
+          "count": 20
+        },
+        {
+          "word": "mindset",
+          "count": 20
+        },
+        {
+          "word": "diversity",
+          "count": 19
+        },
+        {
+          "word": "well-being",
+          "count": 10
+        },
+        {
+          "word": "motivation",
+          "count": 6
+        }
+      ]
+    },
+    "WTT_DE": {
+      "context": "WTT",
+      "country": "DE",
+      "post_count": 19,
+      "keywords": [
+        {
+          "word": "workforce",
+          "count": 23
+        },
+        {
+          "word": "technology",
+          "count": 8
+        },
+        {
+          "word": "data",
+          "count": 6
+        },
+        {
+          "word": "talent",
+          "count": 4
+        },
+        {
+          "word": "skill",
+          "count": 2
+        }
+      ]
+    },
+    "HRT_DE": {
+      "context": "HRT",
+      "country": "DE",
+      "post_count": 12,
+      "keywords": [
+        {
+          "word": "transformation",
+          "count": 7
+        },
+        {
+          "word": "organization",
+          "count": 3
+        },
+        {
+          "word": "employee experience",
+          "count": 2
+        },
+        {
+          "word": "strategic",
+          "count": 2
+        },
+        {
+          "word": "development",
+          "count": 1
+        },
+        {
+          "word": "excellence",
+          "count": 1
+        }
+      ]
+    },
+    "S&G_DE": {
+      "context": "S&G",
+      "country": "DE",
+      "post_count": 10,
+      "keywords": [
+        {
+          "word": "board",
+          "count": 17
+        },
+        {
+          "word": "leadership",
+          "count": 10
+        },
+        {
+          "word": "executive",
+          "count": 5
+        },
+        {
+          "word": "management",
+          "count": 2
+        },
+        {
+          "word": "planning",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

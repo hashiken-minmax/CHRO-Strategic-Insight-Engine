@@ -80,6 +80,7 @@ def run_pipeline(force=False, period=None):
         ("②情報分類",             str(SCRIPTS_DIR / "classify_content.py"),              ["--period", period]),
         ("③分析データ生成",        str(SCRIPTS_DIR / "generate_analytics.py"),            ["--period", period]),
         ("③深層分析（Phase A）",  str(SCRIPTS_DIR / "generate_analytics_phaseA.py"),     ["--period", period]),
+        ("③深層分析（Phase C）",  str(SCRIPTS_DIR / "generate_analytics_phaseC.py"),     ["--period", period]),
         ("④戦略立案",             str(SCRIPTS_DIR / "ideate_business_strategy.py"),      ["--period", period]),
         ("⑤レポート作成",         str(SCRIPTS_DIR / "produce_report_phaseA_with_charts.py"), ["--period", period]),
     ]

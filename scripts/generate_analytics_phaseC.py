@@ -24,9 +24,20 @@ if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-CLASSIFIED_FILE = DATA_DIR / "classified_data_202604.json"
-OUTPUT_JSON = DATA_DIR / "analytics_phaseC_202604.json"
-OUTPUT_MD = DATA_DIR / "analytics_phaseC_202604.md"
+
+# 対象期間: --period 引数があればそれを使用、なければ 202604（後方互換）
+def _get_period():
+    if '--period' in sys.argv:
+        try:
+            return sys.argv[sys.argv.index('--period') + 1]
+        except IndexError:
+            pass
+    return "202604"
+
+PERIOD = _get_period()
+CLASSIFIED_FILE = DATA_DIR / f"classified_data_{PERIOD}.json"
+OUTPUT_JSON = DATA_DIR / f"analytics_phaseC_{PERIOD}.json"
+OUTPUT_MD = DATA_DIR / f"analytics_phaseC_{PERIOD}.md"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # コンテキスト別キーワード（keyword_example.docxから抽出）
@@ -269,7 +280,7 @@ print(f"[OK] {len(keyword_by_ctx_country)}コンテキスト×国のキーワー
 analysis_result = {
     "metadata": {
         "generated_at": datetime.now().isoformat(),
-        "period": "202604",
+        "period": PERIOD,
         "phase": "C",
         "description": "Context-based Keyword Ranking (HR & Governance Theme Only) + Deep Insights"
     },
@@ -290,7 +301,7 @@ md_lines = [
     "## コンテキスト別キーワードランキング（コンテキスト固有キーワード）",
     "",
     f"**生成日時**: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}",
-    f"**対象期間**: 2026年3月17日 ～ 2026年4月16日",
+    f"**対象期間**: {PERIOD}",
     f"**抽出手法**: 各コンテキスト固有のキーワード（keyword_example.docxから抽出）",
     f"**重要**: 複数単語フレーズ（例：「Audit and Supervisory Committee」）は1単語として計数",
     "",

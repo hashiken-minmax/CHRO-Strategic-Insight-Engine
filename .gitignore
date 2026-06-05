@@ -68,12 +68,13 @@ node_modules/
 !data/analytics_phaseC_*.json
 !data/business_ideas_*.json
 
+# Credentials (本番APIキーはGitHub Secretsで管理。リポジトリには絶対に含めない)
+.env
+
 # Old/test scripts to exclude
 scripts/update_*.py
 scripts/add_*.py
 scripts/init_*.py
-scripts/monthly_pipeline.py
-scripts/ideate_business_strategy.py
 scripts/markdown_to_pdf.py
 scripts/test_*.py
 test_*.py
@@ -81,4 +82,5 @@ Phase1指示書.docx
 Phase2指示書.docx
 phase2_text.txt
 keyword_example.docx
-skills/
+# skills/ は月次パイプライン(①SNS収集 last30days.py)に必須のためコミット対象。
+# __pycache__ は上部のグローバル規則で除外済み。

@@ -1,0 +1,102 @@
+name: Monthly CHRO Pipeline
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 月次パイプライン自動実行（毎月 第2営業日）
+#
+#  ①SNSデータ収集 → ②情報分類 → ③分析 → ③深層分析(Phase A)
+#  → ④戦略立案 → ⑤レポート作成 → 生成データを main に自動コミット
+#
+# 仕組み:
+#  - cron は「毎月1〜6日の朝(JST)」だけ起動する軽い見張り役。
+#  - 実際にパイプライン本体が走るのは scripts/monthly_pipeline.py の
+#    should_run_today()=「第2営業日」判定を通った1日だけ（=月1回）。
+#  - 第2営業日以外の日は数秒で終了し、API呼び出し・コミットは発生しない。
+#  - TZ=Asia/Tokyo を設定しているため第2営業日判定は日本時間基準。
+#
+# 注意: scheduled workflow は「デフォルトブランチ(main)」にある時のみ起動する。
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+on:
+  schedule:
+    # 00:00 UTC = 09:00 JST。毎月1〜6日に起動（第2営業日は必ずこの範囲内）。
+    - cron: '0 0 1-6 * *'
+  workflow_dispatch:
+    inputs:
+      period:
+        description: '対象期間 YYYYMM（空欄なら前月を自動使用）'
+        required: false
+        default: ''
+      force:
+        description: '第2営業日判定をスキップして強制実行する'
+        type: boolean
+        required: false
+        default: false
+
+# 生成データを main にコミット＆プッシュするための書き込み権限
+permissions:
+  contents: write
+
+# 同時実行を防止（前回ジョブの完了を待つ）
+concurrency:
+  group: monthly-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: Asia/Tokyo
+      # ── 必須: 分類で使用 (Claude) ──
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # ── 必須: LinkedIn 収集 ──
+      LINKUPAPI_KEY: ${{ secrets.LINKUPAPI_KEY }}
+      LINKUPAPI_LOGIN_TOKEN: ${{ secrets.LINKUPAPI_LOGIN_TOKEN }}
+      # ── 任意: 公開コンテンツ検索 ──
+      EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      # ── 任意: X(Twitter) 収集（未設定なら当該収集はスキップ） ──
+      TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+      TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+      TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+      TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+      TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: 依存関係をインストール
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 月次パイプラインを実行
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+            if [ -n "${{ inputs.period }}" ]; then ARGS="$ARGS --period ${{ inputs.period }}"; fi
+          fi
+          echo "実行引数: '$ARGS'"
+          python scripts/monthly_pipeline.py $ARGS
+
+      - name: 生成データを main にコミット＆プッシュ
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "データに変更なし（第2営業日ではない、または新規データなし）。コミットをスキップします。"
+          else
+            STAMP=$(date +%Y-%m-%d)
+            git commit -m "chore: 月次パイプライン自動更新 (${STAMP})"
+            git push
+            echo "生成データを main にプッシュしました。"
+          fi

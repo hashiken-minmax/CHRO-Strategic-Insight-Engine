@@ -1,0 +1,30 @@
+=== CHRO-SIE Analytics Summary (202604) ===
+
+Total Posts: 1159
+
+--- By Country ---
+
+DE: 189 posts
+  - TMD (Talent Market & Development): 83
+  - A&S (Agenda & Strategy): 52
+  - Keywords: linkedin(596), you(429), https(321), com(310), company(299)
+
+JP: 260 posts
+  - TMD (Talent Market & Development): 110
+  - A&S (Agenda & Strategy): 86
+  - Keywords: linkedin(779), company(596), https(520), com(468), you(420)
+
+UK: 310 posts
+  - TMD (Talent Market & Development): 111
+  - A&S (Agenda & Strategy): 107
+  - Keywords: linkedin(1021), you(765), company(688), https(623), com(568)
+
+US: 400 posts
+  - TMD (Talent Market & Development): 152
+  - A&S (Agenda & Strategy): 134
+  - Keywords: linkedin(1370), https(962), company(910), you(886), com(881)
+
+--- Role Focus Analysis ---
+Strategic (Emerging/Transformational): 839
+Admin (Operational/Compliance): 76
+Neutral: 244

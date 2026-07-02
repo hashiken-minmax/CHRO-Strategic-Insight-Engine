@@ -1,0 +1,500 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-02T13:00:02.612065",
+    "total_posts": 1159,
+    "period": "202604"
+  },
+  "country_overview": {
+    "JP": {
+      "count": 260,
+      "context_dist": {
+        "TMD": 110,
+        "A&S": 86,
+        "C&E": 22,
+        "S&G": 9,
+        "HRT": 1,
+        "HROPAI": 30,
+        "WTT": 2
+      },
+      "activity_dist": {
+        "Issue": 16,
+        "Doing": 82,
+        "null": 4,
+        "Next": 85,
+        "Idea": 9,
+        "Done": 64
+      },
+      "role_focus": {
+        "Strategic": 178,
+        "Neutral": 65,
+        "Admin": 17
+      },
+      "top_keywords": [
+        [
+          "linkedin",
+          779
+        ],
+        [
+          "company",
+          596
+        ],
+        [
+          "https",
+          520
+        ],
+        [
+          "com",
+          468
+        ],
+        [
+          "you",
+          420
+        ],
+        [
+          "people",
+          381
+        ],
+        [
+          "japan",
+          375
+        ],
+        [
+          "years",
+          373
+        ],
+        [
+          "www",
+          363
+        ],
+        [
+          "months",
+          347
+        ],
+        [
+          "join",
+          333
+        ],
+        [
+          "policy",
+          331
+        ],
+        [
+          "sign",
+          322
+        ],
+        [
+          "agree",
+          310
+        ],
+        [
+          "experience",
+          307
+        ]
+      ]
+    },
+    "US": {
+      "count": 400,
+      "context_dist": {
+        "TMD": 152,
+        "A&S": 134,
+        "C&E": 43,
+        "HROPAI": 61,
+        "S&G": 6,
+        "WTT": 3,
+        "HRT": 1
+      },
+      "activity_dist": {
+        "null": 9,
+        "Done": 108,
+        "Doing": 151,
+        "Issue": 34,
+        "Next": 84,
+        "Idea": 14
+      },
+      "role_focus": {
+        "Strategic": 297,
+        "Admin": 30,
+        "Neutral": 73
+      },
+      "top_keywords": [
+        [
+          "linkedin",
+          1370
+        ],
+        [
+          "https",
+          962
+        ],
+        [
+          "company",
+          910
+        ],
+        [
+          "you",
+          886
+        ],
+        [
+          "com",
+          881
+        ],
+        [
+          "people",
+          672
+        ],
+        [
+          "www",
+          660
+        ],
+        [
+          "years",
+          609
+        ],
+        [
+          "comment",
+          568
+        ],
+        [
+          "united",
+          560
+        ],
+        [
+          "join",
+          553
+        ],
+        [
+          "months",
+          543
+        ],
+        [
+          "policy",
+          531
+        ],
+        [
+          "experience",
+          505
+        ],
+        [
+          "agree",
+          504
+        ]
+      ]
+    },
+    "UK": {
+      "count": 310,
+      "context_dist": {
+        "C&E": 39,
+        "TMD": 111,
+        "A&S": 107,
+        "HROPAI": 33,
+        "WTT": 7,
+        "HRT": 4,
+        "S&G": 9
+      },
+      "activity_dist": {
+        "Done": 66,
+        "Next": 78,
+        "Doing": 135,
+        "Idea": 11,
+        "Issue": 19,
+        "null": 1
+      },
+      "role_focus": {
+        "Strategic": 225,
+        "Neutral": 62,
+        "Admin": 23
+      },
+      "top_keywords": [
+        [
+          "linkedin",
+          1021
+        ],
+        [
+          "you",
+          765
+        ],
+        [
+          "company",
+          688
+        ],
+        [
+          "https",
+          623
+        ],
+        [
+          "com",
+          568
+        ],
+        [
+          "people",
+          518
+        ],
+        [
+          "years",
+          491
+        ],
+        [
+          "united",
+          486
+        ],
+        [
+          "policy",
+          456
+        ],
+        [
+          "www",
+          445
+        ],
+        [
+          "months",
+          445
+        ],
+        [
+          "join",
+          441
+        ],
+        [
+          "agree",
+          416
+        ],
+        [
+          "more",
+          388
+        ],
+        [
+          "sign",
+          378
+        ]
+      ]
+    },
+    "DE": {
+      "count": 189,
+      "context_dist": {
+        "TMD": 83,
+        "C&E": 15,
+        "HROPAI": 26,
+        "A&S": 52,
+        "S&G": 9,
+        "WTT": 2,
+        "HRT": 2
+      },
+      "activity_dist": {
+        "Done": 48,
+        "Next": 47,
+        "Doing": 79,
+        "Idea": 8,
+        "Issue": 7
+      },
+      "role_focus": {
+        "Neutral": 44,
+        "Strategic": 139,
+        "Admin": 6
+      },
+      "top_keywords": [
+        [
+          "linkedin",
+          596
+        ],
+        [
+          "you",
+          429
+        ],
+        [
+          "https",
+          321
+        ],
+        [
+          "com",
+          310
+        ],
+        [
+          "company",
+          299
+        ],
+        [
+          "join",
+          280
+        ],
+        [
+          "policy",
+          275
+        ],
+        [
+          "more",
+          270
+        ],
+        [
+          "reactions",
+          261
+        ],
+        [
+          "people",
+          259
+        ],
+        [
+          "agree",
+          255
+        ],
+        [
+          "years",
+          235
+        ],
+        [
+          "und",
+          232
+        ],
+        [
+          "www",
+          217
+        ],
+        [
+          "sign",
+          216
+        ]
+      ]
+    }
+  },
+  "global_metrics": {
+    "context_distribution": {
+      "TMD": 456,
+      "A&S": 379,
+      "C&E": 119,
+      "S&G": 33,
+      "HRT": 8,
+      "HROPAI": 150,
+      "WTT": 14
+    },
+    "activity_distribution": {
+      "Issue": 76,
+      "Doing": 447,
+      "null": 14,
+      "Next": 294,
+      "Idea": 42,
+      "Done": 286
+    },
+    "role_focus_distribution": {
+      "Strategic": 839,
+      "Neutral": 244,
+      "Admin": 76
+    },
+    "top_keywords": [
+      [
+        "linkedin",
+        3766
+      ],
+      [
+        "you",
+        2500
+      ],
+      [
+        "company",
+        2493
+      ],
+      [
+        "https",
+        2426
+      ],
+      [
+        "com",
+        2227
+      ],
+      [
+        "people",
+        1830
+      ],
+      [
+        "years",
+        1708
+      ],
+      [
+        "www",
+        1685
+      ],
+      [
+        "join",
+        1607
+      ],
+      [
+        "policy",
+        1593
+      ],
+      [
+        "months",
+        1528
+      ],
+      [
+        "agree",
+        1485
+      ],
+      [
+        "more",
+        1436
+      ],
+      [
+        "united",
+        1420
+      ],
+      [
+        "sign",
+        1418
+      ],
+      [
+        "comment",
+        1393
+      ],
+      [
+        "reactions",
+        1304
+      ],
+      [
+        "experience",
+        1297
+      ],
+      [
+        "business",
+        1231
+      ],
+      [
+        "has",
+        1165
+      ]
+    ]
+  },
+  "context_by_country": {
+    "JP": {
+      "S&G": 9,
+      "A&S": 86,
+      "HRT": 1,
+      "WTT": 2,
+      "TMD": 110,
+      "HROPAI": 30,
+      "C&E": 22
+    },
+    "US": {
+      "S&G": 6,
+      "A&S": 134,
+      "HRT": 1,
+      "WTT": 3,
+      "TMD": 152,
+      "HROPAI": 61,
+      "C&E": 43
+    },
+    "UK": {
+      "S&G": 9,
+      "A&S": 107,
+      "HRT": 4,
+      "WTT": 7,
+      "TMD": 111,
+      "HROPAI": 33,
+      "C&E": 39
+    },
+    "DE": {
+      "S&G": 9,
+      "A&S": 52,
+      "HRT": 2,
+      "WTT": 2,
+      "TMD": 83,
+      "HROPAI": 26,
+      "C&E": 15
+    }
+  }
+}

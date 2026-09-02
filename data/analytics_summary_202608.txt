@@ -1,0 +1,30 @@
+=== CHRO-SIE Analytics Summary (202604) ===
+
+Total Posts: 2190
+
+--- By Country ---
+
+DE: 595 posts
+  - A&S (Agenda & Strategy): 202
+  - C&E (Culture & Engagement): 178
+  - Keywords: und(843), die(582), people(548), how(470), what(462)
+
+JP: 346 posts
+  - TMD (Talent Market & Development): 146
+  - A&S (Agenda & Strategy): 99
+  - Keywords: japan(918), years(742), company(689), months(678), linkedin(666)
+
+UK: 408 posts
+  - A&S (Agenda & Strategy): 153
+  - TMD (Talent Market & Development): 116
+  - Keywords: people(388), what(313), work(297), about(291), you(291)
+
+US: 841 posts
+  - A&S (Agenda & Strategy): 303
+  - TMD (Talent Market & Development): 223
+  - Keywords: you(752), work(672), people(659), what(570), how(505)
+
+--- Role Focus Analysis ---
+Strategic (Emerging/Transformational): 1731
+Admin (Operational/Compliance): 17
+Neutral: 442

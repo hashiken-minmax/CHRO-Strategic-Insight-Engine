@@ -1,0 +1,500 @@
+{
+  "metadata": {
+    "generated_at": "2026-09-02T12:52:37.400443",
+    "total_posts": 2190,
+    "period": "202604"
+  },
+  "country_overview": {
+    "JP": {
+      "count": 346,
+      "context_dist": {
+        "WTT": 44,
+        "TMD": 146,
+        "HROPAI": 12,
+        "A&S": 99,
+        "C&E": 41,
+        "S&G": 3,
+        "HRT": 1
+      },
+      "activity_dist": {
+        "Next": 59,
+        "Done": 109,
+        "Doing": 111,
+        "Issue": 18,
+        "Idea": 11,
+        "null": 38
+      },
+      "role_focus": {
+        "Strategic": 287,
+        "Neutral": 56,
+        "Admin": 3
+      },
+      "top_keywords": [
+        [
+          "japan",
+          918
+        ],
+        [
+          "years",
+          742
+        ],
+        [
+          "company",
+          689
+        ],
+        [
+          "months",
+          678
+        ],
+        [
+          "linkedin",
+          666
+        ],
+        [
+          "has",
+          606
+        ],
+        [
+          "tokyo",
+          538
+        ],
+        [
+          "department",
+          535
+        ],
+        [
+          "https",
+          522
+        ],
+        [
+          "com",
+          494
+        ],
+        [
+          "level",
+          490
+        ],
+        [
+          "united",
+          477
+        ],
+        [
+          "experience",
+          468
+        ],
+        [
+          "management",
+          459
+        ],
+        [
+          "manager",
+          446
+        ]
+      ]
+    },
+    "US": {
+      "count": 841,
+      "context_dist": {
+        "HROPAI": 55,
+        "A&S": 303,
+        "TMD": 223,
+        "C&E": 202,
+        "WTT": 40,
+        "HRT": 14,
+        "S&G": 4
+      },
+      "activity_dist": {
+        "Doing": 429,
+        "Done": 160,
+        "Idea": 34,
+        "Next": 194,
+        "Issue": 21,
+        "null": 3
+      },
+      "role_focus": {
+        "Strategic": 640,
+        "Neutral": 189,
+        "Admin": 12
+      },
+      "top_keywords": [
+        [
+          "you",
+          752
+        ],
+        [
+          "work",
+          672
+        ],
+        [
+          "people",
+          659
+        ],
+        [
+          "what",
+          570
+        ],
+        [
+          "how",
+          505
+        ],
+        [
+          "who",
+          442
+        ],
+        [
+          "more",
+          423
+        ],
+        [
+          "about",
+          416
+        ],
+        [
+          "their",
+          397
+        ],
+        [
+          "team",
+          373
+        ],
+        [
+          "they",
+          364
+        ],
+        [
+          "has",
+          346
+        ],
+        [
+          "every",
+          344
+        ],
+        [
+          "can",
+          339
+        ],
+        [
+          "one",
+          334
+        ]
+      ]
+    },
+    "UK": {
+      "count": 408,
+      "context_dist": {
+        "WTT": 23,
+        "TMD": 116,
+        "HROPAI": 16,
+        "A&S": 153,
+        "C&E": 90,
+        "HRT": 4,
+        "S&G": 6
+      },
+      "activity_dist": {
+        "Done": 51,
+        "null": 9,
+        "Doing": 219,
+        "Issue": 17,
+        "Next": 87,
+        "Idea": 25
+      },
+      "role_focus": {
+        "Strategic": 317,
+        "Neutral": 89,
+        "Admin": 2
+      },
+      "top_keywords": [
+        [
+          "people",
+          388
+        ],
+        [
+          "what",
+          313
+        ],
+        [
+          "work",
+          297
+        ],
+        [
+          "about",
+          291
+        ],
+        [
+          "you",
+          291
+        ],
+        [
+          "united",
+          262
+        ],
+        [
+          "how",
+          261
+        ],
+        [
+          "more",
+          251
+        ],
+        [
+          "has",
+          219
+        ],
+        [
+          "across",
+          211
+        ],
+        [
+          "can",
+          211
+        ],
+        [
+          "linkedin",
+          207
+        ],
+        [
+          "company",
+          203
+        ],
+        [
+          "experience",
+          199
+        ],
+        [
+          "https",
+          197
+        ]
+      ]
+    },
+    "DE": {
+      "count": 595,
+      "context_dist": {
+        "C&E": 178,
+        "TMD": 128,
+        "HROPAI": 53,
+        "WTT": 20,
+        "S&G": 5,
+        "A&S": 202,
+        "HRT": 9
+      },
+      "activity_dist": {
+        "Next": 167,
+        "Doing": 293,
+        "Idea": 32,
+        "Done": 78,
+        "Issue": 23,
+        "null": 2
+      },
+      "role_focus": {
+        "Strategic": 487,
+        "Neutral": 108
+      },
+      "top_keywords": [
+        [
+          "und",
+          843
+        ],
+        [
+          "die",
+          582
+        ],
+        [
+          "people",
+          548
+        ],
+        [
+          "how",
+          470
+        ],
+        [
+          "what",
+          462
+        ],
+        [
+          "you",
+          437
+        ],
+        [
+          "more",
+          360
+        ],
+        [
+          "work",
+          354
+        ],
+        [
+          "one",
+          341
+        ],
+        [
+          "not",
+          335
+        ],
+        [
+          "der",
+          316
+        ],
+        [
+          "für",
+          310
+        ],
+        [
+          "together",
+          289
+        ],
+        [
+          "wir",
+          287
+        ],
+        [
+          "leadership",
+          283
+        ]
+      ]
+    }
+  },
+  "global_metrics": {
+    "context_distribution": {
+      "WTT": 127,
+      "TMD": 613,
+      "HROPAI": 136,
+      "A&S": 757,
+      "C&E": 511,
+      "S&G": 18,
+      "HRT": 28
+    },
+    "activity_distribution": {
+      "Next": 507,
+      "Done": 398,
+      "Doing": 1052,
+      "Issue": 79,
+      "Idea": 102,
+      "null": 52
+    },
+    "role_focus_distribution": {
+      "Strategic": 1731,
+      "Neutral": 442,
+      "Admin": 17
+    },
+    "top_keywords": [
+      [
+        "you",
+        1746
+      ],
+      [
+        "people",
+        1718
+      ],
+      [
+        "what",
+        1467
+      ],
+      [
+        "work",
+        1430
+      ],
+      [
+        "has",
+        1374
+      ],
+      [
+        "company",
+        1372
+      ],
+      [
+        "years",
+        1367
+      ],
+      [
+        "how",
+        1322
+      ],
+      [
+        "about",
+        1222
+      ],
+      [
+        "more",
+        1155
+      ],
+      [
+        "linkedin",
+        1108
+      ],
+      [
+        "https",
+        1103
+      ],
+      [
+        "across",
+        1065
+      ],
+      [
+        "united",
+        1063
+      ],
+      [
+        "months",
+        1061
+      ],
+      [
+        "experience",
+        1005
+      ],
+      [
+        "they",
+        963
+      ],
+      [
+        "can",
+        954
+      ],
+      [
+        "japan",
+        941
+      ],
+      [
+        "business",
+        936
+      ]
+    ]
+  },
+  "context_by_country": {
+    "JP": {
+      "S&G": 3,
+      "A&S": 99,
+      "HRT": 1,
+      "WTT": 44,
+      "TMD": 146,
+      "HROPAI": 12,
+      "C&E": 41
+    },
+    "US": {
+      "S&G": 4,
+      "A&S": 303,
+      "HRT": 14,
+      "WTT": 40,
+      "TMD": 223,
+      "HROPAI": 55,
+      "C&E": 202
+    },
+    "UK": {
+      "S&G": 6,
+      "A&S": 153,
+      "HRT": 4,
+      "WTT": 23,
+      "TMD": 116,
+      "HROPAI": 16,
+      "C&E": 90
+    },
+    "DE": {
+      "S&G": 5,
+      "A&S": 202,
+      "HRT": 9,
+      "WTT": 20,
+      "TMD": 128,
+      "HROPAI": 53,
+      "C&E": 178
+    }
+  }
+}
